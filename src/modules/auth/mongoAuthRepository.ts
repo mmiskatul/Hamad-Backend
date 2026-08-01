@@ -44,6 +44,13 @@ export class MongoAuthRepository implements AuthRepository {
     return user ? this.toUserRecord(user) : null;
   }
 
+  async findUserById(id: string): Promise<UserRecord | null> {
+    await this.ready();
+    if (!ObjectId.isValid(id)) return null;
+    const user = await this.users.findOne({ _id: new ObjectId(id) });
+    return user ? this.toUserRecord(user) : null;
+  }
+
   async saveVerification(input: {
     email: string;
     purpose: VerificationRecord['purpose'];
@@ -115,6 +122,52 @@ export class MongoAuthRepository implements AuthRepository {
     await this.ready();
     const result = await this.users.updateOne({ email }, { $set: { passwordHash } });
     return result.matchedCount === 1;
+  }
+
+  async updateUserProfile(input: {
+    id: string;
+    name?: string;
+    email?: string;
+    phone?: string;
+    avatarUri?: string | null;
+    updatedAt: Date;
+  }): Promise<UserRecord | null> {
+    await this.ready();
+    if (!ObjectId.isValid(input.id)) return null;
+    const { id, ...patch } = input;
+    try {
+      const user = await this.users.findOneAndUpdate(
+        { _id: new ObjectId(id) },
+        { $set: patch },
+        { returnDocument: 'after' },
+      );
+      if (!user) return null;
+      if (input.email) {
+        await this.sessions.updateMany({ userId: id }, { $set: { userEmail: input.email } });
+      }
+      return this.toUserRecord(user);
+    } catch (error) {
+      if (error instanceof MongoServerError && error.code === 11000) {
+        throw new DuplicateEmailError();
+      }
+      throw error;
+    }
+  }
+
+  async updateUserMemory(input: {
+    id: string;
+    memory: NonNullable<UserRecord['memory']>;
+    updatedAt: Date;
+  }): Promise<UserRecord | null> {
+    await this.ready();
+    if (!ObjectId.isValid(input.id)) return null;
+    const { id, ...patch } = input;
+    const user = await this.users.findOneAndUpdate(
+      { _id: new ObjectId(id) },
+      { $set: patch },
+      { returnDocument: 'after' },
+    );
+    return user ? this.toUserRecord(user) : null;
   }
 
   async deleteVerification(

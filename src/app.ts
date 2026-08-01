@@ -6,10 +6,14 @@ import { env } from './config/env.js';
 import type { AuthRepository } from './modules/auth/authRepository.js';
 import type { EmailSender } from './modules/email/emailSender.js';
 import { registerRoutes } from './routes/index.js';
+import type { ChatRepository } from './modules/chat/chatRepository.js';
+import type { AiRouter } from './modules/ai/modelRouter.js';
 
 export type BuildAppOptions = {
   authRepository?: AuthRepository;
   emailSender?: EmailSender;
+  chatRepository?: ChatRepository;
+  aiRouter?: AiRouter;
 };
 
 export function buildApp(options: BuildAppOptions = {}) {
@@ -39,6 +43,8 @@ export function buildApp(options: BuildAppOptions = {}) {
   app.register(registerRoutes, {
     authRepository: options.authRepository,
     emailSender: options.emailSender,
+    chatRepository: options.chatRepository,
+    aiRouter: options.aiRouter,
   });
 
   return app;

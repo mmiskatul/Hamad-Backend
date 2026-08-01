@@ -31,7 +31,8 @@ export type AuthErrorCode =
   | 'INVALID_OR_EXPIRED_CODE'
   | 'INVALID_REGISTRATION_TOKEN'
   | 'INVALID_PASSWORD_RESET_TOKEN'
-  | 'INVALID_CREDENTIALS';
+  | 'INVALID_CREDENTIALS'
+  | 'CURRENT_PASSWORD_INCORRECT';
 
 export class AuthError extends Error {
   constructor(
@@ -156,6 +157,14 @@ export class AuthService {
       throw new AuthError('INVALID_CREDENTIALS', 'The email or password is incorrect.');
     }
     return user;
+  }
+
+  async changePassword(userId: string, currentPassword: string, newPassword: string): Promise<void> {
+    const user = await this.repository.findUserById(userId);
+    if (!user || !(await verifyPassword(currentPassword, user.passwordHash))) {
+      throw new AuthError('CURRENT_PASSWORD_INCORRECT', 'The current password is incorrect.');
+    }
+    await this.repository.updateUserPassword(user.email, await hashPassword(newPassword));
   }
 
   async requestPasswordResetCode(

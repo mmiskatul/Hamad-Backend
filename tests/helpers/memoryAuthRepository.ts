@@ -19,6 +19,10 @@ export class MemoryAuthRepository implements AuthRepository {
     return this.users.get(email) ?? null;
   }
 
+  async findUserById(id: string): Promise<UserRecord | null> {
+    return [...this.users.values()].find((user) => user.id === id) ?? null;
+  }
+
   async saveVerification(input: {
     email: string;
     purpose: VerificationRecord['purpose'];
@@ -71,6 +75,42 @@ export class MemoryAuthRepository implements AuthRepository {
     if (!user) return false;
     user.passwordHash = passwordHash;
     return true;
+  }
+
+  async updateUserProfile(input: {
+    id: string;
+    name?: string;
+    email?: string;
+    phone?: string;
+    avatarUri?: string | null;
+    updatedAt: Date;
+  }): Promise<UserRecord | null> {
+    const user = await this.findUserById(input.id);
+    if (!user) return null;
+    if (input.email && input.email !== user.email && this.users.has(input.email)) {
+      throw new DuplicateEmailError();
+    }
+    const previousEmail = user.email;
+    const { id, ...patch } = input;
+    const record = { ...user, ...patch, id };
+    if (input.email && input.email !== previousEmail) this.users.delete(previousEmail);
+    this.users.set(record.email, record);
+    for (const session of this.sessions.values()) {
+      if (session.userId === input.id) session.userEmail = record.email;
+    }
+    return record;
+  }
+
+  async updateUserMemory(input: {
+    id: string;
+    memory: NonNullable<UserRecord['memory']>;
+    updatedAt: Date;
+  }): Promise<UserRecord | null> {
+    const user = await this.findUserById(input.id);
+    if (!user) return null;
+    const { id, ...patch } = input;
+    Object.assign(user, patch, { id });
+    return user;
   }
 
   async deleteVerification(

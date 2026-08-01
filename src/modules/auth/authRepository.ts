@@ -4,6 +4,17 @@ export type UserRecord = {
   name: string;
   passwordHash: string;
   createdAt: Date;
+  phone?: string;
+  avatarUri?: string | null;
+  memory?: {
+    enabled: boolean;
+    nickname: string;
+    occupation: string;
+    about: string;
+    summary: string;
+    summaryUpdatedAt?: Date | null;
+  };
+  updatedAt?: Date;
 };
 
 export type VerificationRecord = {
@@ -35,6 +46,7 @@ export type NewSession = Omit<SessionRecord, 'id'>;
 
 export interface AuthRepository {
   findUserByEmail(email: string): Promise<UserRecord | null>;
+  findUserById(id: string): Promise<UserRecord | null>;
   saveVerification(input: {
     email: string;
     purpose: VerificationRecord['purpose'];
@@ -58,6 +70,19 @@ export interface AuthRepository {
   }): Promise<void>;
   createUser(user: NewUser): Promise<UserRecord>;
   updateUserPassword(email: string, passwordHash: string): Promise<boolean>;
+  updateUserProfile(input: {
+    id: string;
+    name?: string;
+    email?: string;
+    phone?: string;
+    avatarUri?: string | null;
+    updatedAt: Date;
+  }): Promise<UserRecord | null>;
+  updateUserMemory(input: {
+    id: string;
+    memory: NonNullable<UserRecord['memory']>;
+    updatedAt: Date;
+  }): Promise<UserRecord | null>;
   deleteVerification(email: string, purpose: VerificationRecord['purpose']): Promise<void>;
   createSession(session: NewSession): Promise<SessionRecord>;
   findActiveSessionById(input: {

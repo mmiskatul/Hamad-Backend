@@ -36,6 +36,7 @@ type ResetPasswordBody = EmailBody & {
   password: string;
   resetToken: string;
 };
+type ChangePasswordBody = { currentPassword: string; newPassword: string };
 
 const emailSchema = { type: 'string', format: 'email', maxLength: 254 } as const;
 
@@ -419,6 +420,35 @@ export async function authRoutes(app: FastifyInstance, options: AuthRouteOptions
       }),
   );
 
+  app.post<{ Body: ChangePasswordBody }>(
+    '/auth/change-password',
+    {
+      onRequest: requireActiveSession,
+      schema: {
+        body: {
+          type: 'object',
+          additionalProperties: false,
+          required: ['currentPassword', 'newPassword'],
+          properties: {
+            currentPassword: { type: 'string', minLength: 1, maxLength: 256 },
+            newPassword: { type: 'string', minLength: 8, maxLength: 256 },
+          },
+        },
+        response: { 401: errorResponseSchema },
+      },
+    },
+    async (request, reply) =>
+      handleAuthError(reply, async () => {
+        const claims = request.user as AccessClaims;
+        await getService().changePassword(
+          claims.sub,
+          request.body.currentPassword,
+          request.body.newPassword,
+        );
+        return reply.code(204).send();
+      }),
+  );
+
   app.post<{ Body: RefreshBody }>(
     '/auth/refresh',
     {
@@ -533,6 +563,8 @@ export async function authRoutes(app: FastifyInstance, options: AuthRouteOptions
     },
     async (request) => {
       const claims = request.user as AccessClaims;
+      const user = await getRepository().findUserById(claims.sub);
+      if (user) return { user: publicUser(user) };
       return {
         user: {
           id: claims.sub,
@@ -621,7 +653,7 @@ async function handleAuthError<T>(
         ? 409
         : error.code === 'EMAIL_NOT_REGISTERED'
           ? 404
-        : error.code === 'INVALID_CREDENTIALS'
+        : error.code === 'INVALID_CREDENTIALS' || error.code === 'CURRENT_PASSWORD_INCORRECT'
           ? 401
           : error.code === 'EMAIL_DELIVERY_FAILED'
             ? 502
