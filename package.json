@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "tsx watch --clear-screen=false src/index.ts",
+    "dev:once": "tsx src/index.ts",
     "build": "tsc -p tsconfig.build.json",
     "start": "node dist/index.js",
     "typecheck": "tsc --noEmit -p tsconfig.json",
