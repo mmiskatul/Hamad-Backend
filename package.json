@@ -5,17 +5,22 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json",
     "start": "node dist/index.js",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "tsx --test tests/**/*.test.ts"
   },
   "dependencies": {
+    "@fastify/cors": "^11.3.0",
+    "@fastify/jwt": "^10.2.1",
+    "@fastify/mongodb": "^9.0.2",
     "dotenv": "^16.6.1",
-    "fastify": "5.10.0"
+    "fastify": "5.10.0",
+    "nodemailer": "^9.0.3"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
+    "@types/nodemailer": "^8.0.1",
     "tsx": "^4.20.3",
     "typescript": "^5.9.2"
   }

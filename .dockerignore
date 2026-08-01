@@ -1,10 +1,28 @@
+# Dependencies and generated output
 node_modules
 dist
 coverage
+
+# Version control and local tooling
 .git
 .gitignore
+.github
+.idea
+.vscode
+
+# Local environment and secrets
 .env
 .env.*
 !.env.example
-*.log
 
+# Files not needed by image stages
+tests
+README.md
+docker-compose*.yml
+*.tsbuildinfo
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+tmp
+temp

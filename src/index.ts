@@ -1,6 +1,9 @@
+import { setServers } from 'node:dns';
 import { buildApp } from './app.js';
-import { env } from './config/env.js';
+import { env, validateProductionEnvironment } from './config/env.js';
 
+validateProductionEnvironment();
+if (env.mongoDnsServers.length > 0) setServers(env.mongoDnsServers);
 const app = buildApp();
 
 try {

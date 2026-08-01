@@ -1,0 +1,187 @@
+import {
+  createHmac,
+  randomBytes,
+  randomInt,
+  scrypt as nodeScrypt,
+  timingSafeEqual,
+} from 'node:crypto';
+import { promisify } from 'node:util';
+import type { EmailSender } from '../email/emailSender.js';
+import {
+  DuplicateEmailError,
+  type AuthRepository,
+  type UserRecord,
+} from './authRepository.js';
+
+const scrypt = promisify(nodeScrypt);
+const MAX_VERIFICATION_CODE_ATTEMPTS = 5;
+const REGISTRATION_PROOF_TTL_MINUTES = 15;
+
+export type AuthServiceOptions = {
+  verificationSecret: string;
+  verificationCodeExpiresMinutes: number;
+  emailSender: EmailSender;
+};
+
+export type AuthErrorCode =
+  | 'EMAIL_ALREADY_REGISTERED'
+  | 'EMAIL_DELIVERY_FAILED'
+  | 'INVALID_OR_EXPIRED_CODE'
+  | 'INVALID_REGISTRATION_TOKEN'
+  | 'INVALID_CREDENTIALS';
+
+export class AuthError extends Error {
+  constructor(
+    readonly code: AuthErrorCode,
+    message: string,
+  ) {
+    super(message);
+    this.name = 'AuthError';
+  }
+}
+
+export class AuthService {
+  constructor(
+    private readonly repository: AuthRepository,
+    private readonly options: AuthServiceOptions,
+  ) {}
+
+  async checkEmail(email: string): Promise<boolean> {
+    return (await this.repository.findUserByEmail(normaliseEmail(email))) !== null;
+  }
+
+  async requestRegistrationCode(email: string): Promise<{ email: string; expiresInSeconds: number }> {
+    const normalised = normaliseEmail(email);
+    if (await this.repository.findUserByEmail(normalised)) {
+      throw new AuthError('EMAIL_ALREADY_REGISTERED', 'An account already exists for this email address.');
+    }
+
+    const code = randomInt(0, 10_000).toString().padStart(4, '0');
+    const expiresInSeconds = this.options.verificationCodeExpiresMinutes * 60;
+    await this.repository.saveVerification({
+      email: normalised,
+      codeHash: this.hashSecret(code),
+      expiresAt: new Date(Date.now() + expiresInSeconds * 1000),
+    });
+
+    try {
+      await this.options.emailSender.sendRegistrationCode({
+        to: normalised,
+        code,
+        expiresInMinutes: this.options.verificationCodeExpiresMinutes,
+      });
+    } catch {
+      await this.repository.deleteVerification(normalised);
+      throw new AuthError(
+        'EMAIL_DELIVERY_FAILED',
+        'We could not send the verification email. Please try again later.',
+      );
+    }
+
+    return { email: normalised, expiresInSeconds };
+  }
+
+  async verifyRegistrationCode(email: string, code: string): Promise<string> {
+    const normalised = normaliseEmail(email);
+    const verification = await this.repository.findVerification(normalised);
+    const invalid =
+      !verification ||
+      verification.expiresAt.getTime() <= Date.now() ||
+      verification.attempts >= MAX_VERIFICATION_CODE_ATTEMPTS ||
+      !verification.codeHash ||
+      !safeEqual(verification.codeHash, this.hashSecret(code));
+
+    if (invalid) {
+      if (verification) await this.repository.incrementVerificationAttempts(normalised);
+      throw new AuthError('INVALID_OR_EXPIRED_CODE', 'The verification code is invalid or has expired.');
+    }
+
+    const token = randomBytes(32).toString('base64url');
+    const verifiedAt = new Date();
+    await this.repository.markVerificationComplete({
+      email: normalised,
+      verificationTokenHash: this.hashSecret(token),
+      verifiedAt,
+      expiresAt: new Date(
+        verifiedAt.getTime() + REGISTRATION_PROOF_TTL_MINUTES * 60 * 1000,
+      ),
+    });
+    return token;
+  }
+
+  async register(input: {
+    email: string;
+    name: string;
+    password: string;
+    verificationToken: string;
+  }): Promise<UserRecord> {
+    const email = normaliseEmail(input.email);
+    const verification = await this.repository.findVerification(email);
+    if (
+      !verification?.verifiedAt ||
+      !verification.verificationTokenHash ||
+      verification.expiresAt.getTime() <= Date.now() ||
+      !safeEqual(verification.verificationTokenHash, this.hashSecret(input.verificationToken))
+    ) {
+      throw new AuthError('INVALID_REGISTRATION_TOKEN', 'Verify your email again before creating the account.');
+    }
+
+    try {
+      const user = await this.repository.createUser({
+        email,
+        name: input.name.trim(),
+        passwordHash: await hashPassword(input.password),
+        createdAt: new Date(),
+      });
+      await this.repository.deleteVerification(email);
+      return user;
+    } catch (error) {
+      if (error instanceof DuplicateEmailError) {
+        throw new AuthError('EMAIL_ALREADY_REGISTERED', error.message);
+      }
+      throw error;
+    }
+  }
+
+  async login(email: string, password: string): Promise<UserRecord> {
+    const user = await this.repository.findUserByEmail(normaliseEmail(email));
+    if (!user || !(await verifyPassword(password, user.passwordHash))) {
+      throw new AuthError('INVALID_CREDENTIALS', 'The email or password is incorrect.');
+    }
+    return user;
+  }
+
+  private hashSecret(value: string): string {
+    return createHmac('sha256', this.options.verificationSecret).update(value).digest('hex');
+  }
+}
+
+export function normaliseEmail(email: string): string {
+  return email.trim().toLowerCase();
+}
+
+async function hashPassword(password: string): Promise<string> {
+  const salt = randomBytes(16);
+  const derived = (await scrypt(password, salt, 64)) as Buffer;
+  return 'scrypt$' + salt.toString('base64url') + '$' + derived.toString('base64url');
+}
+
+async function verifyPassword(password: string, storedHash: string): Promise<boolean> {
+  const [algorithm, saltValue, hashValue] = storedHash.split('$');
+  if (algorithm !== 'scrypt' || !saltValue || !hashValue) return false;
+
+  try {
+    const salt = Buffer.from(saltValue, 'base64url');
+    const expected = Buffer.from(hashValue, 'base64url');
+    const actual = (await scrypt(password, salt, expected.length)) as Buffer;
+    return actual.length === expected.length && timingSafeEqual(actual, expected);
+  } catch {
+    return false;
+  }
+}
+
+function safeEqual(left: string, right: string): boolean {
+  const leftBuffer = Buffer.from(left);
+  const rightBuffer = Buffer.from(right);
+  return leftBuffer.length === rightBuffer.length && timingSafeEqual(leftBuffer, rightBuffer);
+}
