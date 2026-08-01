@@ -299,5 +299,125 @@ test('login creates a session and refresh rotates tokens until logout or replay'
   });
   assert.equal(refreshAfterLogout.statusCode, 401);
 
+  const accessAfterLogout = await app.inject({
+    method: 'GET',
+    url: '/api/v1/auth/me',
+    headers: { authorization: `Bearer ${loggedInAgain.json().accessToken}` },
+  });
+  assert.equal(accessAfterLogout.statusCode, 401);
+  assert.equal(accessAfterLogout.json().error.code, 'INVALID_SESSION');
+
+  await app.close();
+});
+
+test('password reset verifies an emailed code, changes the password, and revokes old sessions', async () => {
+  const repository = new MemoryAuthRepository();
+  const emailSender = new MemoryEmailSender();
+  const app = buildApp({ authRepository: repository, emailSender });
+  const email = 'reset.member@example.com';
+  const oldPassword = 'old-password-123';
+  const newPassword = 'new-password-456';
+
+  await app.inject({
+    method: 'POST',
+    url: '/api/v1/auth/registration/request-code',
+    payload: { email },
+  });
+  const registrationCode = emailSender.messages[0]?.code;
+  const verifiedRegistration = await app.inject({
+    method: 'POST',
+    url: '/api/v1/auth/registration/verify-code',
+    payload: { email, code: registrationCode },
+  });
+  const registered = await app.inject({
+    method: 'POST',
+    url: '/api/v1/auth/registration',
+    payload: {
+      email,
+      name: 'Reset Member',
+      password: oldPassword,
+      verificationToken: verifiedRegistration.json().verificationToken,
+    },
+  });
+  assert.equal(registered.statusCode, 201);
+
+  const requested = await app.inject({
+    method: 'POST',
+    url: '/api/v1/auth/password-reset/request-code',
+    payload: { email },
+  });
+  assert.equal(requested.statusCode, 202);
+  assert.equal(emailSender.passwordResetMessages.length, 1);
+  const resetCode = emailSender.passwordResetMessages[0]?.code;
+  assert.match(resetCode ?? '', /^\d{4}$/);
+
+  const badCode = await app.inject({
+    method: 'POST',
+    url: '/api/v1/auth/password-reset/verify-code',
+    payload: { email, code: resetCode === '9999' ? '0000' : '9999' },
+  });
+  assert.equal(badCode.statusCode, 400);
+  assert.equal(badCode.json().error.code, 'INVALID_OR_EXPIRED_CODE');
+
+  const verified = await app.inject({
+    method: 'POST',
+    url: '/api/v1/auth/password-reset/verify-code',
+    payload: { email, code: resetCode },
+  });
+  assert.equal(verified.statusCode, 200);
+  assert.ok(verified.json().resetToken.length >= 20);
+
+  const reset = await app.inject({
+    method: 'POST',
+    url: '/api/v1/auth/password-reset',
+    payload: { email, password: newPassword, resetToken: verified.json().resetToken },
+  });
+  assert.equal(reset.statusCode, 204);
+
+  const replayedReset = await app.inject({
+    method: 'POST',
+    url: '/api/v1/auth/password-reset',
+    payload: { email, password: 'another-password', resetToken: verified.json().resetToken },
+  });
+  assert.equal(replayedReset.statusCode, 400);
+  assert.equal(replayedReset.json().error.code, 'INVALID_PASSWORD_RESET_TOKEN');
+
+  const oldLogin = await app.inject({
+    method: 'POST',
+    url: '/api/v1/auth/login',
+    payload: { email, password: oldPassword },
+  });
+  assert.equal(oldLogin.statusCode, 401);
+
+  const newLogin = await app.inject({
+    method: 'POST',
+    url: '/api/v1/auth/login',
+    payload: { email, password: newPassword },
+  });
+  assert.equal(newLogin.statusCode, 200);
+
+  const oldAccess = await app.inject({
+    method: 'GET',
+    url: '/api/v1/auth/me',
+    headers: { authorization: `Bearer ${registered.json().accessToken}` },
+  });
+  assert.equal(oldAccess.statusCode, 401);
+  assert.equal(oldAccess.json().error.code, 'INVALID_SESSION');
+
+  await app.close();
+});
+
+test('protected session routes return 401 instead of a serialization error without a JWT', async () => {
+  const app = buildApp({
+    authRepository: new MemoryAuthRepository(),
+    emailSender: new MemoryEmailSender(),
+  });
+
+  const response = await app.inject({
+    method: 'GET',
+    url: '/api/v1/auth/sessions',
+  });
+
+  assert.equal(response.statusCode, 401);
   await app.close();
 });

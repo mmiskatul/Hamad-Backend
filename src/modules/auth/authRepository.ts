@@ -8,6 +8,7 @@ export type UserRecord = {
 
 export type VerificationRecord = {
   email: string;
+  purpose: 'registration' | 'password_reset';
   codeHash?: string;
   attempts: number;
   expiresAt: Date;
@@ -36,20 +37,34 @@ export interface AuthRepository {
   findUserByEmail(email: string): Promise<UserRecord | null>;
   saveVerification(input: {
     email: string;
+    purpose: VerificationRecord['purpose'];
     codeHash: string;
     expiresAt: Date;
   }): Promise<void>;
-  findVerification(email: string): Promise<VerificationRecord | null>;
-  incrementVerificationAttempts(email: string): Promise<void>;
+  findVerification(
+    email: string,
+    purpose: VerificationRecord['purpose'],
+  ): Promise<VerificationRecord | null>;
+  incrementVerificationAttempts(
+    email: string,
+    purpose: VerificationRecord['purpose'],
+  ): Promise<void>;
   markVerificationComplete(input: {
     email: string;
+    purpose: VerificationRecord['purpose'];
     verificationTokenHash: string;
     expiresAt: Date;
     verifiedAt: Date;
   }): Promise<void>;
   createUser(user: NewUser): Promise<UserRecord>;
-  deleteVerification(email: string): Promise<void>;
+  updateUserPassword(email: string, passwordHash: string): Promise<boolean>;
+  deleteVerification(email: string, purpose: VerificationRecord['purpose']): Promise<void>;
   createSession(session: NewSession): Promise<SessionRecord>;
+  findActiveSessionById(input: {
+    id: string;
+    userId: string;
+    now: Date;
+  }): Promise<SessionRecord | null>;
   findSessionByTokenHash(sessionTokenHash: string): Promise<SessionRecord | null>;
   rotateSessionRefreshToken(input: {
     id: string;
@@ -58,6 +73,7 @@ export interface AuthRepository {
     lastUsedAt: Date;
   }): Promise<boolean>;
   revokeSessionByTokenHash(sessionTokenHash: string, revokedAt: Date): Promise<void>;
+  revokeActiveSessionsByUserId(userId: string, revokedAt: Date): Promise<void>;
   findActiveSessionsByUserId(userId: string, now: Date): Promise<SessionRecord[]>;
   revokeSessionById(input: {
     id: string;

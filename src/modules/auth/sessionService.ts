@@ -108,6 +108,15 @@ export class SessionService {
     );
   }
 
+  async assertActive(userId: string, sessionId: string): Promise<void> {
+    const session = await this.repository.findActiveSessionById({
+      id: sessionId,
+      userId,
+      now: new Date(),
+    });
+    if (!session) throw invalidSession();
+  }
+
   async list(userId: string): Promise<SessionRecord[]> {
     return this.repository.findActiveSessionsByUserId(userId, new Date());
   }

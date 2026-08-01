@@ -21,29 +21,38 @@ export class MemoryAuthRepository implements AuthRepository {
 
   async saveVerification(input: {
     email: string;
+    purpose: VerificationRecord['purpose'];
     codeHash: string;
     expiresAt: Date;
   }): Promise<void> {
     this.verifications.set(input.email, { ...input, attempts: 0 });
   }
 
-  async findVerification(email: string): Promise<VerificationRecord | null> {
-    return this.verifications.get(email) ?? null;
+  async findVerification(
+    email: string,
+    purpose: VerificationRecord['purpose'],
+  ): Promise<VerificationRecord | null> {
+    const verification = this.verifications.get(email);
+    return verification?.purpose === purpose ? verification : null;
   }
 
-  async incrementVerificationAttempts(email: string): Promise<void> {
+  async incrementVerificationAttempts(
+    email: string,
+    purpose: VerificationRecord['purpose'],
+  ): Promise<void> {
     const record = this.verifications.get(email);
-    if (record) record.attempts += 1;
+    if (record?.purpose === purpose) record.attempts += 1;
   }
 
   async markVerificationComplete(input: {
     email: string;
+    purpose: VerificationRecord['purpose'];
     verificationTokenHash: string;
     expiresAt: Date;
     verifiedAt: Date;
   }): Promise<void> {
     const record = this.verifications.get(input.email);
-    if (!record) return;
+    if (!record || record.purpose !== input.purpose) return;
     record.codeHash = undefined;
     record.verificationTokenHash = input.verificationTokenHash;
     record.verifiedAt = input.verifiedAt;
@@ -57,14 +66,42 @@ export class MemoryAuthRepository implements AuthRepository {
     return saved;
   }
 
-  async deleteVerification(email: string): Promise<void> {
-    this.verifications.delete(email);
+  async updateUserPassword(email: string, passwordHash: string): Promise<boolean> {
+    const user = this.users.get(email);
+    if (!user) return false;
+    user.passwordHash = passwordHash;
+    return true;
+  }
+
+  async deleteVerification(
+    email: string,
+    purpose: VerificationRecord['purpose'],
+  ): Promise<void> {
+    const verification = this.verifications.get(email);
+    if (verification?.purpose === purpose) this.verifications.delete(email);
   }
 
   async createSession(session: NewSession): Promise<SessionRecord> {
     const saved = { ...session, id: String(this.nextSessionId++) };
     this.sessions.set(saved.id, saved);
     return saved;
+  }
+
+  async findActiveSessionById(input: {
+    id: string;
+    userId: string;
+    now: Date;
+  }): Promise<SessionRecord | null> {
+    const session = this.sessions.get(input.id);
+    if (
+      !session ||
+      session.userId !== input.userId ||
+      session.revokedAt ||
+      session.expiresAt.getTime() <= input.now.getTime()
+    ) {
+      return null;
+    }
+    return session;
   }
 
   async findSessionByTokenHash(sessionTokenHash: string): Promise<SessionRecord | null> {
@@ -98,6 +135,12 @@ export class MemoryAuthRepository implements AuthRepository {
   async revokeSessionByTokenHash(sessionTokenHash: string, revokedAt: Date): Promise<void> {
     const session = await this.findSessionByTokenHash(sessionTokenHash);
     if (session && !session.revokedAt) session.revokedAt = revokedAt;
+  }
+
+  async revokeActiveSessionsByUserId(userId: string, revokedAt: Date): Promise<void> {
+    for (const session of this.sessions.values()) {
+      if (session.userId === userId && !session.revokedAt) session.revokedAt = revokedAt;
+    }
   }
 
   async findActiveSessionsByUserId(userId: string, now: Date): Promise<SessionRecord[]> {

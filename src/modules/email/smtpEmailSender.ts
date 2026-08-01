@@ -1,5 +1,9 @@
 import nodemailer, { type Transporter } from 'nodemailer';
-import type { EmailSender, RegistrationCodeEmail } from './emailSender.js';
+import type {
+  EmailSender,
+  PasswordResetCodeEmail,
+  RegistrationCodeEmail,
+} from './emailSender.js';
 
 export type SmtpEmailSenderOptions = {
   host: string;
@@ -54,6 +58,25 @@ export class SmtpEmailSender implements EmailSender {
         <p style="font-size: 28px; font-weight: 700; letter-spacing: 8px;">${message.code}</p>
         <p>It expires in ${message.expiresInMinutes} minutes.</p>
         <p>If you did not request this code, you can ignore this email.</p>
+      `,
+    });
+  }
+
+  async sendPasswordResetCode(message: PasswordResetCodeEmail): Promise<void> {
+    await this.transporter.sendMail({
+      from: { name: this.options.fromName, address: this.options.fromEmail },
+      to: message.to,
+      subject: 'Reset your One AI Hub password',
+      text: [
+        `Your One AI Hub password reset code is ${message.code}.`,
+        `It expires in ${message.expiresInMinutes} minutes.`,
+        'If you did not request a password reset, you can ignore this email.',
+      ].join('\n\n'),
+      html: `
+        <p>Your One AI Hub password reset code is:</p>
+        <p style="font-size: 28px; font-weight: 700; letter-spacing: 8px;">${message.code}</p>
+        <p>It expires in ${message.expiresInMinutes} minutes.</p>
+        <p>If you did not request a password reset, you can ignore this email.</p>
       `,
     });
   }

@@ -32,6 +32,10 @@ type RegisterBody = EmailBody & {
   password: string;
   verificationToken: string;
 };
+type ResetPasswordBody = EmailBody & {
+  password: string;
+  resetToken: string;
+};
 
 const emailSchema = { type: 'string', format: 'email', maxLength: 254 } as const;
 
@@ -147,6 +151,22 @@ export async function authRoutes(app: FastifyInstance, options: AuthRouteOptions
       env.sessionExpiresDays,
     );
     return sessionService;
+  };
+
+  const requireActiveSession = async (
+    request: FastifyRequest,
+    reply: FastifyReply,
+  ) => {
+    await request.jwtVerify();
+    const claims = request.user as AccessClaims;
+    try {
+      await getSessionService().assertActive(claims.sub, claims.sid);
+    } catch (error) {
+      if (!(error instanceof SessionError)) throw error;
+      return reply.code(401).send({
+        error: { code: error.code, message: error.message },
+      });
+    }
   };
 
   app.post<{ Body: EmailBody }>(
@@ -289,7 +309,6 @@ export async function authRoutes(app: FastifyInstance, options: AuthRouteOptions
         },
         response: {
           200: authenticatedResponseSchema,
-          401: errorResponseSchema,
         },
       },
     },
@@ -302,6 +321,102 @@ export async function authRoutes(app: FastifyInstance, options: AuthRouteOptions
           request,
         ),
       ),
+  );
+
+  app.post<{ Body: EmailBody }>(
+    '/auth/password-reset/request-code',
+    {
+      schema: {
+        body: {
+          type: 'object',
+          additionalProperties: false,
+          required: ['email'],
+          properties: { email: emailSchema },
+        },
+        response: {
+          202: {
+            type: 'object',
+            required: ['email', 'sent', 'expiresInSeconds'],
+            properties: {
+              email: { type: 'string' },
+              sent: { type: 'boolean' },
+              expiresInSeconds: { type: 'number' },
+            },
+          },
+          404: errorResponseSchema,
+          502: errorResponseSchema,
+        },
+      },
+    },
+    async (request, reply) =>
+      handleAuthError(reply, async () => {
+        const result = await getService().requestPasswordResetCode(request.body.email);
+        app.log.info({ email: result.email }, 'Password reset code issued');
+        return reply.code(202).send({
+          email: result.email,
+          sent: true,
+          expiresInSeconds: result.expiresInSeconds,
+        });
+      }),
+  );
+
+  app.post<{ Body: VerifyCodeBody }>(
+    '/auth/password-reset/verify-code',
+    {
+      schema: {
+        body: {
+          type: 'object',
+          additionalProperties: false,
+          required: ['email', 'code'],
+          properties: {
+            email: emailSchema,
+            code: { type: 'string', pattern: '^[0-9]{4}$' },
+          },
+        },
+        response: {
+          200: {
+            type: 'object',
+            required: ['resetToken'],
+            properties: { resetToken: { type: 'string' } },
+          },
+          400: errorResponseSchema,
+        },
+      },
+    },
+    async (request, reply) =>
+      handleAuthError(reply, async () => ({
+        resetToken: await getService().verifyPasswordResetCode(
+          request.body.email,
+          request.body.code,
+        ),
+      })),
+  );
+
+  app.post<{ Body: ResetPasswordBody }>(
+    '/auth/password-reset',
+    {
+      schema: {
+        body: {
+          type: 'object',
+          additionalProperties: false,
+          required: ['email', 'password', 'resetToken'],
+          properties: {
+            email: emailSchema,
+            password: { type: 'string', minLength: 8, maxLength: 256 },
+            resetToken: { type: 'string', minLength: 20, maxLength: 200 },
+          },
+        },
+        response: {
+          400: errorResponseSchema,
+          404: errorResponseSchema,
+        },
+      },
+    },
+    async (request, reply) =>
+      handleAuthError(reply, async () => {
+        await getService().resetPassword(request.body);
+        return reply.code(204).send();
+      }),
   );
 
   app.post<{ Body: RefreshBody }>(
@@ -358,7 +473,7 @@ export async function authRoutes(app: FastifyInstance, options: AuthRouteOptions
   app.get(
     '/auth/sessions',
     {
-      onRequest: async (request) => request.jwtVerify(),
+      onRequest: requireActiveSession,
       schema: {
         response: {
           200: {
@@ -383,7 +498,7 @@ export async function authRoutes(app: FastifyInstance, options: AuthRouteOptions
   app.delete<{ Params: SessionParams }>(
     '/auth/sessions/:sessionId',
     {
-      onRequest: async (request) => request.jwtVerify(),
+      onRequest: requireActiveSession,
       schema: {
         params: {
           type: 'object',
@@ -405,8 +520,16 @@ export async function authRoutes(app: FastifyInstance, options: AuthRouteOptions
   app.get(
     '/auth/me',
     {
-      onRequest: async (request) => request.jwtVerify(),
-      schema: { response: { 200: { type: 'object', required: ['user'], properties: { user: publicUserSchema } } } },
+      onRequest: requireActiveSession,
+      schema: {
+        response: {
+          200: {
+            type: 'object',
+            required: ['user'],
+            properties: { user: publicUserSchema },
+          },
+        },
+      },
     },
     async (request) => {
       const claims = request.user as AccessClaims;
@@ -496,6 +619,8 @@ async function handleAuthError<T>(
     const status =
       error.code === 'EMAIL_ALREADY_REGISTERED'
         ? 409
+        : error.code === 'EMAIL_NOT_REGISTERED'
+          ? 404
         : error.code === 'INVALID_CREDENTIALS'
           ? 401
           : error.code === 'EMAIL_DELIVERY_FAILED'

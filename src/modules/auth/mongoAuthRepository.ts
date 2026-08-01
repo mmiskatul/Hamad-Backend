@@ -46,6 +46,7 @@ export class MongoAuthRepository implements AuthRepository {
 
   async saveVerification(input: {
     email: string;
+    purpose: VerificationRecord['purpose'];
     codeHash: string;
     expiresAt: Date;
   }): Promise<void> {
@@ -60,25 +61,32 @@ export class MongoAuthRepository implements AuthRepository {
     );
   }
 
-  async findVerification(email: string): Promise<VerificationRecord | null> {
+  async findVerification(
+    email: string,
+    purpose: VerificationRecord['purpose'],
+  ): Promise<VerificationRecord | null> {
     await this.ready();
-    return this.verifications.findOne({ email });
+    return this.verifications.findOne({ email, purpose });
   }
 
-  async incrementVerificationAttempts(email: string): Promise<void> {
+  async incrementVerificationAttempts(
+    email: string,
+    purpose: VerificationRecord['purpose'],
+  ): Promise<void> {
     await this.ready();
-    await this.verifications.updateOne({ email }, { $inc: { attempts: 1 } });
+    await this.verifications.updateOne({ email, purpose }, { $inc: { attempts: 1 } });
   }
 
   async markVerificationComplete(input: {
     email: string;
+    purpose: VerificationRecord['purpose'];
     verificationTokenHash: string;
     expiresAt: Date;
     verifiedAt: Date;
   }): Promise<void> {
     await this.ready();
     await this.verifications.updateOne(
-      { email: input.email },
+      { email: input.email, purpose: input.purpose },
       {
         $set: {
           verificationTokenHash: input.verificationTokenHash,
@@ -103,15 +111,40 @@ export class MongoAuthRepository implements AuthRepository {
     }
   }
 
-  async deleteVerification(email: string): Promise<void> {
+  async updateUserPassword(email: string, passwordHash: string): Promise<boolean> {
     await this.ready();
-    await this.verifications.deleteOne({ email });
+    const result = await this.users.updateOne({ email }, { $set: { passwordHash } });
+    return result.matchedCount === 1;
+  }
+
+  async deleteVerification(
+    email: string,
+    purpose: VerificationRecord['purpose'],
+  ): Promise<void> {
+    await this.ready();
+    await this.verifications.deleteOne({ email, purpose });
   }
 
   async createSession(session: NewSession): Promise<SessionRecord> {
     await this.ready();
     const result = await this.sessions.insertOne(session);
     return { ...session, id: result.insertedId.toHexString() };
+  }
+
+  async findActiveSessionById(input: {
+    id: string;
+    userId: string;
+    now: Date;
+  }): Promise<SessionRecord | null> {
+    await this.ready();
+    if (!ObjectId.isValid(input.id)) return null;
+    const session = await this.sessions.findOne({
+      _id: new ObjectId(input.id),
+      userId: input.userId,
+      revokedAt: { $exists: false },
+      expiresAt: { $gt: input.now },
+    });
+    return session ? this.toSessionRecord(session) : null;
   }
 
   async findSessionByTokenHash(sessionTokenHash: string): Promise<SessionRecord | null> {
@@ -149,6 +182,14 @@ export class MongoAuthRepository implements AuthRepository {
     await this.ready();
     await this.sessions.updateOne(
       { sessionTokenHash, revokedAt: { $exists: false } },
+      { $set: { revokedAt } },
+    );
+  }
+
+  async revokeActiveSessionsByUserId(userId: string, revokedAt: Date): Promise<void> {
+    await this.ready();
+    await this.sessions.updateMany(
+      { userId, revokedAt: { $exists: false } },
       { $set: { revokedAt } },
     );
   }
