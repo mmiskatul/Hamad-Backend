@@ -2,7 +2,7 @@ import Fastify, { LogController } from 'fastify';
 import cors from '@fastify/cors';
 import jwt from '@fastify/jwt';
 import mongodb from '@fastify/mongodb';
-import { env } from './config/env.js';
+import { env, hasAdminBootstrapConfiguration } from './config/env.js';
 import type { AuthRepository } from './modules/auth/authRepository.js';
 import type { EmailSender } from './modules/email/emailSender.js';
 import { registerRoutes } from './routes/index.js';
@@ -10,6 +10,8 @@ import type { ChatRepository } from './modules/chat/chatRepository.js';
 import type { AiRouter } from './modules/ai/modelRouter.js';
 import type { ProjectRepository } from './modules/projects/projectRepository.js';
 import type { SupportRepository } from './modules/support/supportRepository.js';
+import { MongoAuthRepository } from './modules/auth/mongoAuthRepository.js';
+import { bootstrapAdminAccount } from './modules/auth/adminBootstrap.js';
 
 export type BuildAppOptions = {
   authRepository?: AuthRepository;
@@ -90,6 +92,24 @@ export function buildApp(options: BuildAppOptions = {}) {
       url: env.mongoUrl,
       database: env.mongoDatabase,
       forceClose: true,
+    });
+  }
+
+  if (!options.authRepository) {
+    app.addHook('onReady', async () => {
+      if (!hasAdminBootstrapConfiguration()) return;
+      const repository = new MongoAuthRepository(
+        app.mongo.db ?? app.mongo.client.db(env.mongoDatabase),
+      );
+      const result = await bootstrapAdminAccount(repository, {
+        email: env.adminSeedEmail,
+        password: env.adminSeedPassword,
+        name: env.adminSeedName,
+      });
+      app.log.info(
+        { email: result.user.email, created: result.created },
+        result.created ? 'admin account created' : 'admin account already exists',
+      );
     });
   }
 

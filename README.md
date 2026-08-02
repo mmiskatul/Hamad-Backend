@@ -48,6 +48,12 @@ keeps machine-readable JSON logs for deployment log collectors.
 - GET /api/v1/auth/sessions lists the user's active sessions
 - DELETE /api/v1/auth/sessions/:sessionId revokes one of the user's sessions
 - GET /api/v1/auth/me returns the JWT-authenticated user
+- POST /api/v1/admin/auth/login validates an administrator and creates a session
+- POST /api/v1/admin/auth/refresh rotates the administrator refresh token
+- POST /api/v1/admin/auth/logout revokes the administrator session
+- GET /api/v1/admin/auth/me validates the access token and active admin session
+- GET /api/v1/admin/auth/sessions lists active administrator sessions
+- DELETE /api/v1/admin/auth/sessions/:sessionId revokes an administrator session
 
 Passwords are stored as salted scrypt hashes. Email verification codes and
 one-time registration proofs are HMAC-hashed and expire automatically through a
@@ -79,6 +85,15 @@ the session token remains stable. Clients must serialize refresh calls because
 reuse of an already-rotated refresh token revokes that session. If refresh returns
 `INVALID_SESSION`, clear all three tokens and require login. Mobile clients must
 store refresh and session tokens in encrypted secure storage, not AsyncStorage.
+
+For the first administrator, set `ADMIN_SEED_EMAIL`, `ADMIN_SEED_PASSWORD`, and
+optionally `ADMIN_SEED_NAME` before starting the backend. Startup creates the
+account only when the email does not exist; later startups never reset its
+password. The password must contain at least 12 characters. Remove the seed
+email and password from the runtime environment after the first successful
+startup. The admin dashboard stores issued access, refresh, and session tokens
+in separate HttpOnly cookies and refreshes the short-lived access token through
+its server-side authentication gateway.
 
 Production startup rejects missing SMTP credentials and weak or placeholder JWT
 secrets. `SMTP_SECURE=false` is correct for STARTTLS on port 587; use port 465

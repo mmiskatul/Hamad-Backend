@@ -132,6 +132,13 @@ export class SessionService {
     }
   }
 
+  async revokeOthers(userId: string, currentSessionId: string): Promise<number> {
+    const active = await this.list(userId);
+    const others = active.filter((session) => session.id !== currentSessionId);
+    await Promise.all(others.map((session) => this.revoke(userId, session.id)));
+    return others.length;
+  }
+
   private hashToken(token: string): string {
     return createHmac('sha256', this.secret).update(token).digest('hex');
   }

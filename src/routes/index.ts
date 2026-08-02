@@ -14,6 +14,7 @@ import { projectsRoutes } from './projects.js';
 import type { ProjectRepository } from '../modules/projects/projectRepository.js';
 import { supportRoutes } from './support.js';
 import type { SupportRepository } from '../modules/support/supportRepository.js';
+import { adminAuthRoutes } from './adminAuth.js';
 
 export type RouteOptions = {
   authRepository?: AuthRepository;
@@ -30,6 +31,10 @@ export async function registerRoutes(app: FastifyInstance, options: RouteOptions
     prefix: '/api/v1',
     authRepository: options.authRepository,
     emailSender: options.emailSender,
+  });
+  await app.register(adminAuthRoutes, {
+    prefix: '/api/v1',
+    authRepository: options.authRepository,
   });
   await app.register(aiRoutes, {
     prefix: '/api/v1',

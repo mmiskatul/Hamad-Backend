@@ -153,11 +153,7 @@ export class AuthService {
   }
 
   async login(email: string, password: string): Promise<UserRecord> {
-    const user = await this.repository.findUserByEmail(normaliseEmail(email));
-    if (!user || !(await verifyPassword(password, user.passwordHash))) {
-      throw new AuthError('INVALID_CREDENTIALS', 'The email or password is incorrect.');
-    }
-    return user;
+    return authenticateUser(this.repository, email, password);
   }
 
   async changePassword(userId: string, currentPassword: string, newPassword: string): Promise<void> {
@@ -285,13 +281,25 @@ export function normaliseEmail(email: string): string {
   return email.trim().toLowerCase();
 }
 
-async function hashPassword(password: string): Promise<string> {
+export async function authenticateUser(
+  repository: AuthRepository,
+  email: string,
+  password: string,
+): Promise<UserRecord> {
+  const user = await repository.findUserByEmail(normaliseEmail(email));
+  if (!user || !(await verifyPassword(password, user.passwordHash))) {
+    throw new AuthError('INVALID_CREDENTIALS', 'The email or password is incorrect.');
+  }
+  return user;
+}
+
+export async function hashPassword(password: string): Promise<string> {
   const salt = randomBytes(16);
   const derived = (await scrypt(password, salt, 64)) as Buffer;
   return 'scrypt$' + salt.toString('base64url') + '$' + derived.toString('base64url');
 }
 
-async function verifyPassword(password: string, storedHash: string): Promise<boolean> {
+export async function verifyPassword(password: string, storedHash: string): Promise<boolean> {
   const [algorithm, saltValue, hashValue] = storedHash.split('$');
   if (algorithm !== 'scrypt' || !saltValue || !hashValue) return false;
 

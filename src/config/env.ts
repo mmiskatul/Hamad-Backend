@@ -32,6 +32,9 @@ export const env = {
   jwtSecret: process.env.JWT_SECRET ?? 'development-only-change-this-jwt-secret',
   accessTokenExpiresIn: process.env.ACCESS_TOKEN_EXPIRES_IN ?? '15m',
   sessionExpiresDays: positiveInteger(process.env.SESSION_EXPIRES_DAYS, 30),
+  adminSeedEmail: trimmed(process.env.ADMIN_SEED_EMAIL),
+  adminSeedPassword: process.env.ADMIN_SEED_PASSWORD ?? '',
+  adminSeedName: trimmed(process.env.ADMIN_SEED_NAME) || 'OneAI Administrator',
   emailVerificationCodeExpiresMinutes: positiveInteger(
     process.env.EMAIL_VERIFICATION_CODE_EXPIRES_MINUTES,
     10,
@@ -75,4 +78,8 @@ export function validateProductionEnvironment(): void {
   if (missing.length > 0) {
     throw new Error(`Missing or insecure production configuration: ${missing.join(', ')}`);
   }
+}
+
+export function hasAdminBootstrapConfiguration(): boolean {
+  return Boolean(env.adminSeedEmail || env.adminSeedPassword);
 }

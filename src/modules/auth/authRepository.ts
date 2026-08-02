@@ -1,11 +1,14 @@
 import type { Plan } from '../plans/plans.js';
 
+export type UserRole = 'user' | 'admin';
+
 export type UserRecord = {
   id: string;
   email: string;
   name: string;
   passwordHash: string;
   createdAt: Date;
+  role?: UserRole;
   plan?: Plan;
   phone?: string;
   avatarUri?: string | null;
