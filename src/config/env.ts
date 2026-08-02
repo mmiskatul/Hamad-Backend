@@ -43,47 +43,11 @@ export const env = {
   smtpPassword: process.env.SMTP_PASSWORD ?? '',
   smtpFromEmail: process.env.SMTP_FROM_EMAIL ?? '',
   smtpFromName: process.env.SMTP_FROM_NAME ?? 'One AI Hub',
-  // Provider credentials remain server-only; Mobile receives availability metadata.
+  // FastAPI owns all provider credentials and model routing.
+  aiServiceBaseUrl:
+    trimmed(process.env.AI_SERVICE_BASE_URL) || 'http://localhost:8000/api/v1',
   aiRequestTimeoutMs: positiveInteger(process.env.AI_REQUEST_TIMEOUT_MS, 60_000),
   aiMaxContextMessages: positiveInteger(process.env.AI_MAX_CONTEXT_MESSAGES, 30),
-  openAi: {
-    enabled: boolean(process.env.OPENAI_ENABLED),
-    apiKey: trimmed(process.env.OPENAI_API_KEY),
-    baseUrl: trimmed(process.env.OPENAI_BASE_URL) || 'https://api.openai.com/v1',
-    model: trimmed(process.env.OPENAI_MODEL) || 'gpt-5.6',
-  },
-  deepSeek: {
-    enabled: boolean(process.env.DEEPSEEK_ENABLED),
-    apiKey: trimmed(process.env.DEEPSEEK_API_KEY),
-    baseUrl: trimmed(process.env.DEEPSEEK_BASE_URL) || 'https://api.deepseek.com',
-    model: trimmed(process.env.DEEPSEEK_MODEL) || 'deepseek-v4-flash',
-  },
-  gemini: {
-    enabled: boolean(process.env.GEMINI_ENABLED),
-    apiKey: trimmed(process.env.GEMINI_API_KEY),
-    baseUrl:
-      trimmed(process.env.GEMINI_BASE_URL) ||
-      'https://generativelanguage.googleapis.com/v1beta',
-    model: trimmed(process.env.GEMINI_MODEL) || 'gemini-3.6-flash',
-  },
-  anthropic: {
-    enabled: boolean(process.env.ANTHROPIC_ENABLED),
-    apiKey: trimmed(process.env.ANTHROPIC_API_KEY),
-    baseUrl: trimmed(process.env.ANTHROPIC_BASE_URL) || 'https://api.anthropic.com/v1',
-    model: trimmed(process.env.ANTHROPIC_MODEL) || 'claude-sonnet-5',
-  },
-  perplexity: {
-    enabled: boolean(process.env.PERPLEXITY_ENABLED),
-    apiKey: trimmed(process.env.PERPLEXITY_API_KEY),
-    baseUrl: trimmed(process.env.PERPLEXITY_BASE_URL) || 'https://api.perplexity.ai',
-    model: trimmed(process.env.PERPLEXITY_MODEL) || 'sonar',
-  },
-  xAi: {
-    enabled: boolean(process.env.XAI_ENABLED),
-    apiKey: trimmed(process.env.XAI_API_KEY),
-    baseUrl: trimmed(process.env.XAI_BASE_URL) || 'https://api.x.ai/v1',
-    model: trimmed(process.env.XAI_MODEL) || 'grok-4.5',
-  },
 } as const;
 
 export function validateProductionEnvironment(): void {
@@ -106,17 +70,7 @@ export function validateProductionEnvironment(): void {
   })) {
     if (!value.trim()) missing.push(name);
   }
-
-  for (const [name, provider] of Object.entries({
-    OPENAI: env.openAi,
-    DEEPSEEK: env.deepSeek,
-    GEMINI: env.gemini,
-    ANTHROPIC: env.anthropic,
-    PERPLEXITY: env.perplexity,
-    XAI: env.xAi,
-  })) {
-    if (provider.enabled && !provider.apiKey) missing.push(`${name}_API_KEY`);
-  }
+  if (!process.env.AI_SERVICE_BASE_URL?.trim()) missing.push('AI_SERVICE_BASE_URL');
 
   if (missing.length > 0) {
     throw new Error(`Missing or insecure production configuration: ${missing.join(', ')}`);

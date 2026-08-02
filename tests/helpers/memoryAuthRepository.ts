@@ -65,8 +65,8 @@ export class MemoryAuthRepository implements AuthRepository {
 
   async createUser(user: NewUser): Promise<UserRecord> {
     if (this.users.has(user.email)) throw new DuplicateEmailError();
-    const saved = { ...user, id: String(this.nextId++) };
-    this.users.set(user.email, saved);
+    const saved = { ...user, id: String(this.nextId++), plan: user.plan ?? 'free' };
+    this.users.set(saved.email, saved);
     return saved;
   }
 
@@ -110,6 +110,18 @@ export class MemoryAuthRepository implements AuthRepository {
     if (!user) return null;
     const { id, ...patch } = input;
     Object.assign(user, patch, { id });
+    return user;
+  }
+
+  async updateUserPlan(input: {
+    id: string;
+    plan: NonNullable<UserRecord['plan']>;
+    updatedAt: Date;
+  }): Promise<UserRecord | null> {
+    const user = await this.findUserById(input.id);
+    if (!user) return null;
+    user.plan = input.plan;
+    user.updatedAt = input.updatedAt;
     return user;
   }
 

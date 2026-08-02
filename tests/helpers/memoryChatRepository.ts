@@ -3,6 +3,7 @@ import type {
   ConversationRecord,
   CreateConversationInput,
   MessageRecord,
+  UpdateConversationPatch,
   UsageSnapshot,
 } from '../../src/modules/chat/chatRepository.js';
 
@@ -26,13 +27,21 @@ export class MemoryChatRepository implements ChatRepository {
   async listConversations(userId: string): Promise<ConversationRecord[]> {
     return [...this.conversations.values()]
       .filter((item) => item.userId === userId)
-      .sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime());
+      .sort((a, b) => {
+        if (a.pinned !== b.pinned) return a.pinned ? -1 : 1;
+        if (a.pinned && b.pinned) {
+          const aTime = a.pinnedAt?.getTime() ?? a.updatedAt.getTime();
+          const bTime = b.pinnedAt?.getTime() ?? b.updatedAt.getTime();
+          return bTime - aTime;
+        }
+        return b.updatedAt.getTime() - a.updatedAt.getTime();
+      });
   }
 
   async updateConversation(
     userId: string,
     conversationId: string,
-    patch: Partial<Pick<ConversationRecord, 'title' | 'modelId' | 'responseLanguage' | 'updatedAt'>>,
+    patch: UpdateConversationPatch,
   ): Promise<ConversationRecord | null> {
     const record = await this.findConversation(userId, conversationId);
     if (!record) return null;

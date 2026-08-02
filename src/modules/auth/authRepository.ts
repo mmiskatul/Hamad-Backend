@@ -1,9 +1,12 @@
+import type { Plan } from '../plans/plans.js';
+
 export type UserRecord = {
   id: string;
   email: string;
   name: string;
   passwordHash: string;
   createdAt: Date;
+  plan?: Plan;
   phone?: string;
   avatarUri?: string | null;
   memory?: {
@@ -81,6 +84,11 @@ export interface AuthRepository {
   updateUserMemory(input: {
     id: string;
     memory: NonNullable<UserRecord['memory']>;
+    updatedAt: Date;
+  }): Promise<UserRecord | null>;
+  updateUserPlan(input: {
+    id: string;
+    plan: Plan;
     updatedAt: Date;
   }): Promise<UserRecord | null>;
   deleteVerification(email: string, purpose: VerificationRecord['purpose']): Promise<void>;

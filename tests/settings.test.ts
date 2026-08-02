@@ -59,6 +59,29 @@ test('settings, memory, usage, and about endpoints return account data', async (
   assert.equal(usage.json().tokens, 15);
   assert.deepEqual(usage.json().byModel.gpt, { requests: 1, tokens: 15 });
 
+  for (const [plan, requests, tokens] of [
+    ['pro', 500, 4000],
+    ['business', 5000, 8000],
+    ['free', 50, 1000],
+  ] as const) {
+    const changed = await app.inject({
+      method: 'PATCH',
+      url: '/api/v1/settings/plan',
+      headers,
+      payload: { plan },
+    });
+    assert.equal(changed.statusCode, 200, changed.body);
+    assert.deepEqual(changed.json(), { plan, limits: { requests, tokens } });
+  }
+
+  const invalidPlan = await app.inject({
+    method: 'PATCH',
+    url: '/api/v1/settings/plan',
+    headers,
+    payload: { plan: 'enterprise' },
+  });
+  assert.equal(invalidPlan.statusCode, 400);
+
   const about = await app.inject({ method: 'GET', url: '/api/v1/about' });
   assert.equal(about.statusCode, 200, about.body);
   assert.equal(about.json().name, 'OneAI Hub');

@@ -1,6 +1,6 @@
 import type { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
 import type { AiRouter } from '../modules/ai/modelRouter.js';
-import { ConfiguredAiRouter } from '../modules/ai/modelRouter.js';
+import { createDefaultAiRouter } from '../modules/ai/aiServiceRouter.js';
 import type { AuthRepository } from '../modules/auth/authRepository.js';
 import { MongoAuthRepository } from '../modules/auth/mongoAuthRepository.js';
 import { SessionError, SessionService } from '../modules/auth/sessionService.js';
@@ -21,19 +21,24 @@ export type ChatRouteOptions = {
 };
 
 type AccessClaims = { sub: string; sid: string };
+type ConversationProjectBody = { id: string; name: string };
 type ConversationParams = { conversationId: string };
 type CreateConversationBody = {
   id?: string;
   title?: string;
   modelId: ModelId;
   responseLanguage?: ResponseLanguage;
+  project?: ConversationProjectBody;
 };
-type UpdateConversationBody = Partial<Pick<CreateConversationBody, 'title' | 'modelId' | 'responseLanguage'>>;
+type UpdateConversationBody = Partial<
+  Pick<CreateConversationBody, 'title' | 'modelId' | 'responseLanguage'> & { pinned: boolean }
+>;
 type SendMessageBody = {
   clientMessageId: string;
   content: string;
   modelId: ModelId;
   responseLanguage?: ResponseLanguage;
+  project?: ConversationProjectBody;
 };
 
 const errorSchema = {
@@ -53,6 +58,16 @@ const conversationIdSchema = {
   additionalProperties: false,
   required: ['conversationId'],
   properties: { conversationId: { type: 'string', minLength: 3, maxLength: 100 } },
+} as const;
+
+const projectSchema = {
+  type: 'object',
+  additionalProperties: false,
+  required: ['id', 'name'],
+  properties: {
+    id: { type: 'string', minLength: 1, maxLength: 100 },
+    name: { type: 'string', minLength: 1, maxLength: 120 },
+  },
 } as const;
 
 export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions) {
@@ -76,7 +91,7 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
   const getService = () => {
     service ??= new ChatService(
       getChatRepository(),
-      options.aiRouter ?? new ConfiguredAiRouter(),
+      options.aiRouter ?? createDefaultAiRouter(),
       env.aiMaxContextMessages,
       async (userId) => (await getAuthRepository().findUserById(userId))?.memory ?? null,
     );
@@ -96,9 +111,9 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
     }
   };
 
-  app.get('/models', { onRequest: requireActiveSession }, async () => ({
-    models: getService().models(),
-  }));
+  app.get('/models', { onRequest: requireActiveSession }, async (_request, reply) =>
+    handleChatError(reply, async () => ({ models: await getService().models() })),
+  );
 
   app.get('/conversations', { onRequest: requireActiveSession }, async (request) => ({
     conversations: (await getService().listConversations(userId(request))).map(publicConversation),
@@ -110,12 +125,15 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
       onRequest: requireActiveSession,
       schema: {
         body: {
-          type: 'object', additionalProperties: false, required: ['modelId'],
+          type: 'object',
+          additionalProperties: false,
+          required: ['modelId'],
           properties: {
             id: { type: 'string', minLength: 3, maxLength: 100 },
             title: { type: 'string', minLength: 1, maxLength: 200 },
             modelId: { type: 'string', enum: [...MODEL_IDS] },
             responseLanguage: { type: 'string', enum: [...RESPONSE_LANGUAGES] },
+            project: projectSchema,
           },
         },
         response: { 503: errorSchema },
@@ -128,6 +146,20 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
         responseLanguage: request.body.responseLanguage ?? 'auto',
       }))),
     ),
+  );
+
+  app.get<{ Params: ConversationParams }>(
+    '/conversations/:conversationId',
+    {
+      onRequest: requireActiveSession,
+      schema: { params: conversationIdSchema, response: { 404: errorSchema } },
+    },
+    async (request, reply) => handleChatError(reply, async () => ({
+      conversation: publicConversation(
+        await getService().getConversation(userId(request), request.params.conversationId),
+      ),
+      messages: (await getService().getMessages(userId(request), request.params.conversationId)).map(publicMessage),
+    })),
   );
 
   app.get<{ Params: ConversationParams }>(
@@ -145,11 +177,14 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
       schema: {
         params: conversationIdSchema,
         body: {
-          type: 'object', additionalProperties: false, minProperties: 1,
+          type: 'object',
+          additionalProperties: false,
+          minProperties: 1,
           properties: {
             title: { type: 'string', minLength: 1, maxLength: 200 },
             modelId: { type: 'string', enum: [...MODEL_IDS] },
             responseLanguage: { type: 'string', enum: [...RESPONSE_LANGUAGES] },
+            pinned: { type: 'boolean' },
           },
         },
         response: { 404: errorSchema, 503: errorSchema },
@@ -176,13 +211,15 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
       schema: {
         params: conversationIdSchema,
         body: {
-          type: 'object', additionalProperties: false,
+          type: 'object',
+          additionalProperties: false,
           required: ['clientMessageId', 'content', 'modelId'],
           properties: {
             clientMessageId: { type: 'string', minLength: 3, maxLength: 100 },
-            content: { type: 'string', minLength: 1, maxLength: 50_000, pattern: '.*\\S.*' },
+            content: { type: 'string', minLength: 1, maxLength: 50000, pattern: '.*\\S.*' },
             modelId: { type: 'string', enum: [...MODEL_IDS] },
             responseLanguage: { type: 'string', enum: [...RESPONSE_LANGUAGES] },
+            project: projectSchema,
           },
         },
         response: { 404: errorSchema, 502: errorSchema, 503: errorSchema },
@@ -209,7 +246,12 @@ function userId(request: FastifyRequest): string {
 }
 
 function publicConversation(record: Awaited<ReturnType<ChatService['createConversation']>>) {
-  return { ...record, createdAt: record.createdAt.toISOString(), updatedAt: record.updatedAt.toISOString() };
+  return {
+    ...record,
+    pinnedAt: record.pinnedAt ? record.pinnedAt.toISOString() : null,
+    createdAt: record.createdAt.toISOString(),
+    updatedAt: record.updatedAt.toISOString(),
+  };
 }
 
 function publicMessage(record: Awaited<ReturnType<ChatRepository['appendMessage']>>) {

@@ -109,7 +109,7 @@ export class MongoAuthRepository implements AuthRepository {
     await this.ready();
     try {
       const result = await this.users.insertOne(user);
-      return { ...user, id: result.insertedId.toHexString() };
+      return { ...user, id: result.insertedId.toHexString(), plan: user.plan ?? 'free' };
     } catch (error) {
       if (error instanceof MongoServerError && error.code === 11000) {
         throw new DuplicateEmailError();
@@ -160,6 +160,21 @@ export class MongoAuthRepository implements AuthRepository {
     updatedAt: Date;
   }): Promise<UserRecord | null> {
     await this.ready();
+    if (!ObjectId.isValid(input.id)) return null;
+    const { id, ...patch } = input;
+    const user = await this.users.findOneAndUpdate(
+      { _id: new ObjectId(id) },
+      { $set: patch },
+      { returnDocument: 'after' },
+    );
+    return user ? this.toUserRecord(user) : null;
+  }
+
+  async updateUserPlan(input: {
+    id: string;
+    plan: NonNullable<UserRecord['plan']>,
+    updatedAt: Date;
+  }): Promise<UserRecord | null> {
     if (!ObjectId.isValid(input.id)) return null;
     const { id, ...patch } = input;
     const user = await this.users.findOneAndUpdate(
@@ -276,7 +291,7 @@ export class MongoAuthRepository implements AuthRepository {
 
   private toUserRecord(document: WithId<UserDocument>): UserRecord {
     const { _id, ...user } = document;
-    return { ...user, id: _id.toHexString() };
+    return { ...user, id: _id.toHexString(), plan: user.plan ?? 'free' };
   }
 
   private toSessionRecord(document: WithId<SessionDocument>): SessionRecord {

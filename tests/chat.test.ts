@@ -27,7 +27,9 @@ class RecordingAiRouter implements AiRouter {
   async generate(input: GenerateInput): Promise<GenerateResult> {
     this.calls.push(input);
     return {
-      content: input.modelId === 'deepseek' ? 'إجابة ديب سيك' : 'GPT answer',
+      content: input.modelId === 'deepseek'
+        ? '\u0625\u062c\u0627\u0628\u0629 \u062f\u064a\u0628 \u0633\u064a\u0643'
+        : 'GPT answer',
       modelId: input.modelId,
       provider: input.modelId === 'deepseek' ? 'DeepSeek' : 'OpenAI',
       configuredModel: `test-${input.modelId}`,
@@ -39,6 +41,7 @@ test('one conversation keeps shared history while switching models and language'
   const repository = new MemoryChatRepository();
   const router = new RecordingAiRouter();
   const service = new ChatService(repository, router, 30);
+  const arabicPrompt = '\u0645\u0627 \u0627\u0633\u0645 \u0645\u0634\u0631\u0648\u0639\u064a\u061f';
 
   await service.sendMessage({
     userId: 'user-1', conversationId: 'conversation-1', clientMessageId: 'message-1',
@@ -46,14 +49,14 @@ test('one conversation keeps shared history while switching models and language'
   });
   const second = await service.sendMessage({
     userId: 'user-1', conversationId: 'conversation-1', clientMessageId: 'message-2',
-    content: 'ما اسم مشروعي؟', modelId: 'deepseek', responseLanguage: 'ar',
+    content: arabicPrompt, modelId: 'deepseek', responseLanguage: 'ar',
   });
 
   assert.equal(router.calls.length, 2);
   assert.deepEqual(router.calls[1]?.messages.map(({ role, content }) => ({ role, content })), [
     { role: 'user', content: 'Remember that my project is OneAI.' },
     { role: 'assistant', content: 'GPT answer' },
-    { role: 'user', content: 'ما اسم مشروعي؟' },
+    { role: 'user', content: arabicPrompt },
   ]);
   assert.equal(router.calls[1]?.modelId, 'deepseek');
   assert.equal(router.calls[1]?.responseLanguage, 'ar');
@@ -104,19 +107,67 @@ test('chat routes reject unauthenticated calls and accept an active JWT session'
     name: user.name,
     createdAt: user.createdAt.toISOString(),
   });
-  const response = await app.inject({
+  const sendResponse = await app.inject({
     method: 'POST',
     url: '/api/v1/conversations/mobile-conversation/messages',
     headers: { authorization: `Bearer ${accessToken}` },
     payload: {
-      clientMessageId: 'mobile-message', content: 'Hello from Mobile',
-      modelId: 'gpt', responseLanguage: 'en',
+      clientMessageId: 'mobile-message',
+      content: 'Hello from Mobile',
+      modelId: 'gpt',
+      responseLanguage: 'en',
+      project: { id: 'project-1', name: 'Mobile project' },
     },
   });
 
-  assert.equal(response.statusCode, 201, response.body);
-  assert.equal(response.json().assistantMessage.content, 'GPT answer');
+  assert.equal(sendResponse.statusCode, 201, sendResponse.body);
+  assert.equal(sendResponse.json().assistantMessage.content, 'GPT answer');
   assert.equal(chatRepository.messages.length, 2);
+
+  const pinResponse = await app.inject({
+    method: 'PATCH',
+    url: '/api/v1/conversations/mobile-conversation',
+    headers: { authorization: `Bearer ${accessToken}` },
+    payload: { pinned: true },
+  });
+  assert.equal(pinResponse.statusCode, 200, pinResponse.body);
+  assert.equal(pinResponse.json().pinned, true);
+  assert.ok(pinResponse.json().pinnedAt);
+
+  const listResponse = await app.inject({
+    method: 'GET',
+    url: '/api/v1/conversations',
+    headers: { authorization: `Bearer ${accessToken}` },
+  });
+  assert.equal(listResponse.statusCode, 200, listResponse.body);
+  assert.deepEqual(listResponse.json().conversations[0]?.project, { id: 'project-1', name: 'Mobile project' });
+  assert.equal(listResponse.json().conversations[0]?.pinned, true);
+
+  const detailResponse = await app.inject({
+    method: 'GET',
+    url: '/api/v1/conversations/mobile-conversation',
+    headers: { authorization: `Bearer ${accessToken}` },
+  });
+  assert.equal(detailResponse.statusCode, 200, detailResponse.body);
+  assert.equal(detailResponse.json().messages.length, 2);
+  assert.equal(detailResponse.json().messages[0]?.clientMessageId, 'mobile-message');
+
+  const deleteResponse = await app.inject({
+    method: 'DELETE',
+    url: '/api/v1/conversations/mobile-conversation',
+    headers: { authorization: `Bearer ${accessToken}` },
+  });
+  assert.equal(deleteResponse.statusCode, 204, deleteResponse.body);
+  assert.equal(chatRepository.conversations.size, 0);
+  assert.equal(chatRepository.messages.length, 0);
+
+  const deletedDetailResponse = await app.inject({
+    method: 'GET',
+    url: '/api/v1/conversations/mobile-conversation',
+    headers: { authorization: `Bearer ${accessToken}` },
+  });
+  assert.equal(deletedDetailResponse.statusCode, 404, deletedDetailResponse.body);
+
   await app.close();
 });
 

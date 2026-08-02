@@ -1,9 +1,10 @@
-import type { Db, Collection } from 'mongodb';
+import type { Collection, Db } from 'mongodb';
 import type {
   ChatRepository,
   ConversationRecord,
   CreateConversationInput,
   MessageRecord,
+  UpdateConversationPatch,
   UsageSnapshot,
 } from './chatRepository.js';
 
@@ -18,22 +19,42 @@ export class MongoChatRepository implements ChatRepository {
   }
 
   ensureIndexes(): Promise<void> {
-    this.indexesReady ??= Promise.all([
-      this.conversations.createIndex({ userId: 1, updatedAt: -1 }),
-      this.messages.createIndex({ conversationId: 1, createdAt: 1 }),
-      this.messages.createIndex(
-        { conversationId: 1, clientMessageId: 1 },
-        { unique: true, sparse: true },
-      ),
-      this.messages.createIndex({ replyToMessageId: 1 }, { sparse: true }),
-    ]).then(() => undefined);
+    this.indexesReady ??= this.prepareIndexes();
     return this.indexesReady;
+  }
+
+  private async prepareIndexes(): Promise<void> {
+    await Promise.all([
+      this.conversations.createIndex({ userId: 1, pinned: -1, pinnedAt: -1, updatedAt: -1 }),
+      this.messages.createIndex({ conversationId: 1, createdAt: 1 }),
+      this.messages.createIndex({ replyToMessageId: 1 }, { sparse: true }),
+    ]);
+
+    const indexName = 'conversationId_1_clientMessageId_1';
+    const existing = (await this.messages.listIndexes().toArray())
+      .find((index) => index.name === indexName);
+
+    // A sparse compound index still includes every message because
+    // `conversationId` is always present. MongoDB therefore indexes assistant
+    // messages with clientMessageId=null and rejects the second assistant reply.
+    // Migrate that old index before creating the correctly filtered one.
+    if (existing && !existing.partialFilterExpression) {
+      await this.messages.dropIndex(indexName);
+    }
+
+    await this.messages.createIndex(
+      { conversationId: 1, clientMessageId: 1 },
+      {
+        name: indexName,
+        unique: true,
+        partialFilterExpression: { clientMessageId: { $type: 'string' } },
+      },
+    );
   }
 
   async createConversation(input: CreateConversationInput): Promise<ConversationRecord> {
     await this.ensureIndexes();
-    const record = { _id: input.id, ...input };
-    await this.conversations.insertOne(record);
+    await this.conversations.insertOne({ _id: input.id, ...input });
     return input;
   }
 
@@ -43,14 +64,17 @@ export class MongoChatRepository implements ChatRepository {
   }
 
   async listConversations(userId: string): Promise<ConversationRecord[]> {
-    const records = await this.conversations.find({ userId }).sort({ updatedAt: -1 }).toArray();
+    const records = await this.conversations
+      .find({ userId })
+      .sort({ pinned: -1, pinnedAt: -1, updatedAt: -1 })
+      .toArray();
     return records.map(withoutMongoId);
   }
 
   async updateConversation(
     userId: string,
     conversationId: string,
-    patch: Partial<Pick<ConversationRecord, 'title' | 'modelId' | 'responseLanguage' | 'updatedAt'>>,
+    patch: UpdateConversationPatch,
   ): Promise<ConversationRecord | null> {
     const result = await this.conversations.findOneAndUpdate(
       { _id: conversationId, userId },
@@ -63,7 +87,10 @@ export class MongoChatRepository implements ChatRepository {
   async deleteConversation(userId: string, conversationId: string): Promise<boolean> {
     const result = await this.conversations.deleteOne({ _id: conversationId, userId });
     if (!result.deletedCount) return false;
-    await this.messages.deleteMany({ conversationId, userId });
+    // Ownership was proven by deleting the user's conversation above. Delete
+    // every associated message, including records from older builds that did
+    // not persist userId consistently.
+    await this.messages.deleteMany({ conversationId });
     return true;
   }
 
@@ -115,7 +142,9 @@ export class MongoChatRepository implements ChatRepository {
     let requests = 0;
     let tokens = 0;
     for (const row of rows) {
-      if (row._id) byModel[row._id as keyof typeof byModel] = { requests: row.requests, tokens: row.tokens };
+      if (row._id) {
+        byModel[row._id as keyof typeof byModel] = { requests: row.requests, tokens: row.tokens };
+      }
       requests += row.requests;
       tokens += row.tokens;
     }

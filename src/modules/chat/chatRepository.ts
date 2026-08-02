@@ -6,12 +6,20 @@ export type ResponseLanguage = (typeof RESPONSE_LANGUAGES)[number];
 
 export type ChatRole = 'user' | 'assistant';
 
+export type ConversationProject = {
+  id: string;
+  name: string;
+};
+
 export type ConversationRecord = {
   id: string;
   userId: string;
   title: string;
   modelId: ModelId;
   responseLanguage: ResponseLanguage;
+  pinned: boolean;
+  pinnedAt: Date | null;
+  project: ConversationProject | null;
   createdAt: Date;
   updatedAt: Date;
 };
@@ -42,6 +50,12 @@ export type CreateConversationInput = Omit<ConversationRecord, 'createdAt' | 'up
   updatedAt: Date;
 };
 
+export type UpdateConversationPatch = Partial<
+  Pick<ConversationRecord, 'title' | 'modelId' | 'responseLanguage' | 'pinned' | 'updatedAt'>
+> & {
+  pinnedAt?: Date | null;
+};
+
 export interface ChatRepository {
   ensureIndexes(): Promise<void>;
   createConversation(input: CreateConversationInput): Promise<ConversationRecord>;
@@ -50,7 +64,7 @@ export interface ChatRepository {
   updateConversation(
     userId: string,
     conversationId: string,
-    patch: Partial<Pick<ConversationRecord, 'title' | 'modelId' | 'responseLanguage' | 'updatedAt'>>,
+    patch: UpdateConversationPatch,
   ): Promise<ConversationRecord | null>;
   deleteConversation(userId: string, conversationId: string): Promise<boolean>;
   appendMessage(message: MessageRecord): Promise<MessageRecord>;

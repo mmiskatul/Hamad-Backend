@@ -26,6 +26,16 @@ in `SMTP_HOST`, `SMTP_USER`, `SMTP_PASSWORD`, and `SMTP_FROM_EMAIL` in `.env`.
 MongoDB Atlas is supported through a `mongodb+srv://` URL. Set
 `MONGODB_DNS_SERVERS` only when the host system cannot resolve Atlas SRV records.
 
+Development logs use four consistent terminal events:
+
+- `request started`: request id, HTTP method, path, and client IP
+- `request completed`: HTTP status and duration
+- `request rejected`: concise details for expected 4xx responses
+- `request failed`: error details and stack trace for unexpected 5xx responses
+
+Authorization headers and request bodies are intentionally excluded. Production
+keeps machine-readable JSON logs for deployment log collectors.
+
 - GET / returns service metadata
 - GET /api/v1/health returns the health status
 - POST /api/v1/auth/check-email checks whether an account exists
@@ -91,3 +101,41 @@ docker build --target production -t one-ai-hub-backend .
 The Compose service reads private runtime values from `.env`. The production
 image never copies `.env` into an image layer; provide the same variables through
 your deployment platform's secret/environment configuration.
+
+## AI gateway
+
+The backend is the public API gateway for web and mobile traffic. It owns
+authentication, users, payments, and notifications. Model discovery and generation
+are delegated to the separate FastAPI service through `AI_SERVICE_BASE_URL`.
+Provider API keys are configured only in `ai-agent/.env`.
+
+```text
+React / React Native
+        |
+API Gateway (Fastify)
+        |
+        +-- Authentication / Payments / Users / Notifications
+        |
+        +-- AI Service (FastAPI)
+              +-- Chat / Model Router / Voice / RAG / Agents
+        |
+MongoDB + Redis
+```
+
+Set `AI_SERVICE_BASE_URL=http://localhost:8000/api/v1` to configure the required
+internal AI service. Fastify also exposes `/api/v1/ai-service/*`; for example,
+`/api/v1/ai-service/chat/responses` forwards to FastAPI `/api/v1/chat/responses`.
+
+The backend also exposes two local TypeScript AI layers:
+
+- Stateful chat: `POST /api/v1/conversations/:conversationId/messages` keeps conversation history in MongoDB and is what the mobile app uses today.
+- Stateless AI gateway: `GET /api/v1/ai/models`, `POST /api/v1/ai/responses`, and `POST /api/v1/ai/chat/completions` let other clients use the FastAPI model router without managing conversations first.
+
+Implementation layers:
+
+- `src/modules/ai/modelRouter.ts` defines the internal AI request/response contract.
+- `src/modules/ai/aiServiceRouter.ts` forwards model discovery and generation to FastAPI.
+- `src/modules/ai/gatewayService.ts` loads user memory, invokes the router, and shapes responses.
+- `src/routes/ai.ts` exposes the HTTP endpoints.
+
+The gateway uses the authenticated user's saved memory when it exists, so the response style stays consistent with the profile section.

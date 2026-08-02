@@ -140,6 +140,7 @@ export class AuthService {
         name: input.name.trim(),
         passwordHash: await hashPassword(input.password),
         createdAt: new Date(),
+        plan: 'free',
       });
       await this.repository.deleteVerification(email, 'registration');
       return user;

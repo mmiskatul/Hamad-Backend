@@ -3,6 +3,7 @@ import type { AiRouter, GenerateResult, ModelCatalogueItem } from '../ai/modelRo
 import { ModelUnavailableError, ProviderRequestError } from '../ai/modelRouter.js';
 import type {
   ChatRepository,
+  ConversationProject,
   ConversationRecord,
   MessageRecord,
   ModelId,
@@ -27,6 +28,7 @@ export type SendMessageInput = {
   content: string;
   modelId: ModelId;
   responseLanguage: ResponseLanguage;
+  project?: ConversationProject | null;
 };
 
 export type SendMessageResult = {
@@ -49,12 +51,23 @@ export class ChatService {
     } | null>,
   ) {}
 
-  models(): ModelCatalogueItem[] {
-    return this.aiRouter.catalogue();
+  async models(): Promise<ModelCatalogueItem[]> {
+    try {
+      return await this.aiRouter.catalogue();
+    } catch (error) {
+      if (error instanceof ProviderRequestError) {
+        throw new ChatError(error.code, error.message, 502);
+      }
+      throw error;
+    }
   }
 
   listConversations(userId: string): Promise<ConversationRecord[]> {
     return this.repository.listConversations(userId);
+  }
+
+  getConversation(userId: string, conversationId: string): Promise<ConversationRecord> {
+    return this.requireConversation(userId, conversationId);
   }
 
   async createConversation(input: {
@@ -63,8 +76,9 @@ export class ChatService {
     title?: string;
     modelId: ModelId;
     responseLanguage: ResponseLanguage;
+    project?: ConversationProject | null;
   }): Promise<ConversationRecord> {
-    this.assertModelAvailable(input.modelId);
+    await this.assertModelAvailable(input.modelId);
     const now = new Date();
     return this.repository.createConversation({
       id: input.id ?? randomUUID(),
@@ -72,6 +86,9 @@ export class ChatService {
       title: cleanTitle(input.title ?? 'New chat'),
       modelId: input.modelId,
       responseLanguage: input.responseLanguage,
+      pinned: false,
+      pinnedAt: null,
+      project: cleanProject(input.project),
       createdAt: now,
       updatedAt: now,
     });
@@ -85,16 +102,24 @@ export class ChatService {
   async updateConversation(
     userId: string,
     conversationId: string,
-    patch: { title?: string; modelId?: ModelId; responseLanguage?: ResponseLanguage },
+    patch: { title?: string; modelId?: ModelId; responseLanguage?: ResponseLanguage; pinned?: boolean },
   ): Promise<ConversationRecord> {
-    if (patch.modelId) this.assertModelAvailable(patch.modelId);
+    if (patch.modelId) await this.assertModelAvailable(patch.modelId);
+    const existing = await this.requireConversation(userId, conversationId);
+    const now = new Date();
     const updated = await this.repository.updateConversation(userId, conversationId, {
       ...(patch.title === undefined ? {} : { title: cleanTitle(patch.title) }),
       ...(patch.modelId === undefined ? {} : { modelId: patch.modelId }),
       ...(patch.responseLanguage === undefined
         ? {}
         : { responseLanguage: patch.responseLanguage }),
-      updatedAt: new Date(),
+      ...(patch.pinned === undefined
+        ? {}
+        : {
+            pinned: patch.pinned,
+            pinnedAt: patch.pinned ? existing.pinnedAt ?? now : null,
+          }),
+      updatedAt: now,
     });
     if (!updated) throw new ChatError('CONVERSATION_NOT_FOUND', 'Conversation not found.', 404);
     return updated;
@@ -107,7 +132,7 @@ export class ChatService {
   }
 
   async sendMessage(input: SendMessageInput): Promise<SendMessageResult> {
-    this.assertModelAvailable(input.modelId);
+    await this.assertModelAvailable(input.modelId);
     const content = input.content.trim();
     let conversation = await this.repository.findConversation(input.userId, input.conversationId);
     if (!conversation) {
@@ -117,6 +142,7 @@ export class ChatService {
         title: content,
         modelId: input.modelId,
         responseLanguage: input.responseLanguage,
+        project: input.project ?? null,
       });
     }
 
@@ -157,14 +183,16 @@ export class ChatService {
           role,
           content: messageContent,
         })),
-        ...(memory?.enabled ? {
-          memory: {
-            nickname: memory.nickname,
-            occupation: memory.occupation,
-            about: memory.about,
-            summary: memory.summary,
-          },
-        } : {}),
+        ...(memory?.enabled
+          ? {
+              memory: {
+                nickname: memory.nickname,
+                occupation: memory.occupation,
+                about: memory.about,
+                summary: memory.summary,
+              },
+            }
+          : {}),
       });
     } catch (error) {
       if (error instanceof ModelUnavailableError) {
@@ -200,9 +228,11 @@ export class ChatService {
     return { conversation, userMessage, assistantMessage };
   }
 
-  private assertModelAvailable(modelId: ModelId): void {
-    const model = this.aiRouter.catalogue().find((item) => item.id === modelId);
-    if (!model?.available) throw new ChatError('MODEL_UNAVAILABLE', `${modelId} is not configured on this server.`, 503);
+  private async assertModelAvailable(modelId: ModelId): Promise<void> {
+    const model = (await this.aiRouter.catalogue()).find((item) => item.id === modelId);
+    if (!model?.available) {
+      throw new ChatError('MODEL_UNAVAILABLE', `${modelId} is not configured on this server.`, 503);
+    }
   }
 
   private async requireConversation(userId: string, conversationId: string) {
@@ -214,7 +244,15 @@ export class ChatService {
 
 function cleanTitle(title: string): string {
   const firstLine = title.trim().split('\n')[0]?.trim() || 'New chat';
-  return firstLine.length > 80 ? `${firstLine.slice(0, 79).trimEnd()}…` : firstLine;
+  return firstLine.length > 80 ? `${firstLine.slice(0, 79).trimEnd()}\u2026` : firstLine;
+}
+
+function cleanProject(project: ConversationProject | null | undefined): ConversationProject | null {
+  if (!project) return null;
+  const id = project.id.trim();
+  const name = project.name.trim();
+  if (!id || !name) return null;
+  return { id, name };
 }
 
 export function detectLanguage(content: string): 'en' | 'ar' | 'mixed' {

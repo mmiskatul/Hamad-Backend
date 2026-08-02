@@ -4,6 +4,7 @@ import { MongoAuthRepository } from '../modules/auth/mongoAuthRepository.js';
 import { SessionError, SessionService } from '../modules/auth/sessionService.js';
 import type { ChatRepository } from '../modules/chat/chatRepository.js';
 import { MongoChatRepository } from '../modules/chat/mongoChatRepository.js';
+import { PLAN_LIMITS, PLANS, resolvePlan, type Plan } from '../modules/plans/plans.js';
 import { env } from '../config/env.js';
 
 export type SettingsRouteOptions = {
@@ -19,6 +20,7 @@ type MemoryBody = Partial<{
   about: string;
 }>;
 type SummaryBody = { text: string };
+type PlanBody = { plan: Plan };
 
 const defaultMemory = () => ({
   enabled: false,
@@ -117,17 +119,45 @@ export async function settingsRoutes(app: FastifyInstance, options: SettingsRout
     return updated ? reply.code(204).send() : notFound(reply);
   });
 
-  app.get('/usage', { onRequest: requireSession }, async (request) => {
+  app.get('/usage', { onRequest: requireSession }, async (request, reply) => {
+    const user = await currentUser(auth(), request);
+    if (!user) return notFound(reply);
+    const plan = resolvePlan(user.plan);
     const now = new Date();
     const periodStart = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1));
     const usage = await chat().aggregateUsage(userId(request), periodStart);
     return {
       periodStart: periodStart.toISOString(),
-      plan: 'free',
-      limits: { requests: 50, tokens: 1000 },
+      plan,
+      limits: PLAN_LIMITS[plan],
       ...usage,
     };
   });
+
+  app.patch<{ Body: PlanBody }>(
+    '/settings/plan',
+    {
+      onRequest: requireSession,
+      schema: {
+        body: {
+          type: 'object',
+          additionalProperties: false,
+          required: ['plan'],
+          properties: { plan: { type: 'string', enum: [...PLANS] } },
+        },
+      },
+    },
+    async (request, reply) => {
+      const updated = await auth().updateUserPlan({
+        id: userId(request),
+        plan: request.body.plan,
+        updatedAt: new Date(),
+      });
+      if (!updated) return notFound(reply);
+      const plan = resolvePlan(updated.plan);
+      return { plan, limits: PLAN_LIMITS[plan] };
+    },
+  );
 
   app.get('/about', async () => ({
     name: 'OneAI Hub',
