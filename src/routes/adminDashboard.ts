@@ -163,6 +163,91 @@ export async function adminDashboardRoutes(app: FastifyInstance, options: AdminR
     );
   });
 
+  app.post<{ Params: { id: string } }>('/admin/users/:id/status', { onRequest: requireAdmin }, async (request, reply) => {
+    const body = request.body as { status?: 'active' | 'suspended' | 'grace'; actor?: string; reason?: string };
+    const params = request.params;
+    if (!body.status || !['active', 'suspended', 'grace'].includes(body.status)) {
+      return reply.code(400).send({ error: { code: 'INVALID_PAYLOAD', message: 'status must be one of active, suspended, grace.' } });
+    }
+    if (!body.reason || body.reason.trim().length < 10) {
+      return reply.code(400).send({ error: { code: 'INVALID_PAYLOAD', message: 'reason must be at least 10 characters.' } });
+    }
+    try {
+      return await adminDashboardStore.setUserStatus(
+        params.id,
+        body.status,
+        body.actor ?? 'admin@oneai.app',
+        body.reason,
+      );
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Unable to update user status.';
+      return reply.code(404).send({ error: { code: 'USER_NOT_FOUND', message } });
+    }
+  });
+
+  app.post<{ Params: { id: string } }>('/admin/users/:id/quota-grant', { onRequest: requireAdmin }, async (request, reply) => {
+    const body = request.body as { amount?: number; actor?: string; reason?: string };
+    const params = request.params;
+    if (!Number.isFinite(body.amount) || (body.amount as number) <= 0) {
+      return reply.code(400).send({ error: { code: 'INVALID_PAYLOAD', message: 'amount must be a positive number.' } });
+    }
+    try {
+      return await adminDashboardStore.grantQuota(
+        params.id,
+        body.amount as number,
+        body.actor ?? 'admin@oneai.app',
+        body.reason ?? '',
+      );
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Unable to grant quota.';
+      return reply.code(404).send({ error: { code: 'USER_NOT_FOUND', message } });
+    }
+  });
+
+  app.post<{ Params: { id: string } }>('/admin/users/:id/quota-override', { onRequest: requireAdmin }, async (request, reply) => {
+    const body = request.body as {
+      bypassQuota?: boolean;
+      customRequestsLimit?: number;
+      customTokensLimit?: number;
+      reason?: string;
+      actor?: string;
+    };
+    if (typeof body.bypassQuota !== 'boolean') {
+      return reply.code(400).send({ error: { code: 'INVALID_PAYLOAD', message: 'bypassQuota is required.' } });
+    }
+    if (!body.reason || body.reason.trim().length < 1) {
+      return reply.code(400).send({ error: { code: 'INVALID_PAYLOAD', message: 'reason is required.' } });
+    }
+    const override = {
+      bypassQuota: body.bypassQuota,
+      customRequestsLimit: body.customRequestsLimit,
+      customTokensLimit: body.customTokensLimit,
+      reason: body.reason,
+      setBy: body.actor ?? 'admin@oneai.app',
+      setAt: new Date().toISOString(),
+    };
+    try {
+      return await adminDashboardStore.setQuotaOverride(request.params.id, override, override.setBy);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Unable to save override.';
+      return reply.code(404).send({ error: { code: 'USER_NOT_FOUND', message } });
+    }
+  });
+
+  app.delete<{ Params: { id: string } }>('/admin/users/:id/quota-override', { onRequest: requireAdmin }, async (request, reply) => {
+    const body = (request.body ?? {}) as { actor?: string; reason?: string };
+    try {
+      return await adminDashboardStore.resetQuotaOverride(
+        request.params.id,
+        body.actor ?? 'admin@oneai.app',
+        body.reason ?? 'Quota override cleared',
+      );
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Unable to clear override.';
+      return reply.code(404).send({ error: { code: 'USER_NOT_FOUND', message } });
+    }
+  });
+
   app.post('/admin/audit', { onRequest: requireAdmin }, async (request) =>
     adminDashboardStore.appendAudit(request.body as never),
   );

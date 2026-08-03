@@ -71,5 +71,9 @@ export async function registerRoutes(app: FastifyInstance, options: RouteOptions
     authRepository: options.authRepository,
     supportRepository: options.supportRepository,
   });
+  await app.register(adminDashboardRoutes, {
+    prefix: '/api/v1',
+    authRepository: options.authRepository,
+  });
 }
 

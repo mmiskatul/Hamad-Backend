@@ -62,10 +62,11 @@ export class AdminDashboardStore {
   private async ensureLoaded() {
     if (this.loaded) return;
     this.dir = await resolveDataDir();
+    const userDetailRaw = await readJson(this.dir, 'user-detail');
     this.data = {
       overview: await readJson(this.dir, 'overview'),
       users: await readJson(this.dir, 'users'),
-      userDetail: await readJson(this.dir, 'user-detail'),
+      userDetail: Array.isArray(userDetailRaw) ? userDetailRaw : [userDetailRaw],
       revenue: await readJson(this.dir, 'revenue'),
       usage: await readJson(this.dir, 'usage'),
       providers: await readJson(this.dir, 'providers-health'),
@@ -258,6 +259,73 @@ export class AdminDashboardStore {
     this.data.users.unshift(created);
     this.pushAudit({ actor, action: 'userStatus', target: id, reason: `Created user ${email}`, ip: '10.0.1.1', meta: { email, tier: payload.tier, status: payload.status } });
     return clone(created);
+  }
+
+  async setUserStatus(userId: string, status: 'active' | 'suspended' | 'grace', actor: string, reason: string) {
+    await this.ensureLoaded();
+    const summary = this.data.users.find((row: any) => row.id === userId);
+    if (!summary) throw new Error(`User ${userId} not found`);
+    const previous = summary.status;
+    summary.status = status;
+    summary.lastActiveAt = summary.lastActiveAt ?? new Date().toISOString();
+    this.pushAudit({ actor, action: 'userStatus', target: userId, reason: reason || `Status changed to ${status}`, ip: '10.0.1.1', meta: { previous, next: status } });
+    return clone(summary);
+  }
+
+  async grantQuota(userId: string, amount: number, actor: string, reason: string) {
+    await this.ensureLoaded();
+    if (!Number.isFinite(amount) || amount <= 0) throw new Error('amount must be a positive number');
+    const summary = this.data.users.find((row: any) => row.id === userId);
+    if (!summary) throw new Error(`User ${userId} not found`);
+    const previousLimit = summary.requestsLimit;
+    summary.requestsLimit = previousLimit + amount;
+    const detail = this.data.userDetail.find((row: any) => row.id === userId);
+    const entry = { date: new Date().toISOString(), amount, by: actor, reason: reason || 'No reason provided', newTotal: summary.requestsLimit };
+    if (detail) {
+      detail.requestsLimit = summary.requestsLimit;
+      detail.quotaHistory = [entry, ...(detail.quotaHistory ?? [])];
+    } else {
+      const fallback = this.data.userDetail.find((row: any) => row.id === userId) ?? this.buildDetail(summary);
+      fallback.requestsLimit = summary.requestsLimit;
+      fallback.quotaHistory = [entry, ...(fallback.quotaHistory ?? [])];
+      if (!this.data.userDetail.find((row: any) => row.id === userId)) this.data.userDetail.push(fallback);
+    }
+    this.pushAudit({ actor, action: 'quotaOverride', target: userId, reason: reason || `Granted ${amount} tokens`, ip: '10.0.1.1', meta: { amount, previousLimit, newLimit: summary.requestsLimit } });
+    return { user: clone(summary), entry: clone(entry) };
+  }
+
+  async setQuotaOverride(userId: string, override: { bypassQuota: boolean; customRequestsLimit?: number; customTokensLimit?: number; reason: string; setBy: string; setAt: string }, actor: string) {
+    await this.ensureLoaded();
+    const summary = this.data.users.find((row: any) => row.id === userId);
+    if (!summary) throw new Error(`User ${userId} not found`);
+    const detail = this.data.userDetail.find((row: any) => row.id === userId) ?? this.buildDetail(summary);
+    if (!this.data.userDetail.find((row: any) => row.id === userId)) this.data.userDetail.push(detail);
+    const existing = (detail.quotaHistory ?? []).filter((entry: any) => entry.kind === 'override');
+    if (override.bypassQuota) {
+      detail.requestsLimit = Number.MAX_SAFE_INTEGER;
+    } else if (override.customRequestsLimit != null) {
+      detail.requestsLimit = override.customRequestsLimit;
+      summary.requestsLimit = override.customRequestsLimit;
+    }
+    const entry = { ...override, kind: 'override' as const };
+    detail.quotaHistory = [entry, ...existing];
+    this.pushAudit({ actor, action: 'quotaOverride', target: userId, reason: override.reason, ip: '10.0.1.1', meta: { bypassQuota: override.bypassQuota, customRequestsLimit: override.customRequestsLimit, customTokensLimit: override.customTokensLimit } });
+    return { user: clone(summary), override: clone(entry) };
+  }
+
+  async resetQuotaOverride(userId: string, actor: string, reason: string) {
+    await this.ensureLoaded();
+    const summary = this.data.users.find((row: any) => row.id === userId);
+    if (!summary) throw new Error(`User ${userId} not found`);
+    const detail = this.data.userDetail.find((row: any) => row.id === userId);
+    if (detail) {
+      detail.quotaHistory = (detail.quotaHistory ?? []).filter((entry: any) => entry.kind !== 'override');
+      const defaultLimit = summary.tier === 'free' ? 100 : summary.tier === 'pro' ? 5000 : 25000;
+      detail.requestsLimit = defaultLimit;
+      summary.requestsLimit = defaultLimit;
+    }
+    this.pushAudit({ actor, action: 'quotaOverride', target: userId, reason: reason || 'Quota override cleared', ip: '10.0.1.1', meta: { cleared: true } });
+    return clone(summary);
   }
 
   async appendAudit(entry: any) {
