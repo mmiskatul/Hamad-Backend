@@ -15,6 +15,7 @@
     "@fastify/cors": "^11.3.0",
     "@fastify/jwt": "^10.2.1",
     "@fastify/mongodb": "^9.0.2",
+    "@fastify/multipart": "^9.2.1",
     "dotenv": "^16.6.1",
     "fastify": "5.10.0",
     "nodemailer": "^9.0.3"

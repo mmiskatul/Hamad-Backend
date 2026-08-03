@@ -28,6 +28,7 @@ docker-compose.override.yml
 .npm/
 tmp/
 temp/
+storage/
 
 # Operating systems and editors
 .DS_Store

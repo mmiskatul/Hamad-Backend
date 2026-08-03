@@ -13,6 +13,7 @@ import { MODEL_IDS, RESPONSE_LANGUAGES } from '../modules/chat/chatRepository.js
 import { ChatError, ChatService } from '../modules/chat/chatService.js';
 import { MongoChatRepository } from '../modules/chat/mongoChatRepository.js';
 import { env } from '../config/env.js';
+import { AttachmentStorage } from '../modules/chat/attachmentStorage.js';
 
 export type ChatRouteOptions = {
   authRepository?: AuthRepository;
@@ -23,6 +24,7 @@ export type ChatRouteOptions = {
 type AccessClaims = { sub: string; sid: string };
 type ConversationProjectBody = { id: string; name: string };
 type ConversationParams = { conversationId: string };
+type AttachmentParams = ConversationParams & { attachmentId: string };
 type CreateConversationBody = {
   id?: string;
   title?: string;
@@ -60,6 +62,16 @@ const conversationIdSchema = {
   properties: { conversationId: { type: 'string', minLength: 3, maxLength: 100 } },
 } as const;
 
+const attachmentIdSchema = {
+  type: 'object',
+  additionalProperties: false,
+  required: ['conversationId', 'attachmentId'],
+  properties: {
+    conversationId: { type: 'string', minLength: 3, maxLength: 100 },
+    attachmentId: { type: 'string', minLength: 3, maxLength: 100 },
+  },
+} as const;
+
 const projectSchema = {
   type: 'object',
   additionalProperties: false,
@@ -71,6 +83,7 @@ const projectSchema = {
 } as const;
 
 export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions) {
+  const attachments = new AttachmentStorage(env.attachmentStorageDir);
   let authRepository: AuthRepository | undefined;
   const getAuthRepository = () => {
     authRepository ??=
@@ -200,6 +213,84 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
     { onRequest: requireActiveSession, schema: { params: conversationIdSchema, response: { 404: errorSchema } } },
     async (request, reply) => handleChatError(reply, async () => {
       await getService().deleteConversation(userId(request), request.params.conversationId);
+      await attachments.removeConversation(userId(request), request.params.conversationId);
+      return reply.code(204).send();
+    }),
+  );
+
+  app.get<{ Params: ConversationParams }>(
+    '/conversations/:conversationId/attachments',
+    { onRequest: requireActiveSession, schema: { params: conversationIdSchema, response: { 404: errorSchema } } },
+    async (request, reply) => handleChatError(reply, async () => {
+      await getService().getConversation(userId(request), request.params.conversationId);
+      return {
+        attachments: (await attachments.list(userId(request), request.params.conversationId))
+          .map(publicAttachment),
+      };
+    }),
+  );
+
+  app.post<{ Params: ConversationParams }>(
+    '/conversations/:conversationId/attachments',
+    { onRequest: requireActiveSession, schema: { params: conversationIdSchema, response: { 404: errorSchema } } },
+    async (request, reply) => handleChatError(reply, async () => {
+      await getService().getConversation(userId(request), request.params.conversationId);
+      const part = await request.file();
+      if (!part) throw new ChatError('ATTACHMENT_REQUIRED', 'Choose an image or document to upload.', 400);
+      let data: Buffer;
+      try {
+        data = await part.toBuffer();
+      } catch (error) {
+        if (error instanceof app.multipartErrors.RequestFileTooLargeError) {
+          throw new ChatError(
+            'ATTACHMENT_TOO_LARGE',
+            `Attachments must be ${Math.floor(env.attachmentMaxBytes / 1024 / 1024)} MB or smaller.`,
+            413,
+          );
+        }
+        throw error;
+      }
+      if (!data.byteLength) throw new ChatError('ATTACHMENT_EMPTY', 'The selected file is empty.', 400);
+      const attachment = await attachments.save(userId(request), request.params.conversationId, {
+        name: part.filename,
+        mimeType: part.mimetype,
+        data,
+      });
+      return reply.code(201).send({ attachment: publicAttachment(attachment) });
+    }),
+  );
+
+  app.get<{ Params: AttachmentParams }>(
+    '/conversations/:conversationId/attachments/:attachmentId/content',
+    { onRequest: requireActiveSession, schema: { params: attachmentIdSchema, response: { 404: errorSchema } } },
+    async (request, reply) => handleChatError(reply, async () => {
+      await getService().getConversation(userId(request), request.params.conversationId);
+      const file = await attachments.read(
+        userId(request),
+        request.params.conversationId,
+        request.params.attachmentId,
+      );
+      if (!file) throw new ChatError('ATTACHMENT_NOT_FOUND', 'Attachment not found.', 404);
+      const disposition = file.record.mimeType.startsWith('image/') ? 'inline' : 'attachment';
+      reply
+        .type(file.record.mimeType)
+        .header('Content-Length', file.record.size)
+        .header('Content-Disposition', `${disposition}; filename*=UTF-8''${encodeURIComponent(file.record.name)}`);
+      return reply.send(file.data);
+    }),
+  );
+
+  app.delete<{ Params: AttachmentParams }>(
+    '/conversations/:conversationId/attachments/:attachmentId',
+    { onRequest: requireActiveSession, schema: { params: attachmentIdSchema, response: { 404: errorSchema } } },
+    async (request, reply) => handleChatError(reply, async () => {
+      await getService().getConversation(userId(request), request.params.conversationId);
+      const removed = await attachments.remove(
+        userId(request),
+        request.params.conversationId,
+        request.params.attachmentId,
+      );
+      if (!removed) throw new ChatError('ATTACHMENT_NOT_FOUND', 'Attachment not found.', 404);
       return reply.code(204).send();
     }),
   );
@@ -255,6 +346,16 @@ function publicConversation(record: Awaited<ReturnType<ChatService['createConver
 }
 
 function publicMessage(record: Awaited<ReturnType<ChatRepository['appendMessage']>>) {
+  return { ...record, createdAt: record.createdAt.toISOString() };
+}
+
+function publicAttachment(record: {
+  id: string;
+  name: string;
+  mimeType: string;
+  size: number;
+  createdAt: Date;
+}) {
   return { ...record, createdAt: record.createdAt.toISOString() };
 }
 

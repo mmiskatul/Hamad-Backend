@@ -2,6 +2,7 @@ import Fastify, { LogController } from 'fastify';
 import cors from '@fastify/cors';
 import jwt from '@fastify/jwt';
 import mongodb from '@fastify/mongodb';
+import multipart from '@fastify/multipart';
 import { env, hasAdminBootstrapConfiguration } from './config/env.js';
 import type { AuthRepository } from './modules/auth/authRepository.js';
 import type { EmailSender } from './modules/email/emailSender.js';
@@ -86,6 +87,9 @@ export function buildApp(options: BuildAppOptions = {}) {
   app.register(jwt, {
     secret: env.jwtSecret,
     sign: { expiresIn: env.accessTokenExpiresIn },
+  });
+  app.register(multipart, {
+    limits: { files: 1, fileSize: env.attachmentMaxBytes },
   });
   if (!options.authRepository) {
     app.register(mongodb, {
