@@ -83,7 +83,14 @@ const projectSchema = {
 } as const;
 
 export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions) {
-  const attachments = new AttachmentStorage(env.attachmentStorageDir);
+  let attachments: AttachmentStorage | undefined;
+  const getAttachments = () => {
+    attachments ??= new AttachmentStorage({
+      cloudinaryUrl: env.cloudinaryUrl,
+      folder: env.cloudinaryFolder,
+    });
+    return attachments;
+  };
   let authRepository: AuthRepository | undefined;
   const getAuthRepository = () => {
     authRepository ??=
@@ -212,8 +219,13 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
     '/conversations/:conversationId',
     { onRequest: requireActiveSession, schema: { params: conversationIdSchema, response: { 404: errorSchema } } },
     async (request, reply) => handleChatError(reply, async () => {
+      await getService().getConversation(userId(request), request.params.conversationId);
+      // Production validation requires Cloudinary. The guard keeps repository-only
+      // tests and non-upload local development usable before credentials are set.
+      if (env.cloudinaryUrl) {
+        await getAttachments().removeConversation(userId(request), request.params.conversationId);
+      }
       await getService().deleteConversation(userId(request), request.params.conversationId);
-      await attachments.removeConversation(userId(request), request.params.conversationId);
       return reply.code(204).send();
     }),
   );
@@ -224,7 +236,7 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
     async (request, reply) => handleChatError(reply, async () => {
       await getService().getConversation(userId(request), request.params.conversationId);
       return {
-        attachments: (await attachments.list(userId(request), request.params.conversationId))
+        attachments: (await getAttachments().list(userId(request), request.params.conversationId))
           .map(publicAttachment),
       };
     }),
@@ -251,7 +263,7 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
         throw error;
       }
       if (!data.byteLength) throw new ChatError('ATTACHMENT_EMPTY', 'The selected file is empty.', 400);
-      const attachment = await attachments.save(userId(request), request.params.conversationId, {
+      const attachment = await getAttachments().save(userId(request), request.params.conversationId, {
         name: part.filename,
         mimeType: part.mimetype,
         data,
@@ -265,7 +277,7 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
     { onRequest: requireActiveSession, schema: { params: attachmentIdSchema, response: { 404: errorSchema } } },
     async (request, reply) => handleChatError(reply, async () => {
       await getService().getConversation(userId(request), request.params.conversationId);
-      const file = await attachments.read(
+      const file = await getAttachments().read(
         userId(request),
         request.params.conversationId,
         request.params.attachmentId,
@@ -285,7 +297,7 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
     { onRequest: requireActiveSession, schema: { params: attachmentIdSchema, response: { 404: errorSchema } } },
     async (request, reply) => handleChatError(reply, async () => {
       await getService().getConversation(userId(request), request.params.conversationId);
-      const removed = await attachments.remove(
+      const removed = await getAttachments().remove(
         userId(request),
         request.params.conversationId,
         request.params.attachmentId,

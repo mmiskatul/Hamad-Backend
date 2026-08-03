@@ -9,13 +9,14 @@
     "build": "tsc -p tsconfig.build.json",
     "start": "node dist/index.js",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "test": "tsx --test tests/**/*.test.ts"
+    "test": "tsx --test --test-concurrency=1 tests/**/*.test.ts"
   },
   "dependencies": {
     "@fastify/cors": "^11.3.0",
     "@fastify/jwt": "^10.2.1",
     "@fastify/mongodb": "^9.0.2",
     "@fastify/multipart": "^9.2.1",
+    "cloudinary": "^2.7.0",
     "dotenv": "^16.6.1",
     "fastify": "5.10.0",
     "nodemailer": "^9.0.3"

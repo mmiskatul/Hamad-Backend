@@ -51,8 +51,9 @@ export const env = {
     trimmed(process.env.AI_SERVICE_BASE_URL) || 'http://localhost:8000/api/v1',
   aiRequestTimeoutMs: positiveInteger(process.env.AI_REQUEST_TIMEOUT_MS, 60_000),
   aiMaxContextMessages: positiveInteger(process.env.AI_MAX_CONTEXT_MESSAGES, 30),
-  attachmentStorageDir: trimmed(process.env.ATTACHMENT_STORAGE_DIR) || 'storage/chat-attachments',
   attachmentMaxBytes: positiveInteger(process.env.ATTACHMENT_MAX_BYTES, 10 * 1024 * 1024),
+  cloudinaryUrl: trimmed(process.env.CLOUDINARY_URL),
+  cloudinaryFolder: trimmed(process.env.CLOUDINARY_FOLDER) || 'one-ai-hub/chat-attachments',
 } as const;
 
 export function validateProductionEnvironment(): void {
@@ -76,6 +77,9 @@ export function validateProductionEnvironment(): void {
     if (!value.trim()) missing.push(name);
   }
   if (!process.env.AI_SERVICE_BASE_URL?.trim()) missing.push('AI_SERVICE_BASE_URL');
+  if (!env.cloudinaryUrl) {
+    missing.push('CLOUDINARY_URL');
+  }
 
   if (missing.length > 0) {
     throw new Error(`Missing or insecure production configuration: ${missing.join(', ')}`);

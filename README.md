@@ -117,6 +117,25 @@ The Compose service reads private runtime values from `.env`. The production
 image never copies `.env` into an image layer; provide the same variables through
 your deployment platform's secret/environment configuration.
 
+## Chat attachment storage
+
+Chat images, documents, and their attachment metadata are stored only in
+Cloudinary. Configure:
+
+```env
+CLOUDINARY_URL=cloudinary://api_key:api_secret@cloud_name
+CLOUDINARY_FOLDER=one-ai-hub/chat-attachments
+```
+
+Keep `CLOUDINARY_URL` in deployment secrets and never expose it to mobile or web
+clients. Assets are uploaded with Cloudinary's `authenticated` delivery type;
+clients continue downloading through the authenticated backend endpoint. No
+attachment files or metadata are written to the backend filesystem.
+
+The storage boundary is provider-neutral. A future S3 adapter only needs to
+implement `CloudinaryGateway` in `src/modules/chat/attachmentStorage.ts`; chat routes
+and mobile clients do not change.
+
 ## AI gateway
 
 The backend is the public API gateway for web and mobile traffic. It owns
