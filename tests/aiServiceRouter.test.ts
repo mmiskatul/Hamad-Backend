@@ -21,6 +21,7 @@ test('ai service router loads models and generates through FastAPI', async () =>
       provider: 'OpenAI',
       configuredModel: 'gpt-test',
       choices: [{ message: { role: 'assistant', content: 'AI agent answer' } }],
+      generatedImages: [{ mimeType: 'image/png', dataBase64: 'aW1hZ2U=' }],
       usage: { inputTokens: 2, outputTokens: 3, totalTokens: 5 },
     });
   };
@@ -38,6 +39,7 @@ test('ai service router loads models and generates through FastAPI', async () =>
     assert.equal(models[0]?.available, true);
     assert.equal(result.content, 'AI agent answer');
     assert.equal(result.usage?.totalTokens, 5);
+    assert.equal(result.generatedImages?.[0]?.dataBase64, 'aW1hZ2U=');
     assert.equal(requests[0]?.url, 'http://127.0.0.1:8000/api/v1/chat/models');
     assert.deepEqual(requests[1]?.body, {
       modelId: 'gpt',

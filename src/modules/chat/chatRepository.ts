@@ -6,6 +6,14 @@ export type ResponseLanguage = (typeof RESPONSE_LANGUAGES)[number];
 
 export type ChatRole = 'user' | 'assistant';
 
+export type MessageAttachment = {
+  id: string;
+  name: string;
+  mimeType: string;
+  size: number;
+  createdAt: Date;
+};
+
 export type ConversationProject = {
   id: string;
   name: string;
@@ -35,6 +43,7 @@ export type MessageRecord = {
   modelId?: ModelId;
   provider?: string;
   usage?: { inputTokens: number; outputTokens: number; totalTokens: number };
+  generatedImages?: MessageAttachment[];
   language: 'en' | 'ar' | 'mixed';
   createdAt: Date;
 };

@@ -21,6 +21,7 @@ class RecordingAiRouter implements AiRouter {
     return [
       { id: 'gpt', name: 'ChatGPT', vendor: 'OpenAI', minPlan: 'free', available: this.available, configuredModel: 'test-gpt' },
       { id: 'deepseek', name: 'DeepSeek', vendor: 'DeepSeek', minPlan: 'free', available: this.available, configuredModel: 'test-deepseek' },
+      { id: 'gemini', name: 'Gemini', vendor: 'Google', minPlan: 'pro', available: this.available, configuredModel: 'test-gemini' },
     ];
   }
 
@@ -82,6 +83,34 @@ test('client message id makes a completed send idempotent', async () => {
   assert.equal(repository.messages.length, 2);
 });
 
+test('generated images are persisted through chat attachment storage', async () => {
+  const repository = new MemoryChatRepository();
+  const router = new RecordingAiRouter();
+  router.generate = async (input) => ({
+    content: 'Here is your generated image.',
+    modelId: input.modelId,
+    provider: 'OpenAI',
+    configuredModel: 'test-gpt',
+    generatedImages: [{ mimeType: 'image/png', dataBase64: 'aW1hZ2U=' }],
+  });
+  const stored: Buffer[] = [];
+  const service = new ChatService(repository, router, 30, undefined, async (input) => {
+    stored.push(input.data);
+    return {
+      id: 'image-1', name: input.name, mimeType: input.mimeType,
+      size: input.data.byteLength, createdAt: new Date(0),
+    };
+  });
+
+  const result = await service.sendMessage({
+    userId: 'user-1', conversationId: 'conversation-image', clientMessageId: 'message-image',
+    content: 'Generate an image', modelId: 'gpt', responseLanguage: 'en',
+  });
+
+  assert.equal(stored[0]?.toString(), 'image');
+  assert.equal(result.assistantMessage.generatedImages?.[0]?.id, 'image-1');
+});
+
 test('chat routes reject unauthenticated calls and accept an active JWT session', async () => {
   const authRepository = new MemoryAuthRepository();
   const chatRepository = new MemoryChatRepository();
@@ -107,6 +136,20 @@ test('chat routes reject unauthenticated calls and accept an active JWT session'
     name: user.name,
     createdAt: user.createdAt.toISOString(),
   });
+  const lockedModelResponse = await app.inject({
+    method: 'POST',
+    url: '/api/v1/conversations/locked-model/messages',
+    headers: { authorization: `Bearer ${accessToken}` },
+    payload: {
+      clientMessageId: 'locked-message',
+      content: 'Use Gemini',
+      modelId: 'gemini',
+      responseLanguage: 'en',
+    },
+  });
+  assert.equal(lockedModelResponse.statusCode, 403, lockedModelResponse.body);
+  assert.equal(lockedModelResponse.json().error.code, 'PLAN_UPGRADE_REQUIRED');
+
   const sendResponse = await app.inject({
     method: 'POST',
     url: '/api/v1/conversations/mobile-conversation/messages',
@@ -151,6 +194,32 @@ test('chat routes reject unauthenticated calls and accept an active JWT session'
   assert.equal(detailResponse.statusCode, 200, detailResponse.body);
   assert.equal(detailResponse.json().messages.length, 2);
   assert.equal(detailResponse.json().messages[0]?.clientMessageId, 'mobile-message');
+
+  await chatRepository.appendMessage({
+    id: 'usage-limit',
+    conversationId: 'mobile-conversation',
+    userId: user.id,
+    role: 'assistant',
+    content: 'Usage fixture',
+    modelId: 'gpt',
+    provider: 'OpenAI',
+    usage: { inputTokens: 40_000, outputTokens: 10_000, totalTokens: 50_000 },
+    language: 'en',
+    createdAt: new Date(),
+  });
+  const quotaResponse = await app.inject({
+    method: 'POST',
+    url: '/api/v1/conversations/mobile-conversation/messages',
+    headers: { authorization: `Bearer ${accessToken}` },
+    payload: {
+      clientMessageId: 'over-quota-message',
+      content: 'One more request',
+      modelId: 'gpt',
+      responseLanguage: 'en',
+    },
+  });
+  assert.equal(quotaResponse.statusCode, 429, quotaResponse.body);
+  assert.equal(quotaResponse.json().error.code, 'TOKEN_LIMIT_REACHED');
 
   const deleteResponse = await app.inject({
     method: 'DELETE',

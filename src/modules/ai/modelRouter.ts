@@ -23,6 +23,7 @@ export type GenerateResult = {
   provider: string;
   configuredModel: string;
   usage?: { inputTokens: number; outputTokens: number; totalTokens: number };
+  generatedImages?: Array<{ mimeType: string; dataBase64: string }>;
 };
 
 export interface AiRouter {

@@ -15,6 +15,7 @@ type CompletionResponse = {
   provider?: string;
   configuredModel?: string;
   choices?: Array<{ message?: { content?: string } }>;
+  generatedImages?: Array<{ mimeType?: string; dataBase64?: string }>;
   usage?: GenerateResult['usage'];
 };
 
@@ -48,13 +49,19 @@ export class AiServiceRouter implements AiRouter {
       signal: input.signal,
     }, input.modelId);
     const content = body.choices?.[0]?.message?.content?.trim() ?? '';
-    if (!content) throw new ProviderRequestError(body.provider ?? 'AI service', 'The AI service returned an empty response.');
+    const generatedImages = (body.generatedImages ?? []).flatMap((image) =>
+      image.dataBase64
+        ? [{ mimeType: image.mimeType || 'image/png', dataBase64: image.dataBase64 }]
+        : [],
+    );
+    if (!content && !generatedImages.length) throw new ProviderRequestError(body.provider ?? 'AI service', 'The AI service returned an empty response.');
     return {
-      content,
+      content: content || 'Here is your generated image.',
       modelId: body.modelId ?? input.modelId,
       provider: body.provider ?? 'AI service',
       configuredModel: body.configuredModel ?? input.modelId,
       ...(body.usage ? { usage: body.usage } : {}),
+      ...(generatedImages.length ? { generatedImages } : {}),
     };
   }
 

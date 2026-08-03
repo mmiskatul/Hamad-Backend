@@ -60,9 +60,9 @@ test('settings, memory, usage, and about endpoints return account data', async (
   assert.deepEqual(usage.json().byModel.gpt, { requests: 1, tokens: 15 });
 
   for (const [plan, requests, tokens] of [
-    ['pro', 500, 4000],
-    ['business', 5000, 8000],
-    ['free', 50, 1000],
+    ['pro', 500, 500_000],
+    ['business', 2_000, 1_500_000],
+    ['free', 50, 50_000],
   ] as const) {
     const changed = await app.inject({
       method: 'PATCH',

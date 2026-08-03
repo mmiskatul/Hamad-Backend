@@ -14,6 +14,7 @@ import { ChatError, ChatService } from '../modules/chat/chatService.js';
 import { MongoChatRepository } from '../modules/chat/mongoChatRepository.js';
 import { env } from '../config/env.js';
 import { AttachmentStorage } from '../modules/chat/attachmentStorage.js';
+import { PLAN_LIMITS, planIncludes, resolvePlan } from '../modules/plans/plans.js';
 
 export type ChatRouteOptions = {
   authRepository?: AuthRepository;
@@ -114,8 +115,66 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
       options.aiRouter ?? createDefaultAiRouter(),
       env.aiMaxContextMessages,
       async (userId) => (await getAuthRepository().findUserById(userId))?.memory ?? null,
+      async ({ userId, conversationId, name, mimeType, data }) =>
+        getAttachments().save(userId, conversationId, { name, mimeType, data }),
     );
     return service;
+  };
+
+  const assertModelAllowed = async (request: FastifyRequest, modelId: ModelId) => {
+    const user = await getAuthRepository().findUserById(userId(request));
+    if (!user) throw new ChatError('USER_NOT_FOUND', 'User not found.', 404);
+    const plan = resolvePlan(user.plan);
+    const model = (await getService().models()).find((item) => item.id === modelId);
+    if (model && !planIncludes(plan, model.minPlan)) {
+      throw new ChatError(
+        'PLAN_UPGRADE_REQUIRED',
+        `${model.name} requires the ${model.minPlan} plan.`,
+        403,
+      );
+    }
+  };
+
+  const assertQuotaAvailable = async (
+    request: FastifyRequest,
+    conversationId: string,
+    clientMessageId: string,
+  ) => {
+    // A retry of an already completed idempotent request must return its stored
+    // response even when that response consumed the final request in the plan.
+    const existingMessage = await getChatRepository().findMessageByClientId(
+      userId(request),
+      conversationId,
+      clientMessageId,
+    );
+    if (
+      existingMessage
+      && await getChatRepository().findReplyTo(userId(request), existingMessage.id)
+    ) {
+      return;
+    }
+
+    const user = await getAuthRepository().findUserById(userId(request));
+    if (!user) throw new ChatError('USER_NOT_FOUND', 'User not found.', 404);
+    const plan = resolvePlan(user.plan);
+    const limits = PLAN_LIMITS[plan];
+    const now = new Date();
+    const periodStart = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1));
+    const usage = await getChatRepository().aggregateUsage(user.id, periodStart);
+    if (usage.requests >= limits.requests) {
+      throw new ChatError(
+        'REQUEST_LIMIT_REACHED',
+        `You have used all ${limits.requests.toLocaleString('en-US')} requests in your ${plan} plan.`,
+        429,
+      );
+    }
+    if (usage.tokens >= limits.tokens) {
+      throw new ChatError(
+        'TOKEN_LIMIT_REACHED',
+        `You have used all ${limits.tokens.toLocaleString('en-US')} tokens in your ${plan} plan.`,
+        429,
+      );
+    }
   };
 
   let sessions: SessionService | undefined;
@@ -159,13 +218,14 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
         response: { 503: errorSchema },
       },
     },
-    async (request, reply) => handleChatError(reply, async () =>
-      reply.code(201).send(publicConversation(await getService().createConversation({
+    async (request, reply) => handleChatError(reply, async () => {
+      await assertModelAllowed(request, request.body.modelId);
+      return reply.code(201).send(publicConversation(await getService().createConversation({
         ...request.body,
         userId: userId(request),
         responseLanguage: request.body.responseLanguage ?? 'auto',
-      }))),
-    ),
+      })));
+    }),
   );
 
   app.get<{ Params: ConversationParams }>(
@@ -210,9 +270,12 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
         response: { 404: errorSchema, 503: errorSchema },
       },
     },
-    async (request, reply) => handleChatError(reply, async () => publicConversation(
-      await getService().updateConversation(userId(request), request.params.conversationId, request.body),
-    )),
+    async (request, reply) => handleChatError(reply, async () => {
+      if (request.body.modelId) await assertModelAllowed(request, request.body.modelId);
+      return publicConversation(
+        await getService().updateConversation(userId(request), request.params.conversationId, request.body),
+      );
+    }),
   );
 
   app.delete<{ Params: ConversationParams }>(
@@ -329,6 +392,12 @@ export async function chatRoutes(app: FastifyInstance, options: ChatRouteOptions
       },
     },
     async (request, reply) => handleChatError(reply, async () => {
+      await assertModelAllowed(request, request.body.modelId);
+      await assertQuotaAvailable(
+        request,
+        request.params.conversationId,
+        request.body.clientMessageId,
+      );
       const result = await getService().sendMessage({
         ...request.body,
         userId: userId(request),
@@ -358,7 +427,13 @@ function publicConversation(record: Awaited<ReturnType<ChatService['createConver
 }
 
 function publicMessage(record: Awaited<ReturnType<ChatRepository['appendMessage']>>) {
-  return { ...record, createdAt: record.createdAt.toISOString() };
+  return {
+    ...record,
+    ...(record.generatedImages
+      ? { generatedImages: record.generatedImages.map(publicAttachment) }
+      : {}),
+    createdAt: record.createdAt.toISOString(),
+  };
 }
 
 function publicAttachment(record: {

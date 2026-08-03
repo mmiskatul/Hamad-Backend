@@ -49,7 +49,7 @@ export const env = {
   // FastAPI owns all provider credentials and model routing.
   aiServiceBaseUrl:
     trimmed(process.env.AI_SERVICE_BASE_URL) || 'http://localhost:8000/api/v1',
-  aiRequestTimeoutMs: positiveInteger(process.env.AI_REQUEST_TIMEOUT_MS, 60_000),
+  aiRequestTimeoutMs: positiveInteger(process.env.AI_REQUEST_TIMEOUT_MS, 180_000),
   aiMaxContextMessages: positiveInteger(process.env.AI_MAX_CONTEXT_MESSAGES, 30),
   attachmentMaxBytes: positiveInteger(process.env.ATTACHMENT_MAX_BYTES, 10 * 1024 * 1024),
   cloudinaryUrl: trimmed(process.env.CLOUDINARY_URL),

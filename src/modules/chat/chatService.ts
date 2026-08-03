@@ -6,6 +6,7 @@ import type {
   ConversationProject,
   ConversationRecord,
   MessageRecord,
+  MessageAttachment,
   ModelId,
   ResponseLanguage,
 } from './chatRepository.js';
@@ -49,6 +50,13 @@ export class ChatService {
       about: string;
       summary: string;
     } | null>,
+    private readonly storeGeneratedImage?: (input: {
+      userId: string;
+      conversationId: string;
+      name: string;
+      mimeType: string;
+      data: Buffer;
+    }) => Promise<MessageAttachment>,
   ) {}
 
   async models(): Promise<ModelCatalogueItem[]> {
@@ -205,6 +213,26 @@ export class ChatService {
     }
 
     const now = new Date();
+    const generatedImages: MessageAttachment[] = [];
+    for (const [index, image] of (generated.generatedImages ?? []).entries()) {
+      if (!this.storeGeneratedImage) {
+        throw new ChatError('IMAGE_STORAGE_UNAVAILABLE', 'Image storage is not configured.', 503);
+      }
+      if (!['image/png', 'image/jpeg', 'image/webp'].includes(image.mimeType.toLowerCase())) {
+        throw new ChatError('INVALID_GENERATED_IMAGE', 'The image provider returned an unsupported image type.', 502);
+      }
+      const data = Buffer.from(image.dataBase64, 'base64');
+      if (!data.byteLength) {
+        throw new ChatError('INVALID_GENERATED_IMAGE', 'The image provider returned invalid image data.', 502);
+      }
+      generatedImages.push(await this.storeGeneratedImage({
+        userId: input.userId,
+        conversationId: input.conversationId,
+        name: `generated-${now.getTime()}-${index + 1}.${imageExtension(image.mimeType)}`,
+        mimeType: image.mimeType,
+        data,
+      }));
+    }
     const assistantMessage = await this.repository.appendMessage({
       id: randomUUID(),
       conversationId: input.conversationId,
@@ -215,6 +243,7 @@ export class ChatService {
       modelId: generated.modelId,
       provider: generated.provider,
       ...(generated.usage ? { usage: generated.usage } : {}),
+      ...(generatedImages.length ? { generatedImages } : {}),
       language: detectLanguage(generated.content),
       createdAt: now,
     });
@@ -240,6 +269,15 @@ export class ChatService {
     if (!conversation) throw new ChatError('CONVERSATION_NOT_FOUND', 'Conversation not found.', 404);
     return conversation;
   }
+}
+
+function imageExtension(mimeType: string): string {
+  const extensions: Record<string, string> = {
+    'image/jpeg': 'jpg',
+    'image/png': 'png',
+    'image/webp': 'webp',
+  };
+  return extensions[mimeType.toLowerCase()] ?? 'png';
 }
 
 function cleanTitle(title: string): string {
