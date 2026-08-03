@@ -12,3 +12,5 @@ try {
   app.log.error(error);
   process.exit(1);
 }
+// restart trigger
+
