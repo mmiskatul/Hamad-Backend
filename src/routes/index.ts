@@ -1,4 +1,4 @@
-import type { FastifyInstance } from 'fastify';
+﻿import type { FastifyInstance } from 'fastify';
 import type { AuthRepository } from '../modules/auth/authRepository.js';
 import type { EmailSender } from '../modules/email/emailSender.js';
 import { authRoutes } from './auth.js';
@@ -15,6 +15,7 @@ import type { ProjectRepository } from '../modules/projects/projectRepository.js
 import { supportRoutes } from './support.js';
 import type { SupportRepository } from '../modules/support/supportRepository.js';
 import { adminAuthRoutes } from './adminAuth.js';
+import { adminDashboardRoutes } from './adminDashboard.js';
 
 export type RouteOptions = {
   authRepository?: AuthRepository;
@@ -71,3 +72,4 @@ export async function registerRoutes(app: FastifyInstance, options: RouteOptions
     supportRepository: options.supportRepository,
   });
 }
+
