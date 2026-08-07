@@ -1,0 +1,2520 @@
+[
+  {
+    "id": "usr_rt",
+    "name": "Daniyal Hussain",
+    "email": "daniyal.hussain1@outlook.com",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 84,
+    "requestsLimit": 100,
+    "costUsd": 1.26,
+    "tokensSpent": 513996,
+    "lastActiveAt": "2026-07-06T15:34:01.022Z",
+    "signupDate": "2024-06-03T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "mobile": "+819012349876"
+  },
+  {
+    "id": "usr_ru",
+    "name": "Gabriel Park",
+    "email": "gabriel.park2@proton.me",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 76,
+    "requestsLimit": 100,
+    "costUsd": 0.81,
+    "tokensSpent": 138548,
+    "lastActiveAt": "2026-07-13T15:34:01.022Z",
+    "signupDate": "2024-06-06T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "mobile": "+15555550701"
+  },
+  {
+    "id": "usr_rv",
+    "name": "Jana Mahmood",
+    "email": "jana.mahmood3@hey.com",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 81,
+    "requestsLimit": 100,
+    "costUsd": 0.97,
+    "tokensSpent": 277749,
+    "lastActiveAt": "2026-07-10T15:34:01.022Z",
+    "signupDate": "2024-06-09T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "mobile": "+5511998765012"
+  },
+  {
+    "id": "usr_rw",
+    "name": "Mateo Hassan",
+    "email": "mateo.hassan4@acme.co",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 95,
+    "requestsLimit": 100,
+    "costUsd": 1.46,
+    "tokensSpent": 651795,
+    "lastActiveAt": "2026-07-09T15:34:01.022Z",
+    "signupDate": "2024-06-12T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [],
+    "quotaHistory": [
+      {
+        "date": "2026-07-03T00:00:00.000Z",
+        "amount": 106,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [],
+    "mobile": "+33145678901"
+  },
+  {
+    "id": "usr_rx",
+    "name": "Petra Pinto",
+    "email": "petra.pinto5@studioklein.com",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 26,
+    "requestsLimit": 100,
+    "costUsd": 0.3,
+    "tokensSpent": 168792,
+    "lastActiveAt": "2026-07-21T15:34:01.022Z",
+    "signupDate": "2024-06-15T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "mobile": "+493012349911"
+  },
+  {
+    "id": "usr_ry",
+    "name": "Salma Oduya",
+    "email": "salma.oduya6@northwind.io",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 52,
+    "requestsLimit": 100,
+    "costUsd": 0.38,
+    "tokensSpent": 232336,
+    "lastActiveAt": "2026-07-21T15:34:01.022Z",
+    "signupDate": "2024-06-18T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "mobile": "+15555550377"
+  },
+  {
+    "id": "usr_rz",
+    "name": "Viktor Diallo",
+    "email": "viktor.diallo7@fastmail.com",
+    "tier": "free",
+    "status": "suspended",
+    "requestsUsed": 18,
+    "requestsLimit": 100,
+    "costUsd": 0.18,
+    "tokensSpent": 108882,
+    "lastActiveAt": "2026-07-10T15:34:01.022Z",
+    "signupDate": "2024-06-21T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "mobile": "+919812349911"
+  },
+  {
+    "id": "usr_s0",
+    "name": "Yara Reyes",
+    "email": "yara.reyes8@gmail.com",
+    "tier": "free",
+    "status": "grace",
+    "requestsUsed": 77,
+    "requestsLimit": 100,
+    "costUsd": 0.38,
+    "tokensSpent": 534226,
+    "lastActiveAt": "2026-07-15T15:34:01.022Z",
+    "signupDate": "2024-06-24T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [],
+    "quotaHistory": [
+      {
+        "date": "2026-07-15T00:00:00.000Z",
+        "amount": 74,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [],
+    "mobile": "+61298765432"
+  },
+  {
+    "id": "usr_s1",
+    "name": "Bilqis Awan",
+    "email": "bilqis.awan9@outlook.com",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 30,
+    "requestsLimit": 100,
+    "costUsd": 0.42,
+    "tokensSpent": 78540,
+    "lastActiveAt": "2026-07-15T15:34:01.022Z",
+    "signupDate": "2024-06-27T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "mobile": "+14155550199"
+  },
+  {
+    "id": "usr_s2",
+    "name": "Esme Hernandez",
+    "email": "esme.hernandez10@proton.me",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 79,
+    "requestsLimit": 100,
+    "costUsd": 0.55,
+    "tokensSpent": 132799,
+    "lastActiveAt": "2026-07-17T15:34:01.022Z",
+    "signupDate": "2024-06-02T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "mobile": "+442079461002"
+  },
+  {
+    "id": "usr_s3",
+    "name": "Haruki Suzuki",
+    "email": "haruki.suzuki11@hey.com",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 30,
+    "requestsLimit": 100,
+    "costUsd": 0.34,
+    "tokensSpent": 214890,
+    "lastActiveAt": "2026-07-04T15:34:01.022Z",
+    "signupDate": "2024-06-05T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "mobile": "+971501239998"
+  },
+  {
+    "id": "usr_s4",
+    "name": "Karima Larsen",
+    "email": "karima.larsen12@acme.co",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 70,
+    "requestsLimit": 100,
+    "costUsd": 0.31,
+    "tokensSpent": 131600,
+    "lastActiveAt": "2026-07-18T15:34:01.022Z",
+    "signupDate": "2024-06-08T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [],
+    "quotaHistory": [
+      {
+        "date": "2026-07-07T00:00:00.000Z",
+        "amount": 142,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [],
+    "mobile": "+14155550101"
+  },
+  {
+    "id": "usr_s5",
+    "name": "Niels Brooks",
+    "email": "niels.brooks13@studioklein.com",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 81,
+    "requestsLimit": 100,
+    "costUsd": 1.13,
+    "tokensSpent": 304317,
+    "lastActiveAt": "2026-07-16T15:34:01.022Z",
+    "signupDate": "2024-06-11T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "mobile": "+442079460958"
+  },
+  {
+    "id": "usr_s6",
+    "name": "Qadir Ahmed",
+    "email": "qadir.ahmed14@northwind.io",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 28,
+    "requestsLimit": 100,
+    "costUsd": 0.41,
+    "tokensSpent": 144620,
+    "lastActiveAt": "2026-07-14T15:34:01.022Z",
+    "signupDate": "2024-06-14T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "mobile": "+971501234567"
+  },
+  {
+    "id": "usr_s7",
+    "name": "Talin Iqbal",
+    "email": "talin.iqbal15@fastmail.com",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 60,
+    "requestsLimit": 100,
+    "costUsd": 0.62,
+    "tokensSpent": 375120,
+    "lastActiveAt": "2026-07-18T15:34:01.022Z",
+    "signupDate": "2024-06-17T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "mobile": "+15555550456"
+  },
+  {
+    "id": "usr_s8",
+    "name": "Wren Vargas",
+    "email": "wren.vargas16@gmail.com",
+    "tier": "free",
+    "status": "suspended",
+    "requestsUsed": 79,
+    "requestsLimit": 100,
+    "costUsd": 1.21,
+    "tokensSpent": 337962,
+    "lastActiveAt": "2026-07-13T15:34:01.022Z",
+    "signupDate": "2024-06-20T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [],
+    "quotaHistory": [
+      {
+        "date": "2026-07-19T00:00:00.000Z",
+        "amount": 110,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [],
+    "mobile": "+5511998765432"
+  },
+  {
+    "id": "usr_s9",
+    "name": "Aleks Nguyen",
+    "email": "aleks.nguyen17@outlook.com",
+    "tier": "pro",
+    "status": "grace",
+    "requestsUsed": 206,
+    "requestsLimit": 500,
+    "costUsd": 2.28,
+    "tokensSpent": 1018670,
+    "lastActiveAt": "2026-07-11T15:34:01.022Z",
+    "signupDate": "2024-06-23T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-15T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+15555550612"
+  },
+  {
+    "id": "usr_sa",
+    "name": "Dilara Diaz",
+    "email": "dilara.diaz18@proton.me",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 284,
+    "requestsLimit": 500,
+    "costUsd": 1.05,
+    "tokensSpent": 493024,
+    "lastActiveAt": "2026-07-21T15:34:01.022Z",
+    "signupDate": "2024-06-26T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-12T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+33145678932"
+  },
+  {
+    "id": "usr_sb",
+    "name": "Gojo Jansen",
+    "email": "gojo.jansen19@hey.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 234,
+    "requestsLimit": 500,
+    "costUsd": 1.59,
+    "tokensSpent": 1694862,
+    "lastActiveAt": "2026-07-15T15:34:01.022Z",
+    "signupDate": "2024-06-01T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-09T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+8613800138000"
+  },
+  {
+    "id": "usr_sc",
+    "name": "Jibril Carter",
+    "email": "jibril.carter20@acme.co",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 209,
+    "requestsLimit": 500,
+    "costUsd": 1.72,
+    "tokensSpent": 941127,
+    "lastActiveAt": "2026-07-23T15:34:01.022Z",
+    "signupDate": "2024-06-04T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-11T00:00:00.000Z",
+        "amount": 78,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-06T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+15555550844"
+  },
+  {
+    "id": "usr_sd",
+    "name": "Ada Patel",
+    "email": "ada.patel21@studioklein.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 155,
+    "requestsLimit": 500,
+    "costUsd": 0.73,
+    "tokensSpent": 671305,
+    "lastActiveAt": "2026-07-12T15:34:01.022Z",
+    "signupDate": "2024-06-07T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-03T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+33145678901"
+  },
+  {
+    "id": "usr_se",
+    "name": "Daniyal Murphy",
+    "email": "daniyal.murphy22@northwind.io",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 195,
+    "requestsLimit": 500,
+    "costUsd": 1.67,
+    "tokensSpent": 907140,
+    "lastActiveAt": "2026-07-09T15:34:01.022Z",
+    "signupDate": "2024-06-10T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-07-31T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+5511998765012"
+  },
+  {
+    "id": "usr_sf",
+    "name": "Gabriel Mendez",
+    "email": "gabriel.mendez23@fastmail.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 432,
+    "requestsLimit": 500,
+    "costUsd": 6.17,
+    "tokensSpent": 794016,
+    "lastActiveAt": "2026-07-15T15:34:01.022Z",
+    "signupDate": "2024-06-13T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-17T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+15555550701"
+  },
+  {
+    "id": "usr_sg",
+    "name": "Jana Becker",
+    "email": "jana.becker24@gmail.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 200,
+    "requestsLimit": 500,
+    "costUsd": 1.86,
+    "tokensSpent": 1207200,
+    "lastActiveAt": "2026-07-21T15:34:01.022Z",
+    "signupDate": "2024-06-16T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-03T00:00:00.000Z",
+        "amount": 146,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-14T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+819012349876"
+  },
+  {
+    "id": "usr_sh",
+    "name": "Mateo Akhtar",
+    "email": "mateo.akhtar25@outlook.com",
+    "tier": "pro",
+    "status": "suspended",
+    "requestsUsed": 140,
+    "requestsLimit": 500,
+    "costUsd": 0.63,
+    "tokensSpent": 910840,
+    "lastActiveAt": "2026-07-22T15:34:01.023Z",
+    "signupDate": "2024-06-19T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-11T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+15555550967"
+  },
+  {
+    "id": "usr_si",
+    "name": "Petra Yamamoto",
+    "email": "petra.yamamoto26@proton.me",
+    "tier": "pro",
+    "status": "grace",
+    "requestsUsed": 309,
+    "requestsLimit": 500,
+    "costUsd": 4.08,
+    "tokensSpent": 2147859,
+    "lastActiveAt": "2026-07-14T15:34:01.023Z",
+    "signupDate": "2024-06-22T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-08T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+919812349911"
+  },
+  {
+    "id": "usr_sj",
+    "name": "Salma Aslan",
+    "email": "salma.aslan27@hey.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 276,
+    "requestsLimit": 500,
+    "costUsd": 3.7,
+    "tokensSpent": 1339428,
+    "lastActiveAt": "2026-07-13T15:34:01.023Z",
+    "signupDate": "2024-06-25T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-05T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+15555550377"
+  },
+  {
+    "id": "usr_sk",
+    "name": "Viktor Tanaka",
+    "email": "viktor.tanaka28@acme.co",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 353,
+    "requestsLimit": 500,
+    "costUsd": 5.19,
+    "tokensSpent": 1696165,
+    "lastActiveAt": "2026-07-19T15:34:01.023Z",
+    "signupDate": "2024-05-31T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-15T00:00:00.000Z",
+        "amount": 114,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-02T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+493012349911"
+  },
+  {
+    "id": "usr_sl",
+    "name": "Yara Kim",
+    "email": "yara.kim29@studioklein.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 123,
+    "requestsLimit": 500,
+    "costUsd": 1.6,
+    "tokensSpent": 718566,
+    "lastActiveAt": "2026-07-07T15:34:01.023Z",
+    "signupDate": "2024-06-03T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-07-30T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+919812345678"
+  },
+  {
+    "id": "usr_sm",
+    "name": "Bilqis Nair",
+    "email": "bilqis.nair30@northwind.io",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 242,
+    "requestsLimit": 500,
+    "costUsd": 3.16,
+    "tokensSpent": 1157002,
+    "lastActiveAt": "2026-07-14T15:34:01.023Z",
+    "signupDate": "2024-06-06T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-16T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+15555550234"
+  },
+  {
+    "id": "usr_sn",
+    "name": "Esme Ali",
+    "email": "esme.ali31@fastmail.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 266,
+    "requestsLimit": 500,
+    "costUsd": 2.96,
+    "tokensSpent": 943768,
+    "lastActiveAt": "2026-07-08T15:34:01.023Z",
+    "signupDate": "2024-06-09T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-13T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+493012345678"
+  },
+  {
+    "id": "usr_so",
+    "name": "Haruki Cruz",
+    "email": "haruki.cruz32@gmail.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 157,
+    "requestsLimit": 500,
+    "costUsd": 1.53,
+    "tokensSpent": 394227,
+    "lastActiveAt": "2026-07-22T15:34:01.023Z",
+    "signupDate": "2024-06-12T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-07T00:00:00.000Z",
+        "amount": 82,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-10T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+8613800138013"
+  },
+  {
+    "id": "usr_sp",
+    "name": "Karima Russo",
+    "email": "karima.russo33@outlook.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 382,
+    "requestsLimit": 500,
+    "costUsd": 1.64,
+    "tokensSpent": 1459622,
+    "lastActiveAt": "2026-07-11T15:34:01.023Z",
+    "signupDate": "2024-06-15T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-07T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+61298765432"
+  },
+  {
+    "id": "usr_sq",
+    "name": "Niels Beauchamp",
+    "email": "niels.beauchamp34@proton.me",
+    "tier": "pro",
+    "status": "suspended",
+    "requestsUsed": 164,
+    "requestsLimit": 500,
+    "costUsd": 2.26,
+    "tokensSpent": 1104540,
+    "lastActiveAt": "2026-07-17T15:34:01.023Z",
+    "signupDate": "2024-06-18T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-04T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+14155550199"
+  },
+  {
+    "id": "usr_sr",
+    "name": "Qadir Garcia",
+    "email": "qadir.garcia35@hey.com",
+    "tier": "business",
+    "status": "grace",
+    "requestsUsed": 1351,
+    "requestsLimit": 2500,
+    "costUsd": 15.3,
+    "tokensSpent": 9400258,
+    "lastActiveAt": "2026-07-24T15:34:01.023Z",
+    "signupDate": "2024-06-21T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-01T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+442079461002"
+  },
+  {
+    "id": "usr_ss",
+    "name": "Talin Cohen",
+    "email": "talin.cohen36@acme.co",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 639,
+    "requestsLimit": 2500,
+    "costUsd": 4.52,
+    "tokensSpent": 3815469,
+    "lastActiveAt": "2026-07-12T15:34:01.023Z",
+    "signupDate": "2024-06-24T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-19T00:00:00.000Z",
+        "amount": 50,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-07-29T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+971501239998"
+  },
+  {
+    "id": "usr_st",
+    "name": "Wren Sato",
+    "email": "wren.sato37@studioklein.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1649,
+    "requestsLimit": 2500,
+    "costUsd": 10.91,
+    "tokensSpent": 10499183,
+    "lastActiveAt": "2026-07-10T15:34:01.023Z",
+    "signupDate": "2024-06-27T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-03-26T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-02-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-01-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-15T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+14155550101"
+  },
+  {
+    "id": "usr_su",
+    "name": "Aleks Mendoza",
+    "email": "aleks.mendoza38@northwind.io",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1601,
+    "requestsLimit": 2500,
+    "costUsd": 22.12,
+    "tokensSpent": 8296382,
+    "lastActiveAt": "2026-07-20T15:34:01.023Z",
+    "signupDate": "2024-06-02T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-03-26T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-02-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-12T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+442079460958"
+  },
+  {
+    "id": "usr_sv",
+    "name": "Dilara Walsh",
+    "email": "dilara.walsh39@fastmail.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 941,
+    "requestsLimit": 2500,
+    "costUsd": 5.09,
+    "tokensSpent": 3041312,
+    "lastActiveAt": "2026-07-22T15:34:01.023Z",
+    "signupDate": "2024-06-05T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-03-26T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-09T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+971501234567"
+  },
+  {
+    "id": "usr_sw",
+    "name": "Gojo Wong",
+    "email": "gojo.wong40@gmail.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 981,
+    "requestsLimit": 2500,
+    "costUsd": 9.51,
+    "tokensSpent": 6320583,
+    "lastActiveAt": "2026-07-15T15:34:01.023Z",
+    "signupDate": "2024-06-08T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-11T00:00:00.000Z",
+        "amount": 118,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-06T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+15555550456"
+  },
+  {
+    "id": "usr_sx",
+    "name": "Jibril Pereira",
+    "email": "jibril.pereira41@outlook.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 828,
+    "requestsLimit": 2500,
+    "costUsd": 10.92,
+    "tokensSpent": 5948352,
+    "lastActiveAt": "2026-07-16T15:34:01.024Z",
+    "signupDate": "2024-06-11T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-03T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+5511998765432"
+  },
+  {
+    "id": "usr_sy",
+    "name": "Ada Chen",
+    "email": "ada.chen42@proton.me",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 2109,
+    "requestsLimit": 2500,
+    "costUsd": 15.4,
+    "tokensSpent": 11820945,
+    "lastActiveAt": "2026-07-08T15:34:01.024Z",
+    "signupDate": "2024-06-14T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-07-31T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+15555550612"
+  },
+  {
+    "id": "usr_sz",
+    "name": "Daniyal Lopez",
+    "email": "daniyal.lopez43@hey.com",
+    "tier": "business",
+    "status": "suspended",
+    "requestsUsed": 2359,
+    "requestsLimit": 2500,
+    "costUsd": 16.5,
+    "tokensSpent": 11710076,
+    "lastActiveAt": "2026-07-19T15:34:01.024Z",
+    "signupDate": "2024-06-17T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-03-26T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-02-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-01-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-17T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+819012345678"
+  },
+  {
+    "id": "usr_t0",
+    "name": "Gabriel Rossi",
+    "email": "gabriel.rossi44@acme.co",
+    "tier": "business",
+    "status": "grace",
+    "requestsUsed": 448,
+    "requestsLimit": 2500,
+    "costUsd": 2.44,
+    "tokensSpent": 2223872,
+    "lastActiveAt": "2026-07-20T15:34:01.024Z",
+    "signupDate": "2024-06-20T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-03-26T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-02-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-03T00:00:00.000Z",
+        "amount": 86,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-14T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+14155550199"
+  },
+  {
+    "id": "usr_t1",
+    "name": "Jana Schmidt",
+    "email": "jana.schmidt45@studioklein.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1310,
+    "requestsLimit": 2500,
+    "costUsd": 11.46,
+    "tokensSpent": 6666590,
+    "lastActiveAt": "2026-07-18T15:34:01.024Z",
+    "signupDate": "2024-06-23T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-03-26T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-11T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+61298765432"
+  },
+  {
+    "id": "usr_t2",
+    "name": "Mateo Prasad",
+    "email": "mateo.prasad46@northwind.io",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 825,
+    "requestsLimit": 2500,
+    "costUsd": 5.38,
+    "tokensSpent": 4891425,
+    "lastActiveAt": "2026-07-07T15:34:01.024Z",
+    "signupDate": "2024-06-26T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-08T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+971501239998"
+  },
+  {
+    "id": "usr_t3",
+    "name": "Petra Maguire",
+    "email": "petra.maguire47@fastmail.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1879,
+    "requestsLimit": 2500,
+    "costUsd": 19.93,
+    "tokensSpent": 4738838,
+    "lastActiveAt": "2026-07-18T15:34:01.024Z",
+    "signupDate": "2024-06-01T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-05T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+442079461002"
+  },
+  {
+    "id": "usr_t4",
+    "name": "Salma Khan",
+    "email": "salma.khan48@gmail.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 2085,
+    "requestsLimit": 2500,
+    "costUsd": 12,
+    "tokensSpent": 11849055,
+    "lastActiveAt": "2026-07-16T15:34:01.024Z",
+    "signupDate": "2024-06-04T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-15T00:00:00.000Z",
+        "amount": 54,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-02T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+442079460958"
+  },
+  {
+    "id": "usr_t5",
+    "name": "Viktor Hussain",
+    "email": "viktor.hussain49@outlook.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 2045,
+    "requestsLimit": 2500,
+    "costUsd": 8.72,
+    "tokensSpent": 15006210,
+    "lastActiveAt": "2026-07-08T15:34:01.024Z",
+    "signupDate": "2024-06-07T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-03-26T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-02-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-01-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-07-30T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+14155550101"
+  },
+  {
+    "id": "usr_t6",
+    "name": "Yara Park",
+    "email": "yara.park50@proton.me",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 2286,
+    "requestsLimit": 2500,
+    "costUsd": 28.91,
+    "tokensSpent": 8819388,
+    "lastActiveAt": "2026-07-16T15:34:01.024Z",
+    "signupDate": "2024-06-10T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-03-26T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-02-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-16T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+15555550456"
+  },
+  {
+    "id": "usr_t7",
+    "name": "Bilqis Mahmood",
+    "email": "bilqis.mahmood51@hey.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1600,
+    "requestsLimit": 2500,
+    "costUsd": 10.1,
+    "tokensSpent": 8622400,
+    "lastActiveAt": "2026-07-11T15:34:01.024Z",
+    "signupDate": "2024-06-13T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-03-26T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-13T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+971501234567"
+  },
+  {
+    "id": "usr_t8",
+    "name": "Esme Hassan",
+    "email": "esme.hassan52@acme.co",
+    "tier": "business",
+    "status": "suspended",
+    "requestsUsed": 1062,
+    "requestsLimit": 2500,
+    "costUsd": 8.74,
+    "tokensSpent": 7637904,
+    "lastActiveAt": "2026-07-07T15:34:01.024Z",
+    "signupDate": "2024-06-16T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-07T00:00:00.000Z",
+        "amount": 122,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-10T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+15555550612"
+  },
+  {
+    "id": "usr_t9",
+    "name": "Haruki Pinto",
+    "email": "haruki.pinto53@studioklein.com",
+    "tier": "business",
+    "status": "grace",
+    "requestsUsed": 962,
+    "requestsLimit": 2500,
+    "costUsd": 7.29,
+    "tokensSpent": 6706102,
+    "lastActiveAt": "2026-07-23T15:34:01.024Z",
+    "signupDate": "2024-06-19T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-07T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+5511998765432"
+  },
+  {
+    "id": "usr_ta",
+    "name": "Karima Oduya",
+    "email": "karima.oduya54@northwind.io",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1273,
+    "requestsLimit": 2500,
+    "costUsd": 8.19,
+    "tokensSpent": 2808238,
+    "lastActiveAt": "2026-07-10T15:34:01.024Z",
+    "signupDate": "2024-06-22T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-04T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+15555550189"
+  },
+  {
+    "id": "usr_tb",
+    "name": "Niels Diallo",
+    "email": "niels.diallo55@fastmail.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1417,
+    "requestsLimit": 2500,
+    "costUsd": 20.43,
+    "tokensSpent": 4946747,
+    "lastActiveAt": "2026-07-12T15:34:01.024Z",
+    "signupDate": "2024-06-25T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-03-26T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-02-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-01-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-01T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+15555550844"
+  },
+  {
+    "id": "usr_tc",
+    "name": "Qadir Reyes",
+    "email": "qadir.reyes56@gmail.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1448,
+    "requestsLimit": 2500,
+    "costUsd": 22.29,
+    "tokensSpent": 5592176,
+    "lastActiveAt": "2026-07-23T15:34:01.024Z",
+    "signupDate": "2024-05-31T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-03-26T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-02-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-19T00:00:00.000Z",
+        "amount": 90,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-07-29T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+8613800138000"
+  },
+  {
+    "id": "usr_td",
+    "name": "Talin Awan",
+    "email": "talin.awan57@outlook.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 395,
+    "requestsLimit": 2500,
+    "costUsd": 5.57,
+    "tokensSpent": 2422930,
+    "lastActiveAt": "2026-07-18T15:34:01.024Z",
+    "signupDate": "2024-06-03T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-03-26T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-15T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+5511998765012"
+  },
+  {
+    "id": "usr_te",
+    "name": "Wren Hernandez",
+    "email": "wren.hernandez58@proton.me",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 2402,
+    "requestsLimit": 2500,
+    "costUsd": 16.41,
+    "tokensSpent": 14974068,
+    "lastActiveAt": "2026-07-08T15:34:01.024Z",
+    "signupDate": "2024-06-06T03:00:00.000Z",
+    "platform": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "android",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-04-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-12T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+33145678901"
+  },
+  {
+    "id": "usr_tf",
+    "name": "Aleks Suzuki",
+    "email": "aleks.suzuki59@hey.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 911,
+    "requestsLimit": 2500,
+    "costUsd": 7.38,
+    "tokensSpent": 4127741,
+    "lastActiveAt": "2026-07-24T15:34:01.024Z",
+    "signupDate": "2024-06-09T03:00:00.000Z",
+    "platform": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "web",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2026-05-25T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-09T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+819012349876"
+  },
+  {
+    "id": "usr_tg",
+    "name": "Dilara Larsen",
+    "email": "dilara.larsen60@acme.co",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 382,
+    "requestsLimit": 2500,
+    "costUsd": 5.09,
+    "tokensSpent": 1212086,
+    "lastActiveAt": "2026-07-22T15:34:01.024Z",
+    "signupDate": "2024-06-12T03:00:00.000Z",
+    "platform": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "signupSource": "ios",
+    "paymentHistory": [
+      {
+        "date": "2026-06-24T00:00:00.000Z",
+        "amountUsd": 99,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-11T00:00:00.000Z",
+        "amount": 58,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 99,
+        "nextBillingAt": "2026-08-06T00:00:00.000Z"
+      }
+    ],
+    "mobile": "+15555550701"
+  }
+]

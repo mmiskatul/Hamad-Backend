@@ -1,0 +1,538 @@
+[
+  {
+    "id": "aud_0001",
+    "at": "2026-07-24T15:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "login",
+    "target": "usr_a3",
+    "reason": "Pro-tier migration grace",
+    "ip": "10.0.1.1"
+  },
+  {
+    "id": "aud_0002",
+    "at": "2026-07-24T10:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "quotaOverride",
+    "target": "prov_grok",
+    "reason": "Customer success request",
+    "ip": "10.0.2.8"
+  },
+  {
+    "id": "aud_0003",
+    "at": "2026-07-24T05:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "userStatus",
+    "target": "tkt_001",
+    "reason": "Manual override for incident",
+    "ip": "10.0.3.15"
+  },
+  {
+    "id": "aud_0004",
+    "at": "2026-07-24T00:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "providerToggle",
+    "target": "model_gpt",
+    "reason": "Suspicious API pattern",
+    "ip": "10.0.4.22"
+  },
+  {
+    "id": "aud_0005",
+    "at": "2026-07-23T19:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "tierChange",
+    "target": "tier_pro",
+    "reason": "Restoring access post-chargeback",
+    "ip": "10.0.5.29"
+  },
+  {
+    "id": "aud_0006",
+    "at": "2026-07-23T14:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "modelToggle",
+    "target": "usr_a3",
+    "reason": "Maintenance window",
+    "ip": "10.0.6.36"
+  },
+  {
+    "id": "aud_0007",
+    "at": "2026-07-23T09:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "sessionRevoked",
+    "target": "prov_grok",
+    "reason": "Pro-tier migration grace",
+    "ip": "10.0.7.43"
+  },
+  {
+    "id": "aud_0008",
+    "at": "2026-07-23T04:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "login",
+    "target": "tkt_001",
+    "reason": "Customer success request",
+    "ip": "10.0.8.50"
+  },
+  {
+    "id": "aud_0009",
+    "at": "2026-07-22T23:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "quotaOverride",
+    "target": "model_gpt",
+    "reason": "Manual override for incident",
+    "ip": "10.0.9.57"
+  },
+  {
+    "id": "aud_0010",
+    "at": "2026-07-22T18:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "userStatus",
+    "target": "tier_pro",
+    "reason": "Suspicious API pattern",
+    "ip": "10.0.10.64"
+  },
+  {
+    "id": "aud_0011",
+    "at": "2026-07-22T13:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "providerToggle",
+    "target": "usr_a3",
+    "reason": "Restoring access post-chargeback",
+    "ip": "10.0.11.71"
+  },
+  {
+    "id": "aud_0012",
+    "at": "2026-07-22T08:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "tierChange",
+    "target": "prov_grok",
+    "reason": "Maintenance window",
+    "ip": "10.0.12.78"
+  },
+  {
+    "id": "aud_0013",
+    "at": "2026-07-22T03:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "modelToggle",
+    "target": "tkt_001",
+    "reason": "Pro-tier migration grace",
+    "ip": "10.0.1.85"
+  },
+  {
+    "id": "aud_0014",
+    "at": "2026-07-21T22:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "sessionRevoked",
+    "target": "model_gpt",
+    "reason": "Customer success request",
+    "ip": "10.0.2.92"
+  },
+  {
+    "id": "aud_0015",
+    "at": "2026-07-21T17:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "login",
+    "target": "tier_pro",
+    "reason": "Manual override for incident",
+    "ip": "10.0.3.99"
+  },
+  {
+    "id": "aud_0016",
+    "at": "2026-07-21T12:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "quotaOverride",
+    "target": "usr_a3",
+    "reason": "Suspicious API pattern",
+    "ip": "10.0.4.106"
+  },
+  {
+    "id": "aud_0017",
+    "at": "2026-07-21T07:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "userStatus",
+    "target": "prov_grok",
+    "reason": "Restoring access post-chargeback",
+    "ip": "10.0.5.113"
+  },
+  {
+    "id": "aud_0018",
+    "at": "2026-07-21T02:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "providerToggle",
+    "target": "tkt_001",
+    "reason": "Maintenance window",
+    "ip": "10.0.6.120"
+  },
+  {
+    "id": "aud_0019",
+    "at": "2026-07-20T21:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "tierChange",
+    "target": "model_gpt",
+    "reason": "Pro-tier migration grace",
+    "ip": "10.0.7.127"
+  },
+  {
+    "id": "aud_0020",
+    "at": "2026-07-20T16:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "modelToggle",
+    "target": "tier_pro",
+    "reason": "Customer success request",
+    "ip": "10.0.8.134"
+  },
+  {
+    "id": "aud_0021",
+    "at": "2026-07-20T11:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "sessionRevoked",
+    "target": "usr_a3",
+    "reason": "Manual override for incident",
+    "ip": "10.0.9.141"
+  },
+  {
+    "id": "aud_0022",
+    "at": "2026-07-20T06:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "login",
+    "target": "prov_grok",
+    "reason": "Suspicious API pattern",
+    "ip": "10.0.10.148"
+  },
+  {
+    "id": "aud_0023",
+    "at": "2026-07-20T01:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "quotaOverride",
+    "target": "tkt_001",
+    "reason": "Restoring access post-chargeback",
+    "ip": "10.0.11.155"
+  },
+  {
+    "id": "aud_0024",
+    "at": "2026-07-19T20:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "userStatus",
+    "target": "model_gpt",
+    "reason": "Maintenance window",
+    "ip": "10.0.12.162"
+  },
+  {
+    "id": "aud_0025",
+    "at": "2026-07-19T15:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "providerToggle",
+    "target": "tier_pro",
+    "reason": "Pro-tier migration grace",
+    "ip": "10.0.1.169"
+  },
+  {
+    "id": "aud_0026",
+    "at": "2026-07-19T10:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "tierChange",
+    "target": "usr_a3",
+    "reason": "Customer success request",
+    "ip": "10.0.2.176"
+  },
+  {
+    "id": "aud_0027",
+    "at": "2026-07-19T05:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "modelToggle",
+    "target": "prov_grok",
+    "reason": "Manual override for incident",
+    "ip": "10.0.3.183"
+  },
+  {
+    "id": "aud_0028",
+    "at": "2026-07-19T00:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "sessionRevoked",
+    "target": "tkt_001",
+    "reason": "Suspicious API pattern",
+    "ip": "10.0.4.190"
+  },
+  {
+    "id": "aud_0029",
+    "at": "2026-07-18T19:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "login",
+    "target": "model_gpt",
+    "reason": "Restoring access post-chargeback",
+    "ip": "10.0.5.197"
+  },
+  {
+    "id": "aud_0030",
+    "at": "2026-07-18T14:34:01.040Z",
+    "actor": "admin@oneai.app",
+    "action": "quotaOverride",
+    "target": "tier_pro",
+    "reason": "Maintenance window",
+    "ip": "10.0.6.204"
+  },
+  {
+    "id": "aud_0031",
+    "at": "2026-07-24T16:00:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "tier.update",
+    "target": "tier_pro",
+    "reason": "Raised monthly tokens to 5000 for trial cohort",
+    "ip": "10.0.1.1",
+    "meta": { "tierId": "pro", "before": { "tokensLimit": 4000 }, "after": { "tokensLimit": 5000 } }
+  },
+  {
+    "id": "aud_0032",
+    "at": "2026-07-24T15:45:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "model.toggle",
+    "target": "model_grok",
+    "reason": "Disabled Grok while xAI outage is investigated",
+    "ip": "10.0.1.1",
+    "meta": { "modelId": "grok", "enabled": false }
+  },
+  {
+    "id": "aud_0033",
+    "at": "2026-07-24T15:30:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "usage.toggle",
+    "target": "usage-visibility",
+    "reason": "Disabled customer usage dashboard during incident",
+    "ip": "10.0.1.1",
+    "meta": { "enabled": false }
+  },
+  {
+    "id": "aud_0034",
+    "at": "2026-07-20T12:00:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "legal.publish",
+    "target": "terms",
+    "reason": "Initial Terms & Conditions published",
+    "ip": "10.0.1.1",
+    "meta": { "docType": "terms", "versionId": "v1" }
+  },
+  {
+    "id": "aud_0035",
+    "at": "2026-07-20T12:05:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "legal.publish",
+    "target": "privacy",
+    "reason": "Initial Privacy Policy published",
+    "ip": "10.0.1.1",
+    "meta": { "docType": "privacy", "versionId": "v1" }
+  },
+  {
+    "id": "aud_0036",
+    "at": "2026-07-21T09:00:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "legal.restore",
+    "target": "terms",
+    "reason": "Rolled back to v1 after v2 typo",
+    "ip": "10.0.1.1",
+    "meta": { "docType": "terms", "versionId": "v1" }
+  },
+  {
+    "id": "aud_0037",
+    "at": "2026-07-21T09:05:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "legal.delete",
+    "target": "terms",
+    "reason": "Removed v2 typo draft",
+    "ip": "10.0.1.1",
+    "meta": { "docType": "terms", "versionId": "v2" }
+  },
+  {
+    "id": "aud_0038",
+    "at": "2026-07-23T17:10:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "support.reply",
+    "target": "tkt_001",
+    "reason": "Replied to ticket tkt_001 — login failure",
+    "ip": "10.0.1.1",
+    "meta": { "ticketId": "tkt_001", "preview": "Thanks for the detail. I checked the auth logs..." }
+  },
+  {
+    "id": "aud_0039",
+    "at": "2026-07-23T18:05:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "support.reply",
+    "target": "tkt_001",
+    "reason": "Replied to ticket tkt_001 — fix deployed",
+    "ip": "10.0.1.1",
+    "meta": { "ticketId": "tkt_001", "preview": "Got it. We rolled out a fix at 18:00..." }
+  },
+  {
+    "id": "aud_0040",
+    "at": "2026-07-24T09:30:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "support.reply",
+    "target": "tkt_001",
+    "reason": "Follow-up on ticket tkt_001",
+    "ip": "10.0.1.1",
+    "meta": { "ticketId": "tkt_001", "preview": "Following up — still seeing the same error..." }
+  },
+  {
+    "id": "aud_0041",
+    "at": "2026-07-22T15:00:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "support.close",
+    "target": "tkt_009",
+    "reason": "Quota reset anomaly resolved",
+    "ip": "10.0.1.1",
+    "meta": { "ticketId": "tkt_009" }
+  },
+  {
+    "id": "aud_0042",
+    "at": "2026-07-22T14:00:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "support.close",
+    "target": "tkt_005",
+    "reason": "User migrated to Pro plan",
+    "ip": "10.0.1.1",
+    "meta": { "ticketId": "tkt_005" }
+  },
+  {
+    "id": "aud_0043",
+    "at": "2026-07-24T14:30:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "tier.update",
+    "target": "tier_business",
+    "reason": "Adjusted business SLA pricing after enterprise deal",
+    "ip": "10.0.1.1",
+    "meta": { "tierId": "business", "before": { "monthlyUsd": 24 }, "after": { "monthlyUsd": 29 } }
+  },
+  {
+    "id": "aud_0044",
+    "at": "2026-07-23T14:00:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "model.toggle",
+    "target": "model_claude",
+    "reason": "Disabled Claude during rate-limit incident",
+    "ip": "10.0.1.1",
+    "meta": { "modelId": "claude", "enabled": false }
+  },
+  {
+    "id": "aud_0045",
+    "at": "2026-07-22T10:00:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "usage.toggle",
+    "target": "usage-visibility",
+    "reason": "Re-enabled customer usage dashboard after RCA",
+    "ip": "10.0.1.1",
+    "meta": { "enabled": true }
+  },
+  {
+    "id": "aud_0046",
+    "at": "2026-07-21T11:14:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "quotaOverride",
+    "target": "usr_rw",
+    "reason": "Comp outage credit (Gemini brownout 7/19)",
+    "ip": "10.0.1.1",
+    "meta": { "amount": 106 }
+  },
+  {
+    "id": "aud_0047",
+    "at": "2026-07-15T09:00:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "quotaOverride",
+    "target": "usr_s0",
+    "reason": "Comp outage credit (rate-limit incident 7/14)",
+    "ip": "10.0.1.1",
+    "meta": { "amount": 74 }
+  },
+  {
+    "id": "aud_0048",
+    "at": "2026-07-19T15:34:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "quotaOverride",
+    "target": "usr_s8",
+    "reason": "Comp outage credit (Claude rate-limit 7/18)",
+    "ip": "10.0.1.1",
+    "meta": { "amount": 110 }
+  },
+  {
+    "id": "aud_0049",
+    "at": "2026-07-23T12:00:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "tierChange",
+    "target": "usr_s9",
+    "reason": "Upgraded to Pro per sales follow-up",
+    "ip": "10.0.1.1",
+    "meta": { "from": "free", "to": "pro" }
+  },
+  {
+    "id": "aud_0050",
+    "at": "2026-07-12T08:00:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "userStatus",
+    "target": "usr_sb",
+    "reason": "Reactivated after payment retry success",
+    "ip": "10.0.1.1"
+  },
+  {
+    "id": "aud_0051",
+    "at": "2026-07-21T18:30:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "sessionRevoked",
+    "target": "usr_sc",
+    "reason": "Suspicious login from new geo (Singapore)",
+    "ip": "10.0.1.1"
+  },
+  {
+    "id": "aud_0052",
+    "at": "2026-07-22T14:20:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "modelToggle",
+    "target": "usr_si",
+    "reason": "Disabled Grok for user per abuse report",
+    "ip": "10.0.1.1",
+    "meta": { "modelId": "grok", "enabled": false }
+  },
+  {
+    "id": "aud_0053",
+    "at": "2026-07-20T11:30:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "quotaOverride",
+    "target": "usr_s4",
+    "reason": "SLA credit (upstream Perplexity brownout)",
+    "ip": "10.0.1.1",
+    "meta": { "amount": 142 }
+  },
+  {
+    "id": "aud_0054",
+    "at": "2026-07-22T19:00:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "userStatus",
+    "target": "usr_rz",
+    "reason": "Suspended — chargeback opened on last invoice",
+    "ip": "10.0.1.1"
+  },
+  {
+    "id": "aud_0055",
+    "at": "2026-07-23T09:30:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "support.reply",
+    "target": "tkt_001",
+    "reason": "Replied to Daniyal about login fix",
+    "ip": "10.0.1.1",
+    "meta": { "ticketId": "tkt_001", "preview": "Following up — still seeing the same error?" }
+  },
+  {
+    "id": "aud_0056",
+    "at": "2026-07-24T08:15:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "login",
+    "target": "usr_sb",
+    "reason": "Reviewed account per support ticket",
+    "ip": "10.0.1.1"
+  },
+  {
+    "id": "aud_0057",
+    "at": "2026-07-23T16:45:00.000Z",
+    "actor": "admin@oneai.app",
+    "action": "quotaOverride",
+    "target": "usr_t2",
+    "reason": "Beta-tester thank-you credit",
+    "ip": "10.0.1.1",
+    "meta": { "amount": 250 }
+  }
+]

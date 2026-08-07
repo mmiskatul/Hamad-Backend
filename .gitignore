@@ -5,8 +5,6 @@ coverage/
 *.tsbuildinfo
 
 # Local environment and secrets
-.env
-.env.*
 !.env.example
 secrets/
 *.key
@@ -37,3 +35,4 @@ branch_structure.json
 temp_auto_push.bat
 temp_interactive_push.bat
 .gitignore
+config.bat
