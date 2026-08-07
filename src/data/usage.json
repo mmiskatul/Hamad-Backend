@@ -1,0 +1,240 @@
+{
+  "tokensByModel": [
+    {
+      "date": "2026-07-11",
+      "series": {
+        "gpt": 493863,
+        "gemini": 318606,
+        "claude": 666505,
+        "grok": 150895,
+        "deepseek": 111621,
+        "perplexity": 85403
+      }
+    },
+    {
+      "date": "2026-07-12",
+      "series": {
+        "gpt": 409440,
+        "gemini": 365983,
+        "claude": 543847,
+        "grok": 173406,
+        "deepseek": 93604,
+        "perplexity": 69899
+      }
+    },
+    {
+      "date": "2026-07-13",
+      "series": {
+        "gpt": 443906,
+        "gemini": 312527,
+        "claude": 636466,
+        "grok": 175361,
+        "deepseek": 97438,
+        "perplexity": 87451
+      }
+    },
+    {
+      "date": "2026-07-14",
+      "series": {
+        "gpt": 517261,
+        "gemini": 368238,
+        "claude": 544364,
+        "grok": 176761,
+        "deepseek": 96458,
+        "perplexity": 88058
+      }
+    },
+    {
+      "date": "2026-07-15",
+      "series": {
+        "gpt": 429505,
+        "gemini": 293115,
+        "claude": 617539,
+        "grok": 137605,
+        "deepseek": 103996,
+        "perplexity": 81721
+      }
+    },
+    {
+      "date": "2026-07-16",
+      "series": {
+        "gpt": 460638,
+        "gemini": 297159,
+        "claude": 605992,
+        "grok": 137894,
+        "deepseek": 93386,
+        "perplexity": 78439
+      }
+    },
+    {
+      "date": "2026-07-17",
+      "series": {
+        "gpt": 410659,
+        "gemini": 320370,
+        "claude": 559722,
+        "grok": 137627,
+        "deepseek": 117961,
+        "perplexity": 88213
+      }
+    },
+    {
+      "date": "2026-07-18",
+      "series": {
+        "gpt": 439570,
+        "gemini": 302747,
+        "claude": 528731,
+        "grok": 156804,
+        "deepseek": 111055,
+        "perplexity": 61042
+      }
+    },
+    {
+      "date": "2026-07-19",
+      "series": {
+        "gpt": 467369,
+        "gemini": 364291,
+        "claude": 563017,
+        "grok": 155426,
+        "deepseek": 126000,
+        "perplexity": 66927
+      }
+    },
+    {
+      "date": "2026-07-20",
+      "series": {
+        "gpt": 414058,
+        "gemini": 355002,
+        "claude": 562581,
+        "grok": 153492,
+        "deepseek": 96131,
+        "perplexity": 85868
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "series": {
+        "gpt": 439635,
+        "gemini": 304879,
+        "claude": 577423,
+        "grok": 171003,
+        "deepseek": 114780,
+        "perplexity": 67864
+      }
+    },
+    {
+      "date": "2026-07-22",
+      "series": {
+        "gpt": 464101,
+        "gemini": 333923,
+        "claude": 657543,
+        "grok": 167958,
+        "deepseek": 115281,
+        "perplexity": 82916
+      }
+    },
+    {
+      "date": "2026-07-23",
+      "series": {
+        "gpt": 407456,
+        "gemini": 292134,
+        "claude": 552940,
+        "grok": 164358,
+        "deepseek": 110967,
+        "perplexity": 81023
+      }
+    },
+    {
+      "date": "2026-07-24",
+      "series": {
+        "gpt": 429700,
+        "gemini": 299511,
+        "claude": 613615,
+        "grok": 120202,
+        "deepseek": 115172,
+        "perplexity": 72186
+      }
+    }
+  ],
+  "costByModel": [
+    {
+      "modelId": "gpt",
+      "cost": 2847,
+      "tokens": 9070370
+    },
+    {
+      "modelId": "gemini",
+      "cost": 2927,
+      "tokens": 13549125
+    },
+    {
+      "modelId": "claude",
+      "cost": 2561,
+      "tokens": 9280967
+    },
+    {
+      "modelId": "grok",
+      "cost": 3847,
+      "tokens": 10117746
+    },
+    {
+      "modelId": "deepseek",
+      "cost": 2143,
+      "tokens": 13022427
+    },
+    {
+      "modelId": "perplexity",
+      "cost": 3623,
+      "tokens": 10735751
+    }
+  ],
+  "topUsers": [
+    {
+      "userId": "usr_rt",
+      "email": "daniyal.hussain1@outlook.com",
+      "spend": 3.02,
+      "tokens": 1027992
+    },
+    {
+      "userId": "usr_ru",
+      "email": "gabriel.park2@proton.me",
+      "spend": 1.94,
+      "tokens": 277096
+    },
+    {
+      "userId": "usr_rv",
+      "email": "jana.mahmood3@hey.com",
+      "spend": 2.33,
+      "tokens": 555498
+    },
+    {
+      "userId": "usr_rw",
+      "email": "mateo.hassan4@acme.co",
+      "spend": 3.5,
+      "tokens": 1303590
+    },
+    {
+      "userId": "usr_rx",
+      "email": "petra.pinto5@studioklein.com",
+      "spend": 0.72,
+      "tokens": 337584
+    },
+    {
+      "userId": "usr_ry",
+      "email": "salma.oduya6@northwind.io",
+      "spend": 0.91,
+      "tokens": 464672
+    },
+    {
+      "userId": "usr_rz",
+      "email": "viktor.diallo7@fastmail.com",
+      "spend": 0.43,
+      "tokens": 217764
+    },
+    {
+      "userId": "usr_s0",
+      "email": "yara.reyes8@gmail.com",
+      "spend": 0.91,
+      "tokens": 1068452
+    }
+  ]
+}

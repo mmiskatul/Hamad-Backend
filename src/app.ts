@@ -13,6 +13,7 @@ import type { ProjectRepository } from './modules/projects/projectRepository.js'
 import type { SupportRepository } from './modules/support/supportRepository.js';
 import { MongoAuthRepository } from './modules/auth/mongoAuthRepository.js';
 import { bootstrapAdminAccount } from './modules/auth/adminBootstrap.js';
+import type { AdminDashboardRepository } from './modules/admin/adminRepository.js';
 
 export type BuildAppOptions = {
   authRepository?: AuthRepository;
@@ -21,6 +22,7 @@ export type BuildAppOptions = {
   aiRouter?: AiRouter;
   projectRepository?: ProjectRepository;
   supportRepository?: SupportRepository;
+  adminRepository?: AdminDashboardRepository;
 };
 
 export function buildApp(options: BuildAppOptions = {}) {
@@ -130,6 +132,7 @@ export function buildApp(options: BuildAppOptions = {}) {
     aiRouter: options.aiRouter,
     projectRepository: options.projectRepository,
     supportRepository: options.supportRepository,
+    adminRepository: options.adminRepository,
   });
 
   return app;

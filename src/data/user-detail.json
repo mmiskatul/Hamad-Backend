@@ -1,0 +1,32 @@
+{
+  "id": "usr_rw",
+  "name": "Mateo Hassan",
+  "email": "mateo.hassan4@acme.co",
+  "tier": "free",
+  "status": "active",
+  "requestsUsed": 95,
+  "requestsLimit": 100,
+  "costUsd": 1.46,
+  "tokensSpent": 651795,
+  "lastActiveAt": "2026-07-09T15:34:01.022Z",
+  "signupDate": "2024-06-12T03:00:00.000Z",
+  "platform": "android",
+  "signupSource": "android",
+  "avatarUrl": "/brand/hex-ring.svg",
+  "paymentHistory": [],
+  "quotaHistory": [],
+  "renewals": [],
+  "modelDistribution": {
+    "gpt": 68,
+    "gemini": 355,
+    "claude": 94,
+    "grok": 479,
+    "deepseek": 4,
+    "perplexity": 0
+  },
+  "ticketIds": [
+    "tkt_001",
+    "tkt_004"
+  ],
+  "mobile": "+33145678901"
+}

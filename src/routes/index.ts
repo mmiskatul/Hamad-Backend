@@ -16,6 +16,7 @@ import { supportRoutes } from './support.js';
 import type { SupportRepository } from '../modules/support/supportRepository.js';
 import { adminAuthRoutes } from './adminAuth.js';
 import { adminDashboardRoutes } from './adminDashboard.js';
+import type { AdminDashboardRepository } from '../modules/admin/adminRepository.js';
 
 export type RouteOptions = {
   authRepository?: AuthRepository;
@@ -24,6 +25,7 @@ export type RouteOptions = {
   aiRouter?: AiRouter;
   projectRepository?: ProjectRepository;
   supportRepository?: SupportRepository;
+  adminRepository?: AdminDashboardRepository;
 };
 
 export async function registerRoutes(app: FastifyInstance, options: RouteOptions) {
@@ -74,6 +76,8 @@ export async function registerRoutes(app: FastifyInstance, options: RouteOptions
   await app.register(adminDashboardRoutes, {
     prefix: '/api/v1',
     authRepository: options.authRepository,
+    emailSender: options.emailSender,
+    adminRepository: options.adminRepository,
   });
 }
 

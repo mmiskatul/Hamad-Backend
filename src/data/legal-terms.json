@@ -1,0 +1,19 @@
+{
+  "currentVersionId": "v1",
+  "versions": [
+    {
+      "id": "v1",
+      "createdAt": "2026-04-01T00:00:00.000Z",
+      "createdBy": "admin@oneai.app",
+      "summary": "Initial Terms & Conditions",
+      "bodyMarkdown": "# OneAI Hub — Terms & Conditions\n\n_Last updated: 2026-04-01_\n\n## 1. Acceptance\n\nBy creating an account on OneAI Hub, you agree to these Terms & Conditions. If you do not agree, do not use the service.\n\n## 2. Service description\n\nOneAI Hub is a single super-admin console that orchestrates multi-provider AI access (OpenAI, Anthropic, Google, xAI, DeepSeek, Perplexity). The service forwards user requests to upstream providers and renders the response back to the calling client.\n\n## 3. Account responsibilities\n\n- The super-admin account must have an active TOTP second factor.\n- Recovery codes are shown once at setup. Store them in a password manager.\n- Sessions on unrecognized devices must be revoked immediately.\n\n## 4. Acceptable use\n\nYou may not use the service to:\n\n1. Generate content that violates the upstream provider's usage policy.\n2. Circumvent per-tier request or token limits.\n3. Reverse-engineer provider routing or pricing.\n\n## 5. Privacy\n\nConversation content is never accessible from this admin dashboard. Users may attach a single conversation snapshot to a support ticket; the snapshot auto-expires after 30 days.\n\n## 6. Billing\n\nSubscriptions renew automatically at the end of each billing period. The price and quota for each tier are visible at `/admin/config/tiers`. The super-admin may extend or revoke quota with a documented reason; every change is recorded in the audit log.\n\n## 7. Termination\n\nWe may suspend or terminate any account that violates these terms. Suspension is reversible by the super-admin with a documented reason.\n\n## 8. Changes to these terms\n\nWe will publish changes as a new version in this document. The current version is always identified at the top of this page. Archived versions remain accessible from the history panel.\n\n## 9. Contact\n\nsupport@oneai.app\n"
+    },
+    {
+      "id": "v2",
+      "createdAt": "2026-07-20T12:00:00.000Z",
+      "createdBy": "admin@oneai.app",
+      "summary": "Draft with billing-section typo (deleted)",
+      "bodyMarkdown": "# OneAI Hub — Terms & Conditions (v2 draft — withdrawn)\n\n_Draft dated 2026-07-20, withdrawn same day due to a typo in the billing section. Retained in version history for the audit trail only._\n\n## Billing (draft, contains typo)\n\nSubcriptions renew automaticaly at the end of each billing period. (Typo intentionally retained in this draft.)\n"
+    }
+  ]
+}

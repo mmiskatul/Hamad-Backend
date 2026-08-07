@@ -4,6 +4,7 @@ import type { FastifyInstance } from 'fastify';
 import { buildApp } from '../src/app.js';
 import { bootstrapAdminAccount } from '../src/modules/auth/adminBootstrap.js';
 import { MemoryAuthRepository } from './helpers/memoryAuthRepository.js';
+import { MemoryAdminDashboardRepository } from '../src/modules/admin/memoryAdminRepository.js';
 
 async function setupAdminApp(): Promise<{ app: FastifyInstance; accessToken: string; userId: string }> {
   const repository = new MemoryAuthRepository();
@@ -13,7 +14,10 @@ async function setupAdminApp(): Promise<{ app: FastifyInstance; accessToken: str
     name: 'Platform Admin',
   });
 
-  const app = buildApp({ authRepository: repository });
+  const adminRepository = new MemoryAdminDashboardRepository();
+  await adminRepository.initialize();
+
+  const app = buildApp({ authRepository: repository, adminRepository });
   await app.ready();
 
   const login = await app.inject({
@@ -152,6 +156,79 @@ test('admin dashboard: unauthenticated callers are rejected', async () => {
     url: '/api/v1/admin/users',
   });
   assert.equal(noToken.statusCode, 401);
+
+  await app.close();
+});
+
+test('admin dashboard: overview payload keeps the contract the UI expects', async () => {
+  const { app, accessToken } = await setupAdminApp();
+
+  const response = await app.inject({
+    method: 'GET',
+    url: '/api/v1/admin/overview',
+    headers: { authorization: `Bearer ${accessToken}` },
+  });
+  assert.equal(response.statusCode, 200);
+  const body = response.json() as Record<string, unknown>;
+  // The frontend OverviewView renders a 4-stat grid and two cards off this
+  // exact shape. Any missing field makes the page look "empty" to the
+  // admin, so we lock the contract here.
+  for (const key of [
+    'health',
+    'providersUp',
+    'providersTotal',
+    'mrr',
+    'mrrDelta',
+    'spend30d',
+    'spendMargin',
+    'spendDelta',
+    'activeUsers',
+    'activeUsersDelta',
+    'newUsers',
+    'sparklines',
+    'costByModel',
+  ]) {
+    assert.ok(key in body, `overview payload missing "${key}"`);
+  }
+  const sparklines = body.sparklines as Record<string, unknown>;
+  for (const key of ['mrr', 'spend', 'active']) {
+    assert.ok(Array.isArray(sparklines[key]), `sparklines.${key} must be an array`);
+  }
+  assert.ok(Array.isArray(body.costByModel) && (body.costByModel as unknown[]).length > 0, 'costByModel must be a non-empty array');
+
+  await app.close();
+});
+
+test('admin dashboard: revenue payload exposes the fields the revenue page reads', async () => {
+  const { app, accessToken } = await setupAdminApp();
+
+  const response = await app.inject({
+    method: 'GET',
+    url: '/api/v1/admin/revenue',
+    headers: { authorization: `Bearer ${accessToken}` },
+  });
+  assert.equal(response.statusCode, 200);
+  const body = response.json() as Record<string, unknown>;
+  for (const key of ['mrrSeries', 'tierMix', 'churn', 'arpu', 'arr', 'churnRate', 'funnel']) {
+    assert.ok(key in body, `revenue payload missing "${key}"`);
+  }
+
+  await app.close();
+});
+
+test('admin dashboard: usage payload exposes the fields the usage page reads', async () => {
+  const { app, accessToken } = await setupAdminApp();
+
+  const response = await app.inject({
+    method: 'GET',
+    url: '/api/v1/admin/usage',
+    headers: { authorization: `Bearer ${accessToken}` },
+  });
+  assert.equal(response.statusCode, 200);
+  const body = response.json() as Record<string, unknown>;
+  for (const key of ['tokensByModel', 'costByModel', 'topUsers']) {
+    assert.ok(key in body, `usage payload missing "${key}"`);
+  }
 
   await app.close();
 });
