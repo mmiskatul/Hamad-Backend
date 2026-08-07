@@ -1,0 +1,4584 @@
+[
+  {
+    "id": "usr_rt",
+    "name": "Daniyal Hussain",
+    "email": "daniyal.hussain1@outlook.com",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 84,
+    "requestsLimit": 100,
+    "tokensSpent": 513996,
+    "costUsd": 1.26,
+    "lastActiveAt": "2026-07-06T15:34:01.022Z",
+    "signupDate": "2024-06-03T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.468,
+      "gemini": 0.171,
+      "claude": 0.063,
+      "grok": 0.177,
+      "deepseek": 0.084,
+      "perplexity": 0.036
+    },
+    "ticketIds": [
+      "tkt_001"
+    ],
+    "memory": {
+      "count": 0,
+      "bytesUsed": 0,
+      "lastUpdatedAt": "2024-06-03T03:00:00.000Z",
+      "topCategories": []
+    },
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "actionTimeline": [],
+    "mobile": "+819012349876"
+  },
+  {
+    "id": "usr_ru",
+    "name": "Gabriel Park",
+    "email": "gabriel.park2@proton.me",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 76,
+    "requestsLimit": 100,
+    "tokensSpent": 138548,
+    "costUsd": 0.81,
+    "lastActiveAt": "2026-07-13T15:34:01.022Z",
+    "signupDate": "2024-06-06T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.433,
+      "gemini": 0.16,
+      "claude": 0.072,
+      "grok": 0.2,
+      "deepseek": 0.092,
+      "perplexity": 0.042
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 0,
+      "bytesUsed": 0,
+      "lastUpdatedAt": "2024-06-06T03:00:00.000Z",
+      "topCategories": []
+    },
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-09T09:19:36.241Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+15555550701"
+  },
+  {
+    "id": "usr_rv",
+    "name": "Jana Mahmood",
+    "email": "jana.mahmood3@hey.com",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 81,
+    "requestsLimit": 100,
+    "tokensSpent": 277749,
+    "costUsd": 0.97,
+    "lastActiveAt": "2026-07-10T15:34:01.022Z",
+    "signupDate": "2024-06-09T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.439,
+      "gemini": 0.171,
+      "claude": 0.074,
+      "grok": 0.18,
+      "deepseek": 0.089,
+      "perplexity": 0.047
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 0,
+      "bytesUsed": 0,
+      "lastUpdatedAt": "2024-06-09T03:00:00.000Z",
+      "topCategories": []
+    },
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-20T01:55:54.476Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+5511998765012"
+  },
+  {
+    "id": "usr_rw",
+    "name": "Mateo Hassan",
+    "email": "mateo.hassan4@acme.co",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 95,
+    "requestsLimit": 100,
+    "tokensSpent": 651795,
+    "costUsd": 1.46,
+    "lastActiveAt": "2026-07-09T15:34:01.022Z",
+    "signupDate": "2024-06-12T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.423,
+      "gemini": 0.183,
+      "claude": 0.07,
+      "grok": 0.204,
+      "deepseek": 0.086,
+      "perplexity": 0.035
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 0,
+      "bytesUsed": 0,
+      "lastUpdatedAt": "2024-06-12T03:00:00.000Z",
+      "topCategories": []
+    },
+    "paymentHistory": [],
+    "quotaHistory": [
+      {
+        "date": "2026-06-28T22:25:14.981Z",
+        "amount": 83,
+        "by": "admin@oneai.app",
+        "reason": "Comp outage credit"
+      }
+    ],
+    "renewals": [],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-28T22:25:14.981Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+83 requests — Comp outage credit"
+      }
+    ],
+    "mobile": "+33145678901"
+  },
+  {
+    "id": "usr_rx",
+    "name": "Petra Pinto",
+    "email": "petra.pinto5@studioklein.com",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 26,
+    "requestsLimit": 100,
+    "tokensSpent": 168792,
+    "costUsd": 0.3,
+    "lastActiveAt": "2026-07-21T15:34:01.022Z",
+    "signupDate": "2024-06-15T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.489,
+      "gemini": 0.157,
+      "claude": 0.063,
+      "grok": 0.176,
+      "deepseek": 0.078,
+      "perplexity": 0.037
+    },
+    "ticketIds": [
+      "tkt_002"
+    ],
+    "memory": {
+      "count": 0,
+      "bytesUsed": 0,
+      "lastUpdatedAt": "2024-06-15T03:00:00.000Z",
+      "topCategories": []
+    },
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "actionTimeline": [],
+    "mobile": "+493012349911"
+  },
+  {
+    "id": "usr_ry",
+    "name": "Salma Oduya",
+    "email": "salma.oduya6@northwind.io",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 52,
+    "requestsLimit": 100,
+    "tokensSpent": 232336,
+    "costUsd": 0.38,
+    "lastActiveAt": "2026-07-21T15:34:01.022Z",
+    "signupDate": "2024-06-18T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.422,
+      "gemini": 0.196,
+      "claude": 0.082,
+      "grok": 0.175,
+      "deepseek": 0.081,
+      "perplexity": 0.044
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 0,
+      "bytesUsed": 0,
+      "lastUpdatedAt": "2024-06-18T03:00:00.000Z",
+      "topCategories": []
+    },
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "actionTimeline": [],
+    "mobile": "+15555550377"
+  },
+  {
+    "id": "usr_rz",
+    "name": "Viktor Diallo",
+    "email": "viktor.diallo7@fastmail.com",
+    "tier": "free",
+    "status": "suspended",
+    "requestsUsed": 18,
+    "requestsLimit": 100,
+    "tokensSpent": 108882,
+    "costUsd": 0.18,
+    "lastActiveAt": "2026-07-10T15:34:01.022Z",
+    "signupDate": "2024-06-21T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.401,
+      "gemini": 0.225,
+      "claude": 0.087,
+      "grok": 0.168,
+      "deepseek": 0.084,
+      "perplexity": 0.035
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 0,
+      "bytesUsed": 0,
+      "lastUpdatedAt": "2024-06-21T03:00:00.000Z",
+      "topCategories": []
+    },
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-09T15:34:01.022Z",
+        "actor": "admin@oneai.app",
+        "action": "userStatus",
+        "summary": "suspended — suspicious payment pattern"
+      }
+    ],
+    "mobile": "+919812349911"
+  },
+  {
+    "id": "usr_s0",
+    "name": "Yara Reyes",
+    "email": "yara.reyes8@gmail.com",
+    "tier": "free",
+    "status": "grace",
+    "requestsUsed": 77,
+    "requestsLimit": 100,
+    "tokensSpent": 534226,
+    "costUsd": 0.38,
+    "lastActiveAt": "2026-07-15T15:34:01.022Z",
+    "signupDate": "2024-06-24T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.47,
+      "gemini": 0.153,
+      "claude": 0.074,
+      "grok": 0.198,
+      "deepseek": 0.065,
+      "perplexity": 0.039
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 1,
+      "bytesUsed": 428,
+      "lastUpdatedAt": "2026-07-06T09:45:53.198Z",
+      "topCategories": [
+        "profile"
+      ]
+    },
+    "paymentHistory": [],
+    "quotaHistory": [
+      {
+        "date": "2026-07-03T06:47:45.630Z",
+        "amount": 197,
+        "by": "admin@oneai.app",
+        "reason": "Beta tester thanks"
+      }
+    ],
+    "renewals": [],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-14T15:34:01.022Z",
+        "actor": "admin@oneai.app",
+        "action": "userStatus",
+        "summary": "moved to grace period (payment retry #2)"
+      },
+      {
+        "ts": "2026-07-03T06:47:45.630Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+197 requests — Beta tester thanks"
+      }
+    ],
+    "mobile": "+61298765432"
+  },
+  {
+    "id": "usr_s1",
+    "name": "Bilqis Awan",
+    "email": "bilqis.awan9@outlook.com",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 30,
+    "requestsLimit": 100,
+    "tokensSpent": 78540,
+    "costUsd": 0.42,
+    "lastActiveAt": "2026-07-15T15:34:01.022Z",
+    "signupDate": "2024-06-27T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.507,
+      "gemini": 0.163,
+      "claude": 0.062,
+      "grok": 0.14,
+      "deepseek": 0.087,
+      "perplexity": 0.041
+    },
+    "ticketIds": [
+      "tkt_003"
+    ],
+    "memory": {
+      "count": 0,
+      "bytesUsed": 0,
+      "lastUpdatedAt": "2024-06-27T03:00:00.000Z",
+      "topCategories": []
+    },
+    "paymentHistory": [],
+    "quotaHistory": [
+      {
+        "date": "2026-07-05T16:15:12.607Z",
+        "amount": 198,
+        "by": "admin@oneai.app",
+        "reason": "Promo code: COMP-50"
+      }
+    ],
+    "renewals": [],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-05T16:15:12.607Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+198 requests — Promo code: COMP-50"
+      }
+    ],
+    "mobile": "+14155550199"
+  },
+  {
+    "id": "usr_s2",
+    "name": "Esme Hernandez",
+    "email": "esme.hernandez10@proton.me",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 79,
+    "requestsLimit": 100,
+    "tokensSpent": 132799,
+    "costUsd": 0.55,
+    "lastActiveAt": "2026-07-17T15:34:01.022Z",
+    "signupDate": "2024-06-02T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.422,
+      "gemini": 0.163,
+      "claude": 0.085,
+      "grok": 0.192,
+      "deepseek": 0.098,
+      "perplexity": 0.039
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 0,
+      "bytesUsed": 0,
+      "lastUpdatedAt": "2024-06-02T03:00:00.000Z",
+      "topCategories": []
+    },
+    "paymentHistory": [],
+    "quotaHistory": [
+      {
+        "date": "2026-07-04T12:17:42.467Z",
+        "amount": 95,
+        "by": "admin@oneai.app",
+        "reason": "Promo code: COMP-50"
+      }
+    ],
+    "renewals": [],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-04T12:17:42.467Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+95 requests — Promo code: COMP-50"
+      }
+    ],
+    "mobile": "+442079461002"
+  },
+  {
+    "id": "usr_s3",
+    "name": "Haruki Suzuki",
+    "email": "haruki.suzuki11@hey.com",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 30,
+    "requestsLimit": 100,
+    "tokensSpent": 214890,
+    "costUsd": 0.34,
+    "lastActiveAt": "2026-07-04T15:34:01.022Z",
+    "signupDate": "2024-06-05T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.43,
+      "gemini": 0.183,
+      "claude": 0.076,
+      "grok": 0.177,
+      "deepseek": 0.094,
+      "perplexity": 0.04
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 0,
+      "bytesUsed": 0,
+      "lastUpdatedAt": "2024-06-05T03:00:00.000Z",
+      "topCategories": []
+    },
+    "paymentHistory": [],
+    "quotaHistory": [
+      {
+        "date": "2026-06-25T09:36:47.181Z",
+        "amount": 176,
+        "by": "admin@oneai.app",
+        "reason": "Beta tester thanks"
+      }
+    ],
+    "renewals": [],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-25T09:36:47.181Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+176 requests — Beta tester thanks"
+      }
+    ],
+    "mobile": "+971501239998"
+  },
+  {
+    "id": "usr_s4",
+    "name": "Karima Larsen",
+    "email": "karima.larsen12@acme.co",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 70,
+    "requestsLimit": 100,
+    "tokensSpent": 131600,
+    "costUsd": 0.31,
+    "lastActiveAt": "2026-07-18T15:34:01.022Z",
+    "signupDate": "2024-06-08T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.497,
+      "gemini": 0.16,
+      "claude": 0.073,
+      "grok": 0.147,
+      "deepseek": 0.077,
+      "perplexity": 0.045
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 2,
+      "bytesUsed": 1377,
+      "lastUpdatedAt": "2026-06-24T00:01:40.303Z",
+      "topCategories": [
+        "profile",
+        "preferences"
+      ]
+    },
+    "paymentHistory": [],
+    "quotaHistory": [
+      {
+        "date": "2026-07-18T11:42:50.434Z",
+        "amount": 188,
+        "by": "admin@oneai.app",
+        "reason": "Beta tester thanks"
+      }
+    ],
+    "renewals": [],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-18T11:42:50.434Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+188 requests — Beta tester thanks"
+      }
+    ],
+    "mobile": "+14155550101"
+  },
+  {
+    "id": "usr_s5",
+    "name": "Niels Brooks",
+    "email": "niels.brooks13@studioklein.com",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 81,
+    "requestsLimit": 100,
+    "tokensSpent": 304317,
+    "costUsd": 1.13,
+    "lastActiveAt": "2026-07-16T15:34:01.022Z",
+    "signupDate": "2024-06-11T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.483,
+      "gemini": 0.193,
+      "claude": 0.061,
+      "grok": 0.163,
+      "deepseek": 0.066,
+      "perplexity": 0.035
+    },
+    "ticketIds": [
+      "tkt_004"
+    ],
+    "memory": {
+      "count": 3,
+      "bytesUsed": 524,
+      "lastUpdatedAt": "2026-07-14T12:40:05.181Z",
+      "topCategories": [
+        "profile",
+        "notes"
+      ]
+    },
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-27T23:46:26.094Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+442079460958"
+  },
+  {
+    "id": "usr_s6",
+    "name": "Qadir Ahmed",
+    "email": "qadir.ahmed14@northwind.io",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 28,
+    "requestsLimit": 100,
+    "tokensSpent": 144620,
+    "costUsd": 0.41,
+    "lastActiveAt": "2026-07-14T15:34:01.022Z",
+    "signupDate": "2024-06-14T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.458,
+      "gemini": 0.168,
+      "claude": 0.085,
+      "grok": 0.162,
+      "deepseek": 0.077,
+      "perplexity": 0.05
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 0,
+      "bytesUsed": 0,
+      "lastUpdatedAt": "2024-06-14T03:00:00.000Z",
+      "topCategories": []
+    },
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "actionTimeline": [],
+    "mobile": "+971501234567"
+  },
+  {
+    "id": "usr_s7",
+    "name": "Talin Iqbal",
+    "email": "talin.iqbal15@fastmail.com",
+    "tier": "free",
+    "status": "active",
+    "requestsUsed": 60,
+    "requestsLimit": 100,
+    "tokensSpent": 375120,
+    "costUsd": 0.62,
+    "lastActiveAt": "2026-07-18T15:34:01.022Z",
+    "signupDate": "2024-06-17T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.435,
+      "gemini": 0.155,
+      "claude": 0.059,
+      "grok": 0.22,
+      "deepseek": 0.085,
+      "perplexity": 0.047
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 2,
+      "bytesUsed": 1326,
+      "lastUpdatedAt": "2026-06-25T19:50:57.966Z",
+      "topCategories": [
+        "preferences",
+        "profile"
+      ]
+    },
+    "paymentHistory": [],
+    "quotaHistory": [],
+    "renewals": [],
+    "actionTimeline": [],
+    "mobile": "+15555550456"
+  },
+  {
+    "id": "usr_s8",
+    "name": "Wren Vargas",
+    "email": "wren.vargas16@gmail.com",
+    "tier": "free",
+    "status": "suspended",
+    "requestsUsed": 79,
+    "requestsLimit": 100,
+    "tokensSpent": 337962,
+    "costUsd": 1.21,
+    "lastActiveAt": "2026-07-13T15:34:01.022Z",
+    "signupDate": "2024-06-20T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.455,
+      "gemini": 0.189,
+      "claude": 0.073,
+      "grok": 0.176,
+      "deepseek": 0.063,
+      "perplexity": 0.044
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 0,
+      "bytesUsed": 0,
+      "lastUpdatedAt": "2024-06-20T03:00:00.000Z",
+      "topCategories": []
+    },
+    "paymentHistory": [],
+    "quotaHistory": [
+      {
+        "date": "2026-07-02T02:33:22.984Z",
+        "amount": 144,
+        "by": "admin@oneai.app",
+        "reason": "Promo code: COMP-50"
+      }
+    ],
+    "renewals": [],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-12T15:34:01.022Z",
+        "actor": "admin@oneai.app",
+        "action": "userStatus",
+        "summary": "suspended — suspicious payment pattern"
+      },
+      {
+        "ts": "2026-07-02T02:33:22.984Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+144 requests — Promo code: COMP-50"
+      },
+      {
+        "ts": "2026-05-29T11:25:14.826Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+5511998765432"
+  },
+  {
+    "id": "usr_s9",
+    "name": "Aleks Nguyen",
+    "email": "aleks.nguyen17@outlook.com",
+    "tier": "pro",
+    "status": "grace",
+    "requestsUsed": 206,
+    "requestsLimit": 500,
+    "tokensSpent": 1018670,
+    "costUsd": 2.28,
+    "lastActiveAt": "2026-07-11T15:34:01.022Z",
+    "signupDate": "2024-06-23T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.425,
+      "gemini": 0.202,
+      "claude": 0.098,
+      "grok": 0.133,
+      "deepseek": 0.102,
+      "perplexity": 0.04
+    },
+    "ticketIds": [
+      "tkt_005"
+    ],
+    "memory": {
+      "count": 12,
+      "bytesUsed": 31992,
+      "lastUpdatedAt": "2026-07-10T12:24:54.823Z",
+      "topCategories": [
+        "notes",
+        "preferences"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-23",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-23",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "pending"
+      },
+      {
+        "date": "2024-09-23",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "pending"
+      },
+      {
+        "date": "2024-10-23",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-23",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-08T15:34:01.022Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-10T15:34:01.022Z",
+        "actor": "admin@oneai.app",
+        "action": "userStatus",
+        "summary": "moved to grace period (payment retry #2)"
+      },
+      {
+        "ts": "2026-06-25T04:16:15.434Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to pro"
+      }
+    ],
+    "mobile": "+15555550612"
+  },
+  {
+    "id": "usr_sa",
+    "name": "Dilara Diaz",
+    "email": "dilara.diaz18@proton.me",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 284,
+    "requestsLimit": 500,
+    "tokensSpent": 493024,
+    "costUsd": 1.05,
+    "lastActiveAt": "2026-07-21T15:34:01.022Z",
+    "signupDate": "2024-06-26T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.404,
+      "gemini": 0.221,
+      "claude": 0.11,
+      "grok": 0.135,
+      "deepseek": 0.091,
+      "perplexity": 0.039
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 91,
+      "bytesUsed": 6368,
+      "lastUpdatedAt": "2026-07-18T19:22:29.932Z",
+      "topCategories": [
+        "notes",
+        "snippets"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-26",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-26",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-26",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-26",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "failed"
+      },
+      {
+        "date": "2024-11-26",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-07T19:44:10.395Z",
+        "amount": 283,
+        "by": "admin@oneai.app",
+        "reason": "SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-09T15:34:01.022Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-07T19:44:10.395Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+283 requests — SLA credit for upstream Gemini brownout"
+      },
+      {
+        "ts": "2026-07-16T22:46:52.081Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to pro"
+      }
+    ],
+    "mobile": "+33145678932"
+  },
+  {
+    "id": "usr_sb",
+    "name": "Gojo Jansen",
+    "email": "gojo.jansen19@hey.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 234,
+    "requestsLimit": 500,
+    "tokensSpent": 1694862,
+    "costUsd": 1.59,
+    "lastActiveAt": "2026-07-15T15:34:01.022Z",
+    "signupDate": "2024-06-01T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.439,
+      "gemini": 0.186,
+      "claude": 0.118,
+      "grok": 0.118,
+      "deepseek": 0.101,
+      "perplexity": 0.037
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 63,
+      "bytesUsed": 36735,
+      "lastUpdatedAt": "2026-07-09T20:27:40.459Z",
+      "topCategories": [
+        "notes",
+        "preferences"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-01",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-01",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-01",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-07T15:34:01.022Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-26T19:32:15.569Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to pro"
+      }
+    ],
+    "mobile": "+8613800138000"
+  },
+  {
+    "id": "usr_sc",
+    "name": "Jibril Carter",
+    "email": "jibril.carter20@acme.co",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 209,
+    "requestsLimit": 500,
+    "tokensSpent": 941127,
+    "costUsd": 1.72,
+    "lastActiveAt": "2026-07-23T15:34:01.022Z",
+    "signupDate": "2024-06-04T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.421,
+      "gemini": 0.238,
+      "claude": 0.124,
+      "grok": 0.091,
+      "deepseek": 0.095,
+      "perplexity": 0.03
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 75,
+      "bytesUsed": 15143,
+      "lastUpdatedAt": "2026-07-21T22:51:13.698Z",
+      "topCategories": [
+        "profile",
+        "notes",
+        "snippets"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-04",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-15T15:34:01.022Z"
+      }
+    ],
+    "actionTimeline": [],
+    "mobile": "+15555550844"
+  },
+  {
+    "id": "usr_sd",
+    "name": "Ada Patel",
+    "email": "ada.patel21@studioklein.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 155,
+    "requestsLimit": 500,
+    "tokensSpent": 671305,
+    "costUsd": 0.73,
+    "lastActiveAt": "2026-07-12T15:34:01.022Z",
+    "signupDate": "2024-06-07T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.495,
+      "gemini": 0.17,
+      "claude": 0.096,
+      "grok": 0.119,
+      "deepseek": 0.083,
+      "perplexity": 0.037
+    },
+    "ticketIds": [
+      "tkt_006"
+    ],
+    "memory": {
+      "count": 7,
+      "bytesUsed": 9773,
+      "lastUpdatedAt": "2026-07-07T16:52:48.812Z",
+      "topCategories": [
+        "projects",
+        "notes"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-07",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-07",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-07",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-07",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-07",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "pending"
+      },
+      {
+        "date": "2024-12-07",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-09T15:34:01.022Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-05-18T22:32:02.762Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to pro"
+      },
+      {
+        "ts": "2026-04-21T17:57:13.508Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+33145678901"
+  },
+  {
+    "id": "usr_se",
+    "name": "Daniyal Murphy",
+    "email": "daniyal.murphy22@northwind.io",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 195,
+    "requestsLimit": 500,
+    "tokensSpent": 907140,
+    "costUsd": 1.67,
+    "lastActiveAt": "2026-07-09T15:34:01.022Z",
+    "signupDate": "2024-06-10T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.422,
+      "gemini": 0.185,
+      "claude": 0.131,
+      "grok": 0.123,
+      "deepseek": 0.105,
+      "perplexity": 0.034
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 6,
+      "bytesUsed": 37303,
+      "lastUpdatedAt": "2026-07-07T18:16:24.058Z",
+      "topCategories": [
+        "preferences",
+        "profile",
+        "notes"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-10",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-08T12:14:36.475Z",
+        "amount": 548,
+        "by": "admin@oneai.app",
+        "reason": "SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-06T15:34:01.022Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-08T12:14:36.475Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+548 requests — SLA credit for upstream Gemini brownout"
+      },
+      {
+        "ts": "2026-06-05T00:19:10.164Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to pro"
+      },
+      {
+        "ts": "2026-04-29T06:02:13.818Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+5511998765012"
+  },
+  {
+    "id": "usr_sf",
+    "name": "Gabriel Mendez",
+    "email": "gabriel.mendez23@fastmail.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 432,
+    "requestsLimit": 500,
+    "tokensSpent": 794016,
+    "costUsd": 6.17,
+    "lastActiveAt": "2026-07-15T15:34:01.022Z",
+    "signupDate": "2024-06-13T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.457,
+      "gemini": 0.186,
+      "claude": 0.113,
+      "grok": 0.129,
+      "deepseek": 0.083,
+      "perplexity": 0.032
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 18,
+      "bytesUsed": 12392,
+      "lastUpdatedAt": "2026-07-14T06:01:50.237Z",
+      "topCategories": [
+        "notes",
+        "snippets",
+        "profile",
+        "projects"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-13",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-13",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-13",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-07-26T15:34:01.022Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-16T16:59:32.541Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+15555550701"
+  },
+  {
+    "id": "usr_sg",
+    "name": "Jana Becker",
+    "email": "jana.becker24@gmail.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 200,
+    "requestsLimit": 500,
+    "tokensSpent": 1207200,
+    "costUsd": 1.86,
+    "lastActiveAt": "2026-07-21T15:34:01.022Z",
+    "signupDate": "2024-06-16T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.43,
+      "gemini": 0.216,
+      "claude": 0.111,
+      "grok": 0.101,
+      "deepseek": 0.1,
+      "perplexity": 0.042
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 52,
+      "bytesUsed": 21489,
+      "lastUpdatedAt": "2026-07-20T04:06:50.885Z",
+      "topCategories": [
+        "profile",
+        "snippets"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-16",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-16",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "failed"
+      },
+      {
+        "date": "2024-09-16",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "pending"
+      },
+      {
+        "date": "2024-10-16",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-16",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-12-16",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-07T15:34:01.022Z"
+      }
+    ],
+    "actionTimeline": [],
+    "mobile": "+819012349876"
+  },
+  {
+    "id": "usr_sh",
+    "name": "Mateo Akhtar",
+    "email": "mateo.akhtar25@outlook.com",
+    "tier": "pro",
+    "status": "suspended",
+    "requestsUsed": 140,
+    "requestsLimit": 500,
+    "tokensSpent": 910840,
+    "costUsd": 0.63,
+    "lastActiveAt": "2026-07-22T15:34:01.023Z",
+    "signupDate": "2024-06-19T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.468,
+      "gemini": 0.18,
+      "claude": 0.109,
+      "grok": 0.106,
+      "deepseek": 0.097,
+      "perplexity": 0.04
+    },
+    "ticketIds": [
+      "tkt_007"
+    ],
+    "memory": {
+      "count": 57,
+      "bytesUsed": 18788,
+      "lastUpdatedAt": "2026-07-21T12:07:38.876Z",
+      "topCategories": [
+        "projects",
+        "notes",
+        "preferences",
+        "snippets"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-19",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-19",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-19",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-19",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-19",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-12-19",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-07T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-21T15:34:01.023Z",
+        "actor": "admin@oneai.app",
+        "action": "userStatus",
+        "summary": "suspended — suspicious payment pattern"
+      }
+    ],
+    "mobile": "+15555550967"
+  },
+  {
+    "id": "usr_si",
+    "name": "Petra Yamamoto",
+    "email": "petra.yamamoto26@proton.me",
+    "tier": "pro",
+    "status": "grace",
+    "requestsUsed": 309,
+    "requestsLimit": 500,
+    "tokensSpent": 2147859,
+    "costUsd": 4.08,
+    "lastActiveAt": "2026-07-14T15:34:01.023Z",
+    "signupDate": "2024-06-22T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.395,
+      "gemini": 0.224,
+      "claude": 0.118,
+      "grok": 0.135,
+      "deepseek": 0.094,
+      "perplexity": 0.035
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 12,
+      "bytesUsed": 36514,
+      "lastUpdatedAt": "2026-07-14T11:47:20.765Z",
+      "topCategories": [
+        "profile",
+        "notes",
+        "projects"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-22",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-22",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-22",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-22",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-22",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "failed"
+      },
+      {
+        "date": "2024-12-22",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-12T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-13T15:34:01.023Z",
+        "actor": "admin@oneai.app",
+        "action": "userStatus",
+        "summary": "moved to grace period (payment retry #2)"
+      },
+      {
+        "ts": "2026-06-03T22:25:31.591Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to pro"
+      }
+    ],
+    "mobile": "+919812349911"
+  },
+  {
+    "id": "usr_sj",
+    "name": "Salma Aslan",
+    "email": "salma.aslan27@hey.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 276,
+    "requestsLimit": 500,
+    "tokensSpent": 1339428,
+    "costUsd": 3.7,
+    "lastActiveAt": "2026-07-13T15:34:01.023Z",
+    "signupDate": "2024-06-25T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.426,
+      "gemini": 0.191,
+      "claude": 0.119,
+      "grok": 0.116,
+      "deepseek": 0.102,
+      "perplexity": 0.045
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 16,
+      "bytesUsed": 16750,
+      "lastUpdatedAt": "2026-07-11T04:59:44.865Z",
+      "topCategories": [
+        "projects",
+        "profile",
+        "notes",
+        "preferences"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-25",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-25",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-06-17T02:18:39.094Z",
+        "amount": 407,
+        "by": "admin@oneai.app",
+        "reason": "SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-01T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-17T02:18:39.094Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+407 requests — SLA credit for upstream Gemini brownout"
+      },
+      {
+        "ts": "2026-06-13T09:08:41.362Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to pro"
+      }
+    ],
+    "mobile": "+15555550377"
+  },
+  {
+    "id": "usr_sk",
+    "name": "Viktor Tanaka",
+    "email": "viktor.tanaka28@acme.co",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 353,
+    "requestsLimit": 500,
+    "tokensSpent": 1696165,
+    "costUsd": 5.19,
+    "lastActiveAt": "2026-07-19T15:34:01.023Z",
+    "signupDate": "2024-05-31T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.421,
+      "gemini": 0.245,
+      "claude": 0.104,
+      "grok": 0.097,
+      "deepseek": 0.089,
+      "perplexity": 0.043
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 86,
+      "bytesUsed": 10695,
+      "lastUpdatedAt": "2026-07-18T22:31:23.734Z",
+      "topCategories": [
+        "snippets",
+        "profile"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-01",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-07-31",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-31",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-01",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-31",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-10T09:28:42.469Z",
+        "amount": 264,
+        "by": "admin@oneai.app",
+        "reason": "SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-07-30T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-10T09:28:42.469Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+264 requests — SLA credit for upstream Gemini brownout"
+      },
+      {
+        "ts": "2026-05-28T19:19:31.517Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to pro"
+      }
+    ],
+    "mobile": "+493012349911"
+  },
+  {
+    "id": "usr_sl",
+    "name": "Yara Kim",
+    "email": "yara.kim29@studioklein.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 123,
+    "requestsLimit": 500,
+    "tokensSpent": 718566,
+    "costUsd": 1.6,
+    "lastActiveAt": "2026-07-07T15:34:01.023Z",
+    "signupDate": "2024-06-03T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.435,
+      "gemini": 0.185,
+      "claude": 0.115,
+      "grok": 0.127,
+      "deepseek": 0.095,
+      "perplexity": 0.043
+    },
+    "ticketIds": [
+      "tkt_008"
+    ],
+    "memory": {
+      "count": 22,
+      "bytesUsed": 32465,
+      "lastUpdatedAt": "2026-06-30T17:38:18.971Z",
+      "topCategories": [
+        "profile",
+        "preferences"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-03",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-03",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-03",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-03",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-03",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-06-22T14:01:10.222Z",
+        "amount": 384,
+        "by": "admin@oneai.app",
+        "reason": "SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-07-17T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-22T14:01:10.222Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+384 requests — SLA credit for upstream Gemini brownout"
+      },
+      {
+        "ts": "2026-07-05T04:54:17.893Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to pro"
+      }
+    ],
+    "mobile": "+919812345678"
+  },
+  {
+    "id": "usr_sm",
+    "name": "Bilqis Nair",
+    "email": "bilqis.nair30@northwind.io",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 242,
+    "requestsLimit": 500,
+    "tokensSpent": 1157002,
+    "costUsd": 3.16,
+    "lastActiveAt": "2026-07-14T15:34:01.023Z",
+    "signupDate": "2024-06-06T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.399,
+      "gemini": 0.214,
+      "claude": 0.132,
+      "grok": 0.12,
+      "deepseek": 0.095,
+      "perplexity": 0.039
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 14,
+      "bytesUsed": 33500,
+      "lastUpdatedAt": "2026-07-11T19:18:09.453Z",
+      "topCategories": [
+        "notes",
+        "preferences",
+        "profile",
+        "projects"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-06",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-06",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-06",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-10T00:20:26.317Z",
+        "amount": 324,
+        "by": "admin@oneai.app",
+        "reason": "SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-07-28T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-10T00:20:26.317Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+324 requests — SLA credit for upstream Gemini brownout"
+      },
+      {
+        "ts": "2026-05-18T02:49:09.263Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+15555550234"
+  },
+  {
+    "id": "usr_sn",
+    "name": "Esme Ali",
+    "email": "esme.ali31@fastmail.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 266,
+    "requestsLimit": 500,
+    "tokensSpent": 943768,
+    "costUsd": 2.96,
+    "lastActiveAt": "2026-07-08T15:34:01.023Z",
+    "signupDate": "2024-06-09T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.467,
+      "gemini": 0.19,
+      "claude": 0.117,
+      "grok": 0.115,
+      "deepseek": 0.083,
+      "perplexity": 0.029
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 30,
+      "bytesUsed": 35158,
+      "lastUpdatedAt": "2026-07-05T10:42:43.119Z",
+      "topCategories": [
+        "projects",
+        "profile",
+        "preferences"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-09",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-09",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-09",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "pending"
+      },
+      {
+        "date": "2024-10-09",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-09",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-12-09",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-07-18T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [],
+    "mobile": "+493012345678"
+  },
+  {
+    "id": "usr_so",
+    "name": "Haruki Cruz",
+    "email": "haruki.cruz32@gmail.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 157,
+    "requestsLimit": 500,
+    "tokensSpent": 394227,
+    "costUsd": 1.53,
+    "lastActiveAt": "2026-07-22T15:34:01.023Z",
+    "signupDate": "2024-06-12T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.418,
+      "gemini": 0.225,
+      "claude": 0.124,
+      "grok": 0.091,
+      "deepseek": 0.101,
+      "perplexity": 0.042
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 35,
+      "bytesUsed": 17767,
+      "lastUpdatedAt": "2026-07-19T12:49:59.346Z",
+      "topCategories": [
+        "notes",
+        "snippets",
+        "preferences",
+        "profile"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-12",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-12",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-12",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-04T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [],
+    "mobile": "+8613800138013"
+  },
+  {
+    "id": "usr_sp",
+    "name": "Karima Russo",
+    "email": "karima.russo33@outlook.com",
+    "tier": "pro",
+    "status": "active",
+    "requestsUsed": 382,
+    "requestsLimit": 500,
+    "tokensSpent": 1459622,
+    "costUsd": 1.64,
+    "lastActiveAt": "2026-07-11T15:34:01.023Z",
+    "signupDate": "2024-06-15T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.42,
+      "gemini": 0.201,
+      "claude": 0.133,
+      "grok": 0.119,
+      "deepseek": 0.09,
+      "perplexity": 0.037
+    },
+    "ticketIds": [
+      "tkt_009"
+    ],
+    "memory": {
+      "count": 56,
+      "bytesUsed": 33638,
+      "lastUpdatedAt": "2026-07-04T22:32:24.602Z",
+      "topCategories": [
+        "notes",
+        "profile",
+        "preferences",
+        "snippets"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-15",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-15",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-15",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-07-31T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-08T18:07:05.023Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to pro"
+      }
+    ],
+    "mobile": "+61298765432"
+  },
+  {
+    "id": "usr_sq",
+    "name": "Niels Beauchamp",
+    "email": "niels.beauchamp34@proton.me",
+    "tier": "pro",
+    "status": "suspended",
+    "requestsUsed": 164,
+    "requestsLimit": 500,
+    "tokensSpent": 1104540,
+    "costUsd": 2.26,
+    "lastActiveAt": "2026-07-17T15:34:01.023Z",
+    "signupDate": "2024-06-18T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.387,
+      "gemini": 0.248,
+      "claude": 0.108,
+      "grok": 0.101,
+      "deepseek": 0.114,
+      "perplexity": 0.042
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 60,
+      "bytesUsed": 8767,
+      "lastUpdatedAt": "2026-07-11T09:17:06.466Z",
+      "topCategories": [
+        "snippets",
+        "notes",
+        "profile",
+        "projects"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-18",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-18",
+        "amountUsd": 19,
+        "plan": "pro",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "pro",
+        "period": "monthly",
+        "amountUsd": 19,
+        "nextBillingAt": "2026-08-02T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-16T15:34:01.023Z",
+        "actor": "admin@oneai.app",
+        "action": "userStatus",
+        "summary": "suspended — suspicious payment pattern"
+      }
+    ],
+    "mobile": "+14155550199"
+  },
+  {
+    "id": "usr_sr",
+    "name": "Qadir Garcia",
+    "email": "qadir.garcia35@hey.com",
+    "tier": "business",
+    "status": "grace",
+    "requestsUsed": 1351,
+    "requestsLimit": 2500,
+    "tokensSpent": 9400258,
+    "costUsd": 15.3,
+    "lastActiveAt": "2026-07-24T15:34:01.023Z",
+    "signupDate": "2024-06-21T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.285,
+      "gemini": 0.205,
+      "claude": 0.226,
+      "grok": 0.087,
+      "deepseek": 0.051,
+      "perplexity": 0.147
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 89,
+      "bytesUsed": 25838,
+      "lastUpdatedAt": "2026-07-21T08:54:27.269Z",
+      "topCategories": [
+        "snippets",
+        "preferences",
+        "projects",
+        "profile"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-21",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-21",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-21",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "failed"
+      },
+      {
+        "date": "2024-10-21",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-21",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "failed"
+      },
+      {
+        "date": "2024-12-21",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "failed"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-08-05T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-23T15:34:01.023Z",
+        "actor": "admin@oneai.app",
+        "action": "userStatus",
+        "summary": "moved to grace period (payment retry #2)"
+      },
+      {
+        "ts": "2026-07-07T16:10:30.071Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to business"
+      }
+    ],
+    "mobile": "+442079461002"
+  },
+  {
+    "id": "usr_ss",
+    "name": "Talin Cohen",
+    "email": "talin.cohen36@acme.co",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 639,
+    "requestsLimit": 2500,
+    "tokensSpent": 3815469,
+    "costUsd": 4.52,
+    "lastActiveAt": "2026-07-12T15:34:01.023Z",
+    "signupDate": "2024-06-24T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.333,
+      "gemini": 0.207,
+      "claude": 0.195,
+      "grok": 0.074,
+      "deepseek": 0.068,
+      "perplexity": 0.124
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 7,
+      "bytesUsed": 39404,
+      "lastUpdatedAt": "2026-07-08T18:56:32.908Z",
+      "topCategories": [
+        "profile",
+        "notes",
+        "projects",
+        "snippets"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-24",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-24",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-24",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-24",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-07-21T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-14T19:31:27.268Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to business"
+      },
+      {
+        "ts": "2026-05-31T22:01:31.183Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+971501239998"
+  },
+  {
+    "id": "usr_st",
+    "name": "Wren Sato",
+    "email": "wren.sato37@studioklein.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1649,
+    "requestsLimit": 2500,
+    "tokensSpent": 10499183,
+    "costUsd": 10.91,
+    "lastActiveAt": "2026-07-10T15:34:01.023Z",
+    "signupDate": "2024-06-27T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.3,
+      "gemini": 0.178,
+      "claude": 0.262,
+      "grok": 0.067,
+      "deepseek": 0.061,
+      "perplexity": 0.132
+    },
+    "ticketIds": [
+      "tkt_010"
+    ],
+    "memory": {
+      "count": 42,
+      "bytesUsed": 39183,
+      "lastUpdatedAt": "2026-07-04T13:14:25.354Z",
+      "topCategories": [
+        "notes",
+        "preferences",
+        "profile",
+        "projects"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-27",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-27",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-27",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-27",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-27",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-12-27",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-07-23T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-05-13T01:05:17.177Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to business"
+      },
+      {
+        "ts": "2026-05-14T23:51:36.388Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+14155550101"
+  },
+  {
+    "id": "usr_su",
+    "name": "Aleks Mendoza",
+    "email": "aleks.mendoza38@northwind.io",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1601,
+    "requestsLimit": 2500,
+    "tokensSpent": 8296382,
+    "costUsd": 22.12,
+    "lastActiveAt": "2026-07-20T15:34:01.023Z",
+    "signupDate": "2024-06-02T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.35,
+      "gemini": 0.192,
+      "claude": 0.202,
+      "grok": 0.08,
+      "deepseek": 0.047,
+      "perplexity": 0.13
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 8,
+      "bytesUsed": 30789,
+      "lastUpdatedAt": "2026-07-16T23:06:52.844Z",
+      "topCategories": [
+        "projects",
+        "notes",
+        "preferences",
+        "profile"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-02",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-02",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-02",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-02",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "pending"
+      },
+      {
+        "date": "2024-11-02",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-12-02",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-08-08T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [],
+    "mobile": "+442079460958"
+  },
+  {
+    "id": "usr_sv",
+    "name": "Dilara Walsh",
+    "email": "dilara.walsh39@fastmail.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 941,
+    "requestsLimit": 2500,
+    "tokensSpent": 3041312,
+    "costUsd": 5.09,
+    "lastActiveAt": "2026-07-22T15:34:01.023Z",
+    "signupDate": "2024-06-05T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.288,
+      "gemini": 0.16,
+      "claude": 0.244,
+      "grok": 0.092,
+      "deepseek": 0.059,
+      "perplexity": 0.157
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 50,
+      "bytesUsed": 27256,
+      "lastUpdatedAt": "2026-07-20T08:12:05.999Z",
+      "topCategories": [
+        "profile",
+        "preferences",
+        "notes"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-05",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-05",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-05",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-08-09T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [],
+    "mobile": "+971501234567"
+  },
+  {
+    "id": "usr_sw",
+    "name": "Gojo Wong",
+    "email": "gojo.wong40@gmail.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 981,
+    "requestsLimit": 2500,
+    "tokensSpent": 6320583,
+    "costUsd": 9.51,
+    "lastActiveAt": "2026-07-15T15:34:01.023Z",
+    "signupDate": "2024-06-08T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.349,
+      "gemini": 0.169,
+      "claude": 0.186,
+      "grok": 0.095,
+      "deepseek": 0.068,
+      "perplexity": 0.134
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 42,
+      "bytesUsed": 25678,
+      "lastUpdatedAt": "2026-07-15T12:28:03.730Z",
+      "topCategories": [
+        "profile",
+        "snippets",
+        "notes"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-08",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-08",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-08",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-08",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-08",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-12-08",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-08-02T15:34:01.023Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-05-23T14:42:58.739Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to business"
+      },
+      {
+        "ts": "2026-06-20T10:45:52.906Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+15555550456"
+  },
+  {
+    "id": "usr_sx",
+    "name": "Jibril Pereira",
+    "email": "jibril.pereira41@outlook.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 828,
+    "requestsLimit": 2500,
+    "tokensSpent": 5948352,
+    "costUsd": 10.92,
+    "lastActiveAt": "2026-07-16T15:34:01.024Z",
+    "signupDate": "2024-06-11T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.306,
+      "gemini": 0.157,
+      "claude": 0.249,
+      "grok": 0.083,
+      "deepseek": 0.059,
+      "perplexity": 0.146
+    },
+    "ticketIds": [
+      "tkt_011"
+    ],
+    "memory": {
+      "count": 25,
+      "bytesUsed": 13061,
+      "lastUpdatedAt": "2026-07-14T00:59:26.764Z",
+      "topCategories": [
+        "profile",
+        "snippets",
+        "notes",
+        "preferences"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-11",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-11",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-11",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-11",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "pending"
+      },
+      {
+        "date": "2024-11-11",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-07-29T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [],
+    "mobile": "+5511998765432"
+  },
+  {
+    "id": "usr_sy",
+    "name": "Ada Chen",
+    "email": "ada.chen42@proton.me",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 2109,
+    "requestsLimit": 2500,
+    "tokensSpent": 11820945,
+    "costUsd": 15.4,
+    "lastActiveAt": "2026-07-08T15:34:01.024Z",
+    "signupDate": "2024-06-14T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.319,
+      "gemini": 0.174,
+      "claude": 0.235,
+      "grok": 0.078,
+      "deepseek": 0.051,
+      "perplexity": 0.143
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 52,
+      "bytesUsed": 8323,
+      "lastUpdatedAt": "2026-07-04T11:54:25.232Z",
+      "topCategories": [
+        "preferences",
+        "profile",
+        "notes"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-14",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-14",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-14",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-14",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-07-29T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-05-13T11:22:32.514Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to business"
+      }
+    ],
+    "mobile": "+15555550612"
+  },
+  {
+    "id": "usr_sz",
+    "name": "Daniyal Lopez",
+    "email": "daniyal.lopez43@hey.com",
+    "tier": "business",
+    "status": "suspended",
+    "requestsUsed": 2359,
+    "requestsLimit": 2500,
+    "tokensSpent": 11710076,
+    "costUsd": 16.5,
+    "lastActiveAt": "2026-07-19T15:34:01.024Z",
+    "signupDate": "2024-06-17T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.337,
+      "gemini": 0.153,
+      "claude": 0.246,
+      "grok": 0.076,
+      "deepseek": 0.054,
+      "perplexity": 0.135
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 49,
+      "bytesUsed": 24245,
+      "lastUpdatedAt": "2026-07-16T20:04:35.013Z",
+      "topCategories": [
+        "snippets",
+        "projects"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-17",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-17",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-17",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-17",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-08-10T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-18T15:34:01.024Z",
+        "actor": "admin@oneai.app",
+        "action": "userStatus",
+        "summary": "suspended — suspicious payment pattern"
+      }
+    ],
+    "mobile": "+819012345678"
+  },
+  {
+    "id": "usr_t0",
+    "name": "Gabriel Rossi",
+    "email": "gabriel.rossi44@acme.co",
+    "tier": "business",
+    "status": "grace",
+    "requestsUsed": 448,
+    "requestsLimit": 2500,
+    "tokensSpent": 2223872,
+    "costUsd": 2.44,
+    "lastActiveAt": "2026-07-20T15:34:01.024Z",
+    "signupDate": "2024-06-20T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.351,
+      "gemini": 0.177,
+      "claude": 0.216,
+      "grok": 0.065,
+      "deepseek": 0.058,
+      "perplexity": 0.134
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 7,
+      "bytesUsed": 33648,
+      "lastUpdatedAt": "2026-07-15T02:55:39.945Z",
+      "topCategories": [
+        "snippets",
+        "notes",
+        "profile"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-20",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-20",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-20",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-07-30T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-19T15:34:01.024Z",
+        "actor": "admin@oneai.app",
+        "action": "userStatus",
+        "summary": "moved to grace period (payment retry #2)"
+      },
+      {
+        "ts": "2026-06-01T17:55:38.597Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to business"
+      }
+    ],
+    "mobile": "+14155550199"
+  },
+  {
+    "id": "usr_t1",
+    "name": "Jana Schmidt",
+    "email": "jana.schmidt45@studioklein.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1310,
+    "requestsLimit": 2500,
+    "tokensSpent": 6666590,
+    "costUsd": 11.46,
+    "lastActiveAt": "2026-07-18T15:34:01.024Z",
+    "signupDate": "2024-06-23T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.295,
+      "gemini": 0.159,
+      "claude": 0.234,
+      "grok": 0.089,
+      "deepseek": 0.075,
+      "perplexity": 0.148
+    },
+    "ticketIds": [
+      "tkt_012"
+    ],
+    "memory": {
+      "count": 81,
+      "bytesUsed": 41246,
+      "lastUpdatedAt": "2026-07-15T16:02:13.379Z",
+      "topCategories": [
+        "snippets",
+        "notes"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-23",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-23",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-23",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-23",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-08-15T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-04-30T05:20:05.923Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+61298765432"
+  },
+  {
+    "id": "usr_t2",
+    "name": "Mateo Prasad",
+    "email": "mateo.prasad46@northwind.io",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 825,
+    "requestsLimit": 2500,
+    "tokensSpent": 4891425,
+    "costUsd": 5.38,
+    "lastActiveAt": "2026-07-07T15:34:01.024Z",
+    "signupDate": "2024-06-26T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.285,
+      "gemini": 0.22,
+      "claude": 0.226,
+      "grok": 0.076,
+      "deepseek": 0.057,
+      "perplexity": 0.136
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 42,
+      "bytesUsed": 23926,
+      "lastUpdatedAt": "2026-07-06T08:13:16.550Z",
+      "topCategories": [
+        "notes",
+        "projects"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-26",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-26",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-26",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-26",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-26",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-12-26",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-07-17T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-16T10:07:53.914Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to business"
+      },
+      {
+        "ts": "2026-06-21T22:42:53.764Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+971501239998"
+  },
+  {
+    "id": "usr_t3",
+    "name": "Petra Maguire",
+    "email": "petra.maguire47@fastmail.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1879,
+    "requestsLimit": 2500,
+    "tokensSpent": 4738838,
+    "costUsd": 19.93,
+    "lastActiveAt": "2026-07-18T15:34:01.024Z",
+    "signupDate": "2024-06-01T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.348,
+      "gemini": 0.159,
+      "claude": 0.239,
+      "grok": 0.084,
+      "deepseek": 0.056,
+      "perplexity": 0.115
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 22,
+      "bytesUsed": 23298,
+      "lastUpdatedAt": "2026-07-13T15:56:39.682Z",
+      "topCategories": [
+        "projects",
+        "notes",
+        "profile",
+        "preferences"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-01",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-01",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-01",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-01",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-08-08T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-21T20:15:23.207Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to business"
+      }
+    ],
+    "mobile": "+442079461002"
+  },
+  {
+    "id": "usr_t4",
+    "name": "Salma Khan",
+    "email": "salma.khan48@gmail.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 2085,
+    "requestsLimit": 2500,
+    "tokensSpent": 11849055,
+    "costUsd": 12,
+    "lastActiveAt": "2026-07-16T15:34:01.024Z",
+    "signupDate": "2024-06-04T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.343,
+      "gemini": 0.157,
+      "claude": 0.199,
+      "grok": 0.097,
+      "deepseek": 0.05,
+      "perplexity": 0.155
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 40,
+      "bytesUsed": 21437,
+      "lastUpdatedAt": "2026-07-11T10:21:21.982Z",
+      "topCategories": [
+        "projects",
+        "profile",
+        "preferences"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-04",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-04",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-04",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-04",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "pending"
+      },
+      {
+        "date": "2024-11-04",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-12-04",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-07-28T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-07T12:46:27.439Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+442079460958"
+  },
+  {
+    "id": "usr_t5",
+    "name": "Viktor Hussain",
+    "email": "viktor.hussain49@outlook.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 2045,
+    "requestsLimit": 2500,
+    "tokensSpent": 15006210,
+    "costUsd": 8.72,
+    "lastActiveAt": "2026-07-08T15:34:01.024Z",
+    "signupDate": "2024-06-07T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.309,
+      "gemini": 0.19,
+      "claude": 0.223,
+      "grok": 0.096,
+      "deepseek": 0.054,
+      "perplexity": 0.128
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 54,
+      "bytesUsed": 41438,
+      "lastUpdatedAt": "2026-07-05T17:59:56.817Z",
+      "topCategories": [
+        "snippets",
+        "notes",
+        "preferences"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-07",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-07",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-07",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-07",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-07",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-12-07",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-07-22T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-19T10:42:10.376Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to business"
+      }
+    ],
+    "mobile": "+14155550101"
+  },
+  {
+    "id": "usr_t6",
+    "name": "Yara Park",
+    "email": "yara.park50@proton.me",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 2286,
+    "requestsLimit": 2500,
+    "tokensSpent": 8819388,
+    "costUsd": 28.91,
+    "lastActiveAt": "2026-07-16T15:34:01.024Z",
+    "signupDate": "2024-06-10T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.298,
+      "gemini": 0.177,
+      "claude": 0.248,
+      "grok": 0.088,
+      "deepseek": 0.06,
+      "perplexity": 0.128
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 60,
+      "bytesUsed": 4641,
+      "lastUpdatedAt": "2026-07-16T08:03:04.700Z",
+      "topCategories": [
+        "preferences",
+        "notes",
+        "snippets",
+        "projects"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-10",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-10",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-08-05T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-24T04:53:23.406Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to business"
+      },
+      {
+        "ts": "2026-05-28T14:53:38.364Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+15555550456"
+  },
+  {
+    "id": "usr_t7",
+    "name": "Bilqis Mahmood",
+    "email": "bilqis.mahmood51@hey.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1600,
+    "requestsLimit": 2500,
+    "tokensSpent": 8622400,
+    "costUsd": 10.1,
+    "lastActiveAt": "2026-07-11T15:34:01.024Z",
+    "signupDate": "2024-06-13T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.313,
+      "gemini": 0.158,
+      "claude": 0.248,
+      "grok": 0.085,
+      "deepseek": 0.055,
+      "perplexity": 0.141
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 63,
+      "bytesUsed": 32636,
+      "lastUpdatedAt": "2026-07-06T14:06:10.369Z",
+      "topCategories": [
+        "snippets",
+        "preferences"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-13",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-13",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-07-28T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-06T03:45:05.235Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to business"
+      },
+      {
+        "ts": "2026-06-20T02:06:45.038Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+971501234567"
+  },
+  {
+    "id": "usr_t8",
+    "name": "Esme Hassan",
+    "email": "esme.hassan52@acme.co",
+    "tier": "business",
+    "status": "suspended",
+    "requestsUsed": 1062,
+    "requestsLimit": 2500,
+    "tokensSpent": 7637904,
+    "costUsd": 8.74,
+    "lastActiveAt": "2026-07-07T15:34:01.024Z",
+    "signupDate": "2024-06-16T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.276,
+      "gemini": 0.182,
+      "claude": 0.244,
+      "grok": 0.078,
+      "deepseek": 0.061,
+      "perplexity": 0.16
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 85,
+      "bytesUsed": 18415,
+      "lastUpdatedAt": "2026-07-05T21:30:08.700Z",
+      "topCategories": [
+        "preferences",
+        "snippets"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-16",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-16",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-16",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-16",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-16",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-12-16",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-06-30T10:26:51.227Z",
+        "amount": 313,
+        "by": "admin@oneai.app",
+        "reason": "SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-07-25T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-06T15:34:01.024Z",
+        "actor": "admin@oneai.app",
+        "action": "userStatus",
+        "summary": "suspended — suspicious payment pattern"
+      },
+      {
+        "ts": "2026-06-30T10:26:51.227Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+313 requests — SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "mobile": "+15555550612"
+  },
+  {
+    "id": "usr_t9",
+    "name": "Haruki Pinto",
+    "email": "haruki.pinto53@studioklein.com",
+    "tier": "business",
+    "status": "grace",
+    "requestsUsed": 962,
+    "requestsLimit": 2500,
+    "tokensSpent": 6706102,
+    "costUsd": 7.29,
+    "lastActiveAt": "2026-07-23T15:34:01.024Z",
+    "signupDate": "2024-06-19T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.372,
+      "gemini": 0.196,
+      "claude": 0.187,
+      "grok": 0.074,
+      "deepseek": 0.054,
+      "perplexity": 0.117
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 60,
+      "bytesUsed": 33781,
+      "lastUpdatedAt": "2026-07-22T15:41:13.755Z",
+      "topCategories": [
+        "preferences",
+        "profile",
+        "projects"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-19",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-08-05T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-22T15:34:01.024Z",
+        "actor": "admin@oneai.app",
+        "action": "userStatus",
+        "summary": "moved to grace period (payment retry #2)"
+      }
+    ],
+    "mobile": "+5511998765432"
+  },
+  {
+    "id": "usr_ta",
+    "name": "Karima Oduya",
+    "email": "karima.oduya54@northwind.io",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1273,
+    "requestsLimit": 2500,
+    "tokensSpent": 2808238,
+    "costUsd": 8.19,
+    "lastActiveAt": "2026-07-10T15:34:01.024Z",
+    "signupDate": "2024-06-22T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.329,
+      "gemini": 0.199,
+      "claude": 0.198,
+      "grok": 0.095,
+      "deepseek": 0.051,
+      "perplexity": 0.128
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 70,
+      "bytesUsed": 6023,
+      "lastUpdatedAt": "2026-07-08T09:31:45.652Z",
+      "topCategories": [
+        "notes",
+        "projects",
+        "preferences"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-22",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-22",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-22",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-07-25T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-02T23:38:23.408Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to business"
+      }
+    ],
+    "mobile": "+15555550189"
+  },
+  {
+    "id": "usr_tb",
+    "name": "Niels Diallo",
+    "email": "niels.diallo55@fastmail.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1417,
+    "requestsLimit": 2500,
+    "tokensSpent": 4946747,
+    "costUsd": 20.43,
+    "lastActiveAt": "2026-07-12T15:34:01.024Z",
+    "signupDate": "2024-06-25T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.355,
+      "gemini": 0.181,
+      "claude": 0.203,
+      "grok": 0.072,
+      "deepseek": 0.054,
+      "perplexity": 0.136
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 10,
+      "bytesUsed": 42743,
+      "lastUpdatedAt": "2026-07-09T05:19:14.423Z",
+      "topCategories": [
+        "snippets",
+        "notes",
+        "profile"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-25",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-25",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-25",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-25",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-25",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-11T16:37:11.974Z",
+        "amount": 305,
+        "by": "admin@oneai.app",
+        "reason": "SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-07-21T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-11T16:37:11.974Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+305 requests — SLA credit for upstream Gemini brownout"
+      },
+      {
+        "ts": "2026-07-12T07:54:51.527Z",
+        "actor": "admin@oneai.app",
+        "action": "login",
+        "summary": "reviewed account per support request"
+      }
+    ],
+    "mobile": "+15555550844"
+  },
+  {
+    "id": "usr_tc",
+    "name": "Qadir Reyes",
+    "email": "qadir.reyes56@gmail.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 1448,
+    "requestsLimit": 2500,
+    "tokensSpent": 5592176,
+    "costUsd": 22.29,
+    "lastActiveAt": "2026-07-23T15:34:01.024Z",
+    "signupDate": "2024-05-31T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.303,
+      "gemini": 0.204,
+      "claude": 0.229,
+      "grok": 0.071,
+      "deepseek": 0.072,
+      "perplexity": 0.121
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 82,
+      "bytesUsed": 4528,
+      "lastUpdatedAt": "2026-07-21T04:47:20.404Z",
+      "topCategories": [
+        "preferences",
+        "profile",
+        "notes"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-01",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-07-31",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-31",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-01",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-31",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-08-13T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-17T08:43:56.042Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to business"
+      }
+    ],
+    "mobile": "+8613800138000"
+  },
+  {
+    "id": "usr_td",
+    "name": "Talin Awan",
+    "email": "talin.awan57@outlook.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 395,
+    "requestsLimit": 2500,
+    "tokensSpent": 2422930,
+    "costUsd": 5.57,
+    "lastActiveAt": "2026-07-18T15:34:01.024Z",
+    "signupDate": "2024-06-03T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.35,
+      "gemini": 0.17,
+      "claude": 0.216,
+      "grok": 0.085,
+      "deepseek": 0.05,
+      "perplexity": 0.129
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 80,
+      "bytesUsed": 37885,
+      "lastUpdatedAt": "2026-07-12T03:39:18.286Z",
+      "topCategories": [
+        "notes",
+        "preferences"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-03",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-03",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-09-03",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-10-03",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-11-03",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-12-03",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-08-05T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-05-26T01:39:31.037Z",
+        "actor": "admin@oneai.app",
+        "action": "tierChange",
+        "summary": "upgraded to business"
+      }
+    ],
+    "mobile": "+5511998765012"
+  },
+  {
+    "id": "usr_te",
+    "name": "Wren Hernandez",
+    "email": "wren.hernandez58@proton.me",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 2402,
+    "requestsLimit": 2500,
+    "tokensSpent": 14974068,
+    "costUsd": 16.41,
+    "lastActiveAt": "2026-07-08T15:34:01.024Z",
+    "signupDate": "2024-06-06T03:00:00.000Z",
+    "platform": "android",
+    "signupSource": "android",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.331,
+      "gemini": 0.19,
+      "claude": 0.217,
+      "grok": 0.072,
+      "deepseek": 0.06,
+      "perplexity": 0.131
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 74,
+      "bytesUsed": 29064,
+      "lastUpdatedAt": "2026-07-04T09:31:37.812Z",
+      "topCategories": [
+        "preferences",
+        "snippets"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-06",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-06",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-06-16T07:18:38.386Z",
+        "amount": 184,
+        "by": "admin@oneai.app",
+        "reason": "SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-07-31T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-06-16T07:18:38.386Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+184 requests — SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "mobile": "+33145678901"
+  },
+  {
+    "id": "usr_tf",
+    "name": "Aleks Suzuki",
+    "email": "aleks.suzuki59@hey.com",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 911,
+    "requestsLimit": 2500,
+    "tokensSpent": 4127741,
+    "costUsd": 7.38,
+    "lastActiveAt": "2026-07-24T15:34:01.024Z",
+    "signupDate": "2024-06-09T03:00:00.000Z",
+    "platform": "web",
+    "signupSource": "web",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.336,
+      "gemini": 0.171,
+      "claude": 0.197,
+      "grok": 0.067,
+      "deepseek": 0.067,
+      "perplexity": 0.161
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 73,
+      "bytesUsed": 36098,
+      "lastUpdatedAt": "2026-07-20T13:10:03.758Z",
+      "topCategories": [
+        "preferences",
+        "projects"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-09",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-09",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-12T11:52:50.096Z",
+        "amount": 548,
+        "by": "admin@oneai.app",
+        "reason": "SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-08-02T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-12T11:52:50.096Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+548 requests — SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "mobile": "+819012349876"
+  },
+  {
+    "id": "usr_tg",
+    "name": "Dilara Larsen",
+    "email": "dilara.larsen60@acme.co",
+    "tier": "business",
+    "status": "active",
+    "requestsUsed": 382,
+    "requestsLimit": 2500,
+    "tokensSpent": 1212086,
+    "costUsd": 5.09,
+    "lastActiveAt": "2026-07-22T15:34:01.024Z",
+    "signupDate": "2024-06-12T03:00:00.000Z",
+    "platform": "ios",
+    "signupSource": "ios",
+    "avatarUrl": "/brand/hex-ring.svg",
+    "modelDistribution": {
+      "gpt": 0.323,
+      "gemini": 0.196,
+      "claude": 0.202,
+      "grok": 0.088,
+      "deepseek": 0.06,
+      "perplexity": 0.131
+    },
+    "ticketIds": [],
+    "memory": {
+      "count": 38,
+      "bytesUsed": 8272,
+      "lastUpdatedAt": "2026-07-18T12:39:34.829Z",
+      "topCategories": [
+        "notes",
+        "projects",
+        "preferences"
+      ]
+    },
+    "paymentHistory": [
+      {
+        "date": "2024-07-12",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      },
+      {
+        "date": "2024-08-12",
+        "amountUsd": 79,
+        "plan": "business",
+        "period": "monthly",
+        "status": "succeeded"
+      }
+    ],
+    "quotaHistory": [
+      {
+        "date": "2026-07-20T17:34:10.898Z",
+        "amount": 160,
+        "by": "admin@oneai.app",
+        "reason": "SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "renewals": [
+      {
+        "plan": "business",
+        "period": "monthly",
+        "amountUsd": 79,
+        "nextBillingAt": "2026-08-07T15:34:01.024Z"
+      }
+    ],
+    "actionTimeline": [
+      {
+        "ts": "2026-07-20T17:34:10.898Z",
+        "actor": "admin@oneai.app",
+        "action": "quotaOverride",
+        "summary": "+160 requests — SLA credit for upstream Gemini brownout"
+      }
+    ],
+    "mobile": "+15555550701"
+  }
+]

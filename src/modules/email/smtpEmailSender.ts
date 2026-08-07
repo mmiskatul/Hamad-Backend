@@ -3,6 +3,7 @@ import type {
   EmailSender,
   PasswordResetCodeEmail,
   RegistrationCodeEmail,
+  SupportReplyEmail,
 } from './emailSender.js';
 
 export type SmtpEmailSenderOptions = {
@@ -78,6 +79,16 @@ export class SmtpEmailSender implements EmailSender {
         <p>It expires in ${message.expiresInMinutes} minutes.</p>
         <p>If you did not request a password reset, you can ignore this email.</p>
       `,
+    });
+  }
+
+  async sendSupportReply(message: SupportReplyEmail): Promise<void> {
+    await this.transporter.sendMail({
+      from: { name: this.options.fromName, address: this.options.fromEmail },
+      to: message.to,
+      subject: message.subject,
+      text: message.message,
+      html: `<p>${message.message.replace(/\n/g, '<br/>')}</p>`,
     });
   }
 }
