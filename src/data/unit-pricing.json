@@ -1,0 +1,32 @@
+{
+  "requestUnit": {
+    "size": 10,
+    "priceUsd": 1.5,
+    "enabled": true,
+    "updatedAt": "2026-07-25T10:00:00Z",
+    "updatedBy": "admin@oneai.app"
+  },
+  "tokenUnit": {
+    "size": 1000,
+    "priceUsd": 0.25,
+    "enabled": true,
+    "updatedAt": "2026-07-25T10:00:00Z",
+    "updatedBy": "admin@oneai.app"
+  },
+  "history": [
+    {
+      "ts": "2026-07-25T10:00:00Z",
+      "actor": "admin@oneai.app",
+      "unit": "request",
+      "before": {
+        "size": 5,
+        "priceUsd": 2
+      },
+      "after": {
+        "size": 10,
+        "priceUsd": 1.5
+      },
+      "reason": "Align with provider costs"
+    }
+  ]
+}
