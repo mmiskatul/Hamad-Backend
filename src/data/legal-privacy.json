@@ -1,0 +1,12 @@
+{
+  "currentVersionId": "v1",
+  "versions": [
+    {
+      "id": "v1",
+      "createdAt": "2026-04-01T00:00:00.000Z",
+      "createdBy": "admin@oneai.app",
+      "summary": "Initial Privacy Policy",
+      "bodyMarkdown": "# OneAI Hub — Privacy Policy\n\n_Last updated: 2026-04-01_\n\n## 1. What this dashboard stores\n\nThis admin dashboard stores only metadata required to operate the platform:\n\n- User account identifiers (email, signup date, platform)\n- Aggregated request and token counts per user\n- Subscription and billing metadata\n- Support ticket metadata (subject, status, priority)\n\nWe do **not** store conversation content, message bodies, attachments, or any user-generated text. If a user attaches a conversation to a support ticket, the attachment is held for 30 days and then permanently deleted.\n\n## 2. Who can see what\n\n- The super-admin sees metadata only.\n- The super-admin can extend, suspend, or reactivate accounts with a documented reason.\n- Every action is recorded in an append-only audit log.\n\n## 3. Upstream providers\n\nUser prompts are forwarded to upstream AI providers (OpenAI, Anthropic, Google, xAI, DeepSeek, Perplexity). Their privacy policies apply to the data they receive.\n\n## 4. Cookies and analytics\n\nThis dashboard sets a single session cookie (`admin_session`) used to keep you signed in. We do not use third-party analytics or tracking cookies.\n\n## 5. Data retention\n\n- Audit log entries are retained for 7 years for compliance.\n- Support ticket metadata is retained for 2 years after closure.\n- User account records are retained for 30 days after deletion, then permanently removed.\n\n## 6. Your rights\n\nEnd users may request export or deletion of their metadata by emailing privacy@oneai.app. We respond within 30 days.\n\n## 7. Changes to this policy\n\nChanges are published as a new version of this document. The current version is identified at the top of this page.\n\n## 8. Contact\n\nprivacy@oneai.app\n"
+    }
+  ]
+}

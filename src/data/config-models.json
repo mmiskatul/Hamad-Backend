@@ -1,0 +1,44 @@
+[
+  {
+    "id": "gpt",
+    "label": "OpenAI GPT",
+    "enabled": true,
+    "includedInTiers": ["free", "pro", "business"],
+    "affectedUsers": 24
+  },
+  {
+    "id": "gemini",
+    "label": "Google Gemini",
+    "enabled": true,
+    "includedInTiers": ["pro", "business"],
+    "affectedUsers": 22
+  },
+  {
+    "id": "claude",
+    "label": "Anthropic Claude",
+    "enabled": true,
+    "includedInTiers": ["business"],
+    "affectedUsers": 234
+  },
+  {
+    "id": "grok",
+    "label": "xAI Grok",
+    "enabled": false,
+    "includedInTiers": ["free", "pro", "business"],
+    "affectedUsers": 47
+  },
+  {
+    "id": "deepseek",
+    "label": "DeepSeek",
+    "enabled": true,
+    "includedInTiers": ["pro", "business"],
+    "affectedUsers": 22
+  },
+  {
+    "id": "perplexity",
+    "label": "Perplexity",
+    "enabled": true,
+    "includedInTiers": ["business"],
+    "affectedUsers": 166
+  }
+]

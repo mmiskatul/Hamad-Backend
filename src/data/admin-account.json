@@ -1,0 +1,30 @@
+{
+  "id": "admin_001",
+  "name": "Mahfuz Rahman",
+  "email": "admin@oneai.app",
+  "avatarUrl": "/brand/logo-mark.svg",
+  "lastSignInAt": "2026-07-24T09:14:00.000Z",
+  "totpEnabled": false,
+  "twoFactor": {
+    "email": null,
+    "verified": false
+  },
+  "sessions": [
+    {
+      "id": "sess_curr",
+      "device": "MacBook Pro",
+      "location": "Berlin, DE",
+      "ip": "85.214.32.10",
+      "lastActiveAt": "2026-07-24T15:34:01.041Z",
+      "current": true
+    },
+    {
+      "id": "sess_2",
+      "device": "iPhone",
+      "location": "Berlin, DE",
+      "ip": "85.214.32.10",
+      "lastActiveAt": "2026-07-24T14:34:01.000Z",
+      "current": false
+    }
+  ]
+}
