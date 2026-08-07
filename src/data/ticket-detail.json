@@ -1,0 +1,34 @@
+{
+  "id": "tkt_001",
+  "userId": "usr_rt",
+  "userEmail": "daniyal.hussain1@outlook.com",
+  "subject": "Login keeps failing on Android",
+  "status": "open",
+  "priority": "normal",
+  "assignedTo": null,
+  "createdAt": "2026-07-23T15:34:01.035Z",
+  "updatedAt": "2026-07-24T15:34:01.035Z",
+  "hasAttachment": false,
+  "attachmentExpiresAt": null,
+  "description": "User reports sign-out loop after upgrading to Pro. Works on web, fails on iOS 17.",
+  "timeline": [
+    {
+      "id": "ev_1",
+      "at": "2026-07-23T15:34:01.037Z",
+      "actor": "daniyal.hussain1@outlook.com",
+      "note": "Ticket opened."
+    },
+    {
+      "id": "ev_2",
+      "at": "2026-07-23T16:34:01.037Z",
+      "actor": "admin@oneai.app",
+      "note": "Acknowledged. Asked for device logs."
+    },
+    {
+      "id": "ev_3",
+      "at": "2026-07-24T14:34:01.037Z",
+      "actor": "admin@oneai.app",
+      "note": "Logs reviewed. Escalating to engineering."
+    }
+  ]
+}

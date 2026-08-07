@@ -1,0 +1,152 @@
+{
+  "mrrSeries": [
+    {
+      "month": "Jul",
+      "mrr": 12242
+    },
+    {
+      "month": "Aug",
+      "mrr": 12742
+    },
+    {
+      "month": "Sep",
+      "mrr": 13346
+    },
+    {
+      "month": "Oct",
+      "mrr": 13880
+    },
+    {
+      "month": "Nov",
+      "mrr": 14294
+    },
+    {
+      "month": "Dec",
+      "mrr": 14925
+    },
+    {
+      "month": "Jan",
+      "mrr": 15468
+    },
+    {
+      "month": "Feb",
+      "mrr": 15937
+    },
+    {
+      "month": "Mar",
+      "mrr": 16637
+    },
+    {
+      "month": "Apr",
+      "mrr": 17130
+    },
+    {
+      "month": "May",
+      "mrr": 17496
+    },
+    {
+      "month": "Jun",
+      "mrr": 18007
+    }
+  ],
+  "tierMix": [
+    {
+      "tier": "free",
+      "users": 8400,
+      "revenue": 0
+    },
+    {
+      "tier": "pro",
+      "users": 2140,
+      "revenue": 10700
+    },
+    {
+      "tier": "business",
+      "users": 312,
+      "revenue": 7540
+    }
+  ],
+  "churn": [
+    {
+      "month": "Jul",
+      "churn": 0.028,
+      "newMrr": 1071
+    },
+    {
+      "month": "Aug",
+      "churn": 0.029,
+      "newMrr": 1352
+    },
+    {
+      "month": "Sep",
+      "churn": 0.02,
+      "newMrr": 959
+    },
+    {
+      "month": "Oct",
+      "churn": 0.024,
+      "newMrr": 1276
+    },
+    {
+      "month": "Nov",
+      "churn": 0.026,
+      "newMrr": 800
+    },
+    {
+      "month": "Dec",
+      "churn": 0.028,
+      "newMrr": 1204
+    },
+    {
+      "month": "Jan",
+      "churn": 0.028,
+      "newMrr": 1209
+    },
+    {
+      "month": "Feb",
+      "churn": 0.025,
+      "newMrr": 1042
+    },
+    {
+      "month": "Mar",
+      "churn": 0.027,
+      "newMrr": 1311
+    },
+    {
+      "month": "Apr",
+      "churn": 0.02,
+      "newMrr": 1069
+    },
+    {
+      "month": "May",
+      "churn": 0.029,
+      "newMrr": 1078
+    },
+    {
+      "month": "Jun",
+      "churn": 0.02,
+      "newMrr": 879
+    }
+  ],
+  "arpu": 7.32,
+  "arr": 218880,
+  "churnRate": 0.024,
+  "funnel": [
+    {
+      "stage": "Visitors",
+      "value": 24000
+    },
+    {
+      "stage": "Signups",
+      "value": 10420
+    },
+    {
+      "stage": "Activated",
+      "value": 6420
+    },
+    {
+      "stage": "Subscribed",
+      "value": 2452
+    }
+  ]
+}
