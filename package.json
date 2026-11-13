@@ -4,10 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node api.js && tsx watch --clear-screen=false src/index.ts",
-    "dev:once": "node api.js && tsx src/index.ts",
-    "build": "node api.js && tsc -p tsconfig.build.json",
-    "start": "node api.js && node dist/index.js",
+    "dev": "tsx watch --clear-screen=false src/index.ts",
+    "dev:once": "tsx src/index.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/index.js",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "tsx --test --test-concurrency=1 tests/**/*.test.ts"
   },
